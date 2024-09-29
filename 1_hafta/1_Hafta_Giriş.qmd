@@ -323,6 +323,29 @@ sayilar <- c(10, 20, NA, 40, 50)
 ortalama <- mean(sayilar, na.rm = TRUE)   # NA değerini göz ardı ederek ortalama hesaplar
 ```
 
+## Fonksiyon Oluşturma
+R dilinde kendi fonksiyonlarınızı oluşturmak oldukça basittir. Fonksiyonlar, belirli bir işlevi gerçekleştirmek için bir dizi komut içerir ve gerektiğinde parametreler alabilir. Fonksiyonlar, function anahtar kelimesi kullanılarak tanımlanır.
+
+Fonksiyon Oluşturma
+Bir fonksiyon oluşturmak için aşağıdaki adımları izleyebilirsiniz:
+
+- function anahtar kelimesini kullanarak fonksiyonunuzu tanımlayın.
+- Fonksiyonun alacağı parametreleri parantez içinde belirtin.
+- Fonksiyonun gövdesinde, fonksiyonun gerçekleştireceği işlemleri yazın.
+- return() fonksiyonunu kullanarak fonksiyonun döndüreceği değeri belirtin (isteğe bağlı).
+
+```{r}
+# Toplama fonksiyonu oluşturma
+topla <- function(a, b) {
+  sonuc <- a + b
+  return(sonuc)
+}
+
+# Fonksiyonu çağırma
+toplam <- topla(5, 3)
+print(toplam)  # 8
+```
+
 # R’da Yardım Alma
 R, fonksiyonlar ve komutlar hakkında bilgi almak için yerleşik bir yardım sistemi sunar. Özellikle yeni başlayanlar için R’ın yardım sistemi oldukça faydalıdır.
 
@@ -476,20 +499,62 @@ print(my_data_frame)
 
 ![](https://th.bing.com/th/id/OIP.JjZYjvyBurwgQa1RBRtzAAAAAA?rs=1&pid=ImgDetMain)
 
-# Veri İçe Aktarma ve Temel Manipülasyon
+# Veri İçe Aktarma ve Kaydetme
 Veri içe aktarma ve temel manipülasyon, veri analizi sürecinin önemli adımlarıdır. R dilinde veri içe aktarma ve temel manipülasyon işlemleri için çeşitli fonksiyonlar ve paketler kullanılır.
 
-Veri İçe Aktarma
+## Veri İçe Aktarma
 R dilinde veri içe aktarmak için read.csv(), read.table(), read_excel() gibi fonksiyonlar kullanılır.
 
 ```{r}
 # CSV dosyasını içe aktarma
 data <- read.csv("https://raw.githubusercontent.com/datasciencedojo/datasets/refs/heads/master/titanic.csv")   # ("path/to/your/file.csv")
+```
 
+
+```{r}
 # readxl paketini yükleme
 install.packages("readxl")
 library(readxl)
 
 # Excel dosyasını içe aktarma
-data <- read_excel("path/to/your/file.xlsx")
+data <- read_excel("https://github.com/HakanMehmetcik/IST2083/blob/main/Data/sample_excel.xlsx")
 ```
+## Veri Kaydetme
+R dilinde veri kaydetmek için çeşitli fonksiyonlar kullanabilirsiniz. En yaygın kullanılan dosya formatları arasında CSV, Excel ve RDS dosyaları bulunur.
+
+**CSV Dosyasına Veri Kaydetme**
+Veri çerçevesini CSV dosyasına kaydetmek için write.csv() fonksiyonunu kullanabilirsiniz:
+
+```{r}
+# Veri çerçevesini CSV dosyasına kaydetme
+write.csv(data, "path/to/your/file.csv", row.names = FALSE)
+```
+
+**Excel Dosyasına Veri Kaydetme**
+Excel dosyasına veri kaydetmek için writexl paketini kullanabilirsiniz:
+
+```{r}
+# writexl paketini yükleme
+install.packages("writexl")
+library(writexl)
+
+# Veri çerçevesini Excel dosyasına kaydetme
+write_xlsx(data, "path/to/your/file.xlsx")
+```
+
+## Veri Yapısını İnceleme
+Veri inceleme, veri analizi sürecinin önemli bir parçasıdır. R dilinde veri incelemek için çeşitli fonksiyonlar ve paketler kullanabilirsiniz. Bu işlemler arasında veri yapısını kontrol etme, özet istatistikler oluşturma ve veri görselleştirme gibi işlemler bulunur. 
+Veri yapısını incelemek için str(), summary(), head(), ve tail() fonksiyonlarını kullanabilirsiniz. 
+
+```{r}
+# Veri yapısını kontrol etme
+str(data)
+# Özet istatistikler
+summary(data)
+# İlk birkaç satırı görüntüleme
+head(data)
+
+# Son birkaç satırı görüntüleme
+tail(data)
+```
+
