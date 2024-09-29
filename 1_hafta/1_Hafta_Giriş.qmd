@@ -1,14 +1,8 @@
-------------------------------------------------------------------------
-
 ---
 title: "1. Hafta: Giriş"
 author: "Hakan Mehmetcik"
-execute:
-  echo: false
 format: html
 ---
-
-------------------------------------------------------------------------
 
 # **1. R ve R'ın Temel Yapısı**
 
@@ -250,7 +244,7 @@ us <- a^b
 print(us) # Çıktı: 125
 ```
 
-# R'da Temel Fonksiyonlar
+# 4. R'da Temel Fonksiyonlar
 
 R programlama dilinde temel fonksiyonlar, veri analizi ve istatistiksel hesaplamalar için yaygın olarak kullanılır. İşte bazı temel fonksiyonlar ve örnek kullanımları:
 
@@ -346,7 +340,7 @@ toplam <- topla(5, 3)
 print(toplam)  # 8
 ```
 
-# R’da Yardım Alma
+# 5. R’da Yardım Alma
 R, fonksiyonlar ve komutlar hakkında bilgi almak için yerleşik bir yardım sistemi sunar. Özellikle yeni başlayanlar için R’ın yardım sistemi oldukça faydalıdır.
 
 R Fonksiyonları İçin Yardım Alma ( ? ve help() Komutları)
@@ -370,7 +364,7 @@ R’ın tüm fonksiyonlarının nasıl çalıştığını, örnekler ve açıkla
 help(mean)  # Ortalama hesaplayan mean() fonksiyonunu anlamak için yardım alabiliriz
 ```
 
-# Basit Veri Yapıları
+# 6. Basit Veri Yapıları
 R dilinde, veriler çeşitli veri yapıları kullanılarak organize edilir. Temel veri yapıları, vektörler, listeler ve matrislerdir.
 
 ## Vektörler
@@ -499,7 +493,7 @@ print(my_data_frame)
 
 ![](https://th.bing.com/th/id/OIP.JjZYjvyBurwgQa1RBRtzAAAAAA?rs=1&pid=ImgDetMain)
 
-# Veri İçe Aktarma ve Kaydetme
+# 7. Veri İçe Aktarma ve Kaydetme
 Veri içe aktarma ve temel manipülasyon, veri analizi sürecinin önemli adımlarıdır. R dilinde veri içe aktarma ve temel manipülasyon işlemleri için çeşitli fonksiyonlar ve paketler kullanılır.
 
 ## Veri İçe Aktarma
@@ -517,7 +511,7 @@ install.packages("readxl")
 library(readxl)
 
 # Excel dosyasını içe aktarma
-data <- read_excel("https://github.com/HakanMehmetcik/IST2083/blob/main/Data/sample_excel.xlsx")
+# data <- read_excel("https://github.com/HakanMehmetcik/IST2083/blob/main/Data/sample_excel.xlsx")
 ```
 ## Veri Kaydetme
 R dilinde veri kaydetmek için çeşitli fonksiyonlar kullanabilirsiniz. En yaygın kullanılan dosya formatları arasında CSV, Excel ve RDS dosyaları bulunur.
@@ -527,7 +521,7 @@ Veri çerçevesini CSV dosyasına kaydetmek için write.csv() fonksiyonunu kulla
 
 ```{r}
 # Veri çerçevesini CSV dosyasına kaydetme
-write.csv(data, "path/to/your/file.csv", row.names = FALSE)
+# write.csv(data, "path/to/your/file.csv", row.names = FALSE)
 ```
 
 **Excel Dosyasına Veri Kaydetme**
@@ -539,7 +533,7 @@ install.packages("writexl")
 library(writexl)
 
 # Veri çerçevesini Excel dosyasına kaydetme
-write_xlsx(data, "path/to/your/file.xlsx")
+# write_xlsx(data, "path/to/your/file.xlsx")
 ```
 
 ## Veri Yapısını İnceleme

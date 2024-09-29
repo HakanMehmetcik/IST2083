@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hakan Mehmetcik">
+
+<title>1. Hafta: Giriş</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="1_Hafta_Giriş_files/libs/clipboard/clipboard.min.js"></script>
+<script src="1_Hafta_Giriş_files/libs/quarto-html/quarto.js"></script>
+<script src="1_Hafta_Giriş_files/libs/quarto-html/popper.min.js"></script>
+<script src="1_Hafta_Giriş_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="1_Hafta_Giriş_files/libs/quarto-html/anchor.min.js"></script>
+<link href="1_Hafta_Giriş_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="1_Hafta_Giriş_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="1_Hafta_Giriş_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="1_Hafta_Giriş_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="1_Hafta_Giriş_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">1. Hafta: Giriş</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hakan Mehmetcik </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="r-ve-rın-temel-yapısı" class="level1">
+<h1><strong>1. R ve R’ın Temel Yapısı</strong></h1>
+<section id="r-dilinin-genel-özellikleri-ve-kullanımı" class="level2">
+<h2 class="anchored" data-anchor-id="r-dilinin-genel-özellikleri-ve-kullanımı"><strong>R Dilinin Genel Özellikleri ve Kullanımı</strong></h2>
+<p>R, veri analizi, istatistiksel hesaplamalar ve grafiksel görselleştirme için tasarlanmış güçlü ve açık kaynaklı bir programlama dilidir. R’ın temel avantajlarından biri, akademik ve profesyonel dünyada geniş bir kullanım alanına sahip olmasıdır. R, özellikle büyük veri setleri üzerinde hızlı ve etkili analizler yapmayı sağlar.</p>
+</section>
+<section id="r-ile-neler-yapabilirsiniz" class="level2">
+<h2 class="anchored" data-anchor-id="r-ile-neler-yapabilirsiniz"><strong>R ile neler yapabilirsiniz</strong>?</h2>
+<ul>
+<li>Sayısal veriler üzerinde işlem yapabilir, istatistiksel analizler gerçekleştirebilirsiniz.</li>
+<li>Verilerinizi görselleştirmek için grafikler ve çizelgeler oluşturabilirsiniz.</li>
+<li>Gelişmiş istatistiksel modeller kurabilir, veriler üzerinde tahminlerde bulunabilirsiniz.</li>
+</ul>
+</section>
+<section id="rın-veri-analizi-ve-istatistikteki-yeri" class="level2">
+<h2 class="anchored" data-anchor-id="rın-veri-analizi-ve-istatistikteki-yeri"><strong>R’ın Veri Analizi ve İstatistikteki Yeri</strong></h2>
+<p>R, özellikle veri bilimciler, istatistikçiler ve araştırmacılar tarafından veri analizi için yaygın olarak kullanılır. Akademik dünyada, bilimsel araştırmalarda ve iş dünyasında veri analizi için standart bir araçtır. Bunun nedeni R’ın geniş bir paket ekosistemine sahip olmasıdır; yani, özel amaçlar için kullanabileceğiniz binlerce hazır fonksiyon ve paket bulunur.</p>
+<p>R’ın Avantajları: - Esneklik: R, çok farklı veri türleri ve analizlerle çalışmanıza olanak sağlar. - Geniş Paket Desteği: R, geniş bir topluluğa sahiptir ve hemen hemen her türlü veri analizi için uygun bir paket bulabilirsiniz (örneğin: <code>ggplot2</code>, <code>dplyr</code>, <code>tidyverse</code>). - Veri Görselleştirme: Grafiksel görselleştirme için R, güçlü araçlar sunar. Karmaşık veri setlerini kolayca anlaşılır grafiklere dönüştürebilirsiniz.</p>
+</section>
+<section id="rı-github-codespaces-üzerinde-kullanmaya-başlama" class="level2">
+<h2 class="anchored" data-anchor-id="rı-github-codespaces-üzerinde-kullanmaya-başlama"><strong>R’ı GitHub Codespaces Üzerinde Kullanmaya Başlama</strong></h2>
+<p>Bu derste, GitHub Codespaces kullanarak R ile çalışacağız. Codespaces, bulut tabanlı bir geliştirme ortamıdır. Yani, bilgisayarınıza herhangi bir yazılım yüklemeden GitHub üzerinde R projeleri geliştirebilirsiniz. GitHub Codespaces, R dili için hazır bir çalışma ortamı sağlar ve GitHub repository’nizle entegre bir şekilde çalışmanıza olanak tanır.</p>
+<section id="r-ile-github-codespaceste-çalışmaya-başlama-adımları" class="level3">
+<h3 class="anchored" data-anchor-id="r-ile-github-codespaceste-çalışmaya-başlama-adımları"><strong>R ile GitHub Codespaces’te Çalışmaya Başlama Adımları:</strong></h3>
+<ol type="1">
+<li>Repository’ye Erişin: GitHub’da ders için oluşturulan repository’ye gidin (örneğin: <a href="https://github.com/HakanMehmetcik/IST2083.git">IST2083 GitHub Repository</a>).</li>
+<li>Codespace’i Açın: Repository sayfasında “Code” butonuna tıklayın ve “Open with Codespaces” seçeneğini seçin.</li>
+<li>Ortamı Başlatın: Codespace, sizin için bir geliştirme ortamı oluşturacak. Bu ortamda R kodları yazabilir ve çalıştırabilirsiniz.</li>
+<li>Dosyalarla Çalışma: R dilinde yazılmış <code>.qmd</code> (Quarto) dosyalarını açarak ders notlarını inceleyebilir ve R konsolu üzerinde örnek kodları çalıştırabilirsiniz.</li>
+</ol>
+</section>
+<section id="github-codespacesin-avantajları" class="level3">
+<h3 class="anchored" data-anchor-id="github-codespacesin-avantajları"><strong>GitHub Codespaces’in Avantajları:</strong></h3>
+<ul>
+<li>Kurulum Gerektirmez: Hiçbir yazılım indirip kurmanıza gerek kalmaz, her şey tarayıcı üzerinde çalışır.</li>
+<li>Bulut Tabanlı: Tüm verileriniz ve projeleriniz bulutta saklanır, böylece her yerden erişim sağlayabilirsiniz.</li>
+<li>Anında Kullanıma Hazır: R dili ve ilgili paketler önceden yüklenmiştir; hemen kullanmaya başlayabilirsiniz.</li>
+</ul>
+<p><strong>Sonuç Olarak:</strong> R, veri analizi ve istatistik için en güçlü araçlardan biridir. GitHub Codespaces ise bu dili kullanmayı kolaylaştıran bir platform sunar. Bu derste, GitHub Codespaces kullanarak R ile nasıl çalışılacağını ve temel veri analizi kavramlarını öğrenmeye başlayacaksınız.</p>
+</section>
+</section>
+</section>
+<section id="r-konsolu-ve-temel-aritmetik-işlemler" class="level1">
+<h1><strong>2. R Konsolu ve Temel Aritmetik İşlemler</strong></h1>
+<p>R, bir programlama dili olmasının yanı sıra, aynı zamanda bir hesap makinesi gibi basit matematiksel işlemler yapabileceğiniz bir ortam sağlar. R konsolunu kullanarak basit komutları hemen çalıştırabilirsiniz. Aşağıda R konsolunda nasıl çalışacağınızı ve temel matematiksel işlemleri nasıl gerçekleştireceğinizi öğreneceksiniz.</p>
+<section id="r-konsolunu-kullanarak-basit-komutlar-çalıştırma" class="level2">
+<h2 class="anchored" data-anchor-id="r-konsolunu-kullanarak-basit-komutlar-çalıştırma"><strong>R Konsolunu Kullanarak Basit Komutlar Çalıştırma</strong></h2>
+<p>GitHub Codespaces’te R konsolunu açarak komutlar yazabilirsiniz. R konsolu, yazdığınız her komutu anında çalıştırır ve size sonucu gösterir. Örneğin, R konsoluna aşağıdaki gibi bir toplama işlemi yazabilirsiniz:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+<p>Bu komutu çalıştırdığınızda, R size işlemin sonucunu gösterecektir:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="temel-matematiksel-işlemler" class="level2">
+<h2 class="anchored" data-anchor-id="temel-matematiksel-işlemler"><strong>Temel Matematiksel İşlemler</strong></h2>
+<p>R, toplama, çıkarma, çarpma ve bölme gibi temel matematiksel işlemleri doğrudan konsol üzerinde yapabilir. Aşağıda bazı temel matematiksel işlemlerin örnekleri verilmiştir:</p>
+<section id="toplama" class="level3">
+<h3 class="anchored" data-anchor-id="toplama"><strong>Toplama</strong></h3>
+<p>İki sayıyı toplamak için <code>+</code> operatörünü kullanabilirsiniz:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Çıktı:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="çıkarma" class="level3">
+<h3 class="anchored" data-anchor-id="çıkarma"><strong>Çıkarma</strong></h3>
+<p>Çıkarma işlemi için <code>-</code> operatörünü kullanabilirsiniz:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span> <span class="sc">-</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Çıktı:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="çarpma" class="level3">
+<h3 class="anchored" data-anchor-id="çarpma"><strong>Çarpma</strong></h3>
+<p>Çarpma işlemi için <code>*</code> operatörünü kullanabilirsiniz:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">*</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Çıktı:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">24</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bölme" class="level3">
+<h3 class="anchored" data-anchor-id="bölme"><strong>Bölme</strong></h3>
+<p>Bölme işlemi için <code>/</code> operatörünü kullanabilirsiniz:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="sc">/</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Çıktı:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="üs-alma" class="level3">
+<h3 class="anchored" data-anchor-id="üs-alma"><strong>Üs Alma</strong></h3>
+<p>R, üs alma işlemi için <code>^</code> operatörünü kullanır:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Çıktı:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="hata-mesajlarını-anlama-ve-çözme" class="level2">
+<h2 class="anchored" data-anchor-id="hata-mesajlarını-anlama-ve-çözme"><strong>Hata Mesajlarını Anlama ve Çözme</strong></h2>
+<p>R ile çalışırken bazen hatalarla karşılaşabilirsiniz. Hatalar, kodunuzda bir sorun olduğunu ve R’ın bunu çalıştıramadığını belirtir. Ancak endişelenmenize gerek yok, bu hatalar çoğunlukla küçük yazım veya kullanım hatalarından kaynaklanır.</p>
+<section id="örnek-bir-hata" class="level3">
+<h3 class="anchored" data-anchor-id="örnek-bir-hata"><strong>Örnek Bir Hata:</strong></h3>
+<p>Aşağıdaki komutta <code>*</code> yerine <code>x</code> yazıldığı için bir hata oluşacaktır:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> x <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Çıktı:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> unexpected symbol <span class="cf">in</span> <span class="st">"3 x"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu hata, R’ın <code>x</code> sembolünü tanımadığını ve bu yüzden işlemi gerçekleştiremediğini belirtir. Bu hatayı düzeltmek için <code>x</code> sembolünü <code>*</code> ile değiştirebilirsiniz:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">*</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu sefer doğru sonuç olan <code>15</code> çıktısını elde edeceksiniz.</p>
+</section>
+<section id="genel-hata-çözme-ipuçları" class="level3">
+<h3 class="anchored" data-anchor-id="genel-hata-çözme-ipuçları"><strong>Genel Hata Çözme İpuçları:</strong></h3>
+<ol type="1">
+<li>Sembolleri Doğru Kullanın: R’da toplama için <code>+</code>, çarpma için <code>*</code>, bölme için <code>/</code> gibi semboller kullanılır. Yanlış bir sembol kullanırsanız hata alırsınız.</li>
+<li>Kodunuzda Yazım Hataları Olup Olmadığını Kontrol Edin: R büyük/küçük harfe duyarlıdır, yani <code>A</code> ve <code>a</code> R için farklı şeyler ifade eder. Yazım hatalarına dikkat edin.</li>
+<li>Hata Mesajını Dikkatlice Okuyun: R’ın verdiği hata mesajları, sorunun ne olduğunu anlamanıza yardımcı olabilir. Örneğin, yukarıdaki hata mesajı, “unexpected symbol” ifadesiyle bir sembol hatası olduğunu belirtmiştir.</li>
+</ol>
+<hr>
+</section>
+</section>
+</section>
+<section id="değişkenler-ve-veri-türleri" class="level1">
+<h1><strong>3. Değişkenler ve Veri Türleri</strong></h1>
+<p>R dilinde, verileri saklamak ve işlemek için değişkenler kullanılır. Değişkenler, belirli bir değeri tutar ve bu değer üzerinde işlemler yapmanıza olanak tanır.</p>
+<p>Değişken Tanımlama (&lt;- Operatörü) R’da bir değişken tanımlamak için &lt;- operatörü kullanılır. Bu operatör, sağdaki değeri soldaki değişkene atar.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span>   <span class="co"># x değişkenine 10 değerini atar</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Merhaba"</span>   <span class="co"># y değişkenine bir karakter dizisi atar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="rda-veri-türleri" class="level2">
+<h2 class="anchored" data-anchor-id="rda-veri-türleri"><strong>R’da Veri Türleri</strong></h2>
+<p>R’da değişkenlerin farklı veri türleri olabilir. R’ın sık kullanılan veri türleri şunlardır:</p>
+<ul>
+<li><p><strong>Sayısal (Numeric)</strong>: Ondalıklı veya tam sayı olarak saklanan sayılar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">5.7</span> <span class="co"># Ondalıklı bir sayısal veri </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># Tam sayı olarak bir sayısal veri</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p><strong>Karakter (Character)</strong>: Metin veya harf dizisi olarak saklanan veriler.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="st">"R programlama dili"</span> <span class="co"># Karakter veri türünde bir veri</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p><strong>Mantıksal (Logical)</strong>: TRUE veya FALSE değerlerini saklayan değişkenler.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>durum <span class="ot">&lt;-</span> <span class="cn">TRUE</span>   <span class="co"># Logical</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ul>
+</section>
+<section id="değişkenlerle-matematiksel-işlemler" class="level2">
+<h2 class="anchored" data-anchor-id="değişkenlerle-matematiksel-işlemler">Değişkenlerle Matematiksel İşlemler</h2>
+<p>Sayısal veri türüne sahip değişkenlerde matematiksel işlemler yapabilirsiniz. Örneğin:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="toplama-1" class="level1">
+<h1>Toplama</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>toplam <span class="ot">&lt;-</span> a <span class="sc">+</span> b </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(toplam) <span class="co"># Çıktı: 8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+</section>
+<section id="çıkarma-1" class="level1">
+<h1>Çıkarma</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>cikarma <span class="ot">&lt;-</span> a <span class="sc">-</span> b </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cikarma) <span class="co"># Çıktı: 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</section>
+<section id="çarpma-1" class="level1">
+<h1>Çarpma</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>a<span class="sc">*</span>b <span class="co"># Çıktı: 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+</section>
+<section id="bölme-1" class="level1">
+<h1>Bölme</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>bolme <span class="ot">&lt;-</span> a <span class="sc">/</span> b </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(bolme) <span class="co"># Çıktı: 1.666667</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.666667</code></pre>
+</div>
+</div>
+</section>
+<section id="üs-alma-1" class="level1">
+<h1>Üs Alma</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>us <span class="ot">&lt;-</span> a<span class="sc">^</span>b </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(us) <span class="co"># Çıktı: 125</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 125</code></pre>
+</div>
+</div>
+</section>
+<section id="rda-temel-fonksiyonlar" class="level1">
+<h1>4. R’da Temel Fonksiyonlar</h1>
+<p>R programlama dilinde temel fonksiyonlar, veri analizi ve istatistiksel hesaplamalar için yaygın olarak kullanılır. İşte bazı temel fonksiyonlar ve örnek kullanımları:</p>
+<p>R’ın Yerleşik Fonksiyonları Yerleşik fonksiyonlar, R dilinin varsayılan olarak sunduğu işlevlerdir. Örneğin, mean() fonksiyonu bir vektörün ortalamasını hesaplar, sum() toplamını verir ve length() bir vektörün kaç eleman içerdiğini gösterir.</p>
+<p>Örnekler: 1. print(): Bir nesneyi konsola yazdırır.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Merhaba Dünya"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Merhaba Dünya"</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li><p>sum(): Bir vektörün elemanlarının toplamını hesaplar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a> toplam <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>mean(): Bir vektörün elemanlarının ortalamasını hesaplar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>ortalama <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>sd(): Bir vektörün standart sapmasını hesaplar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>standart_sapma <span class="ot">&lt;-</span> <span class="fu">sd</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>length(): Bir vektörün uzunluğunu döndürür.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>uzunluk <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>seq(): Belirli bir aralıkta ardışık sayılar oluşturur.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dizi <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>rep(): Bir değeri belirli sayıda tekrar eder</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>tekrar <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>c(): Vektör oluşturur.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>vektor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>data.frame(): Veri çerçevesi oluşturur.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>veri <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">isim =</span> <span class="fu">c</span>(<span class="st">"Ali"</span>, <span class="st">"Ayşe"</span>, <span class="st">"Fatma"</span>), <span class="at">yas =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>summary(): Bir nesnenin özet istatistiklerini döndürür.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>ozet <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ol>
+<section id="parametrelerle-fonksiyon-kullanımı" class="level2">
+<h2 class="anchored" data-anchor-id="parametrelerle-fonksiyon-kullanımı">Parametrelerle Fonksiyon Kullanımı</h2>
+<p>Fonksiyonlar, belirli bir işlevi gerçekleştirmek için parametre alabilir. Parametreler, fonksiyonun nasıl çalışacağını belirler. Örneğin, mean() fonksiyonuna na.rm = TRUE parametresi eklenerek eksik değerleri göz ardı edebilirsiniz.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="cn">NA</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>ortalama <span class="ot">&lt;-</span> <span class="fu">mean</span>(sayilar, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># NA değerini göz ardı ederek ortalama hesaplar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="fonksiyon-oluşturma" class="level2">
+<h2 class="anchored" data-anchor-id="fonksiyon-oluşturma">Fonksiyon Oluşturma</h2>
+<p>R dilinde kendi fonksiyonlarınızı oluşturmak oldukça basittir. Fonksiyonlar, belirli bir işlevi gerçekleştirmek için bir dizi komut içerir ve gerektiğinde parametreler alabilir. Fonksiyonlar, function anahtar kelimesi kullanılarak tanımlanır.</p>
+<p>Fonksiyon Oluşturma Bir fonksiyon oluşturmak için aşağıdaki adımları izleyebilirsiniz:</p>
+<ul>
+<li>function anahtar kelimesini kullanarak fonksiyonunuzu tanımlayın.</li>
+<li>Fonksiyonun alacağı parametreleri parantez içinde belirtin.</li>
+<li>Fonksiyonun gövdesinde, fonksiyonun gerçekleştireceği işlemleri yazın.</li>
+<li>return() fonksiyonunu kullanarak fonksiyonun döndüreceği değeri belirtin (isteğe bağlı).</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toplama fonksiyonu oluşturma</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>topla <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  sonuc <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(sonuc)</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonksiyonu çağırma</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>toplam <span class="ot">&lt;-</span> <span class="fu">topla</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(toplam)  <span class="co"># 8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="rda-yardım-alma" class="level1">
+<h1>5. R’da Yardım Alma</h1>
+<p>R, fonksiyonlar ve komutlar hakkında bilgi almak için yerleşik bir yardım sistemi sunar. Özellikle yeni başlayanlar için R’ın yardım sistemi oldukça faydalıdır.</p>
+<p>R Fonksiyonları İçin Yardım Alma ( ? ve help() Komutları) Bir R fonksiyonu hakkında bilgi almak için ? veya help() komutlarını kullanabilirsiniz. Bu komutlar, ilgili fonksiyonun nasıl kullanılacağı ve parametrelerinin ne olduğu hakkında detaylı bilgi verir.</p>
+<p><strong>Örnekler</strong>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>?mean   <span class="co"># mean() fonksiyonu hakkında yardım alır</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(sum)  <span class="co"># sum() fonksiyonu hakkında yardım alır</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Bu komutlar, fonksiyonun açıklamasını, hangi argümanları kabul ettiğini ve nasıl çalıştırılacağını gösteren bir dokümantasyon penceresi açar.</p>
+<section id="belgeleme-ve-fonksiyonların-anlamı" class="level2">
+<h2 class="anchored" data-anchor-id="belgeleme-ve-fonksiyonların-anlamı">Belgeleme ve Fonksiyonların Anlamı</h2>
+<p>R’ın tüm fonksiyonlarının nasıl çalıştığını, örnekler ve açıklamalarla birlikte görebilirsiniz. R’da her fonksiyonun geniş bir açıklaması bulunur ve bu belgeleme, fonksiyonların nasıl kullanılacağını öğrenmenin etkili bir yoludur.</p>
+<p><strong>Örnek</strong>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(mean)  <span class="co"># Ortalama hesaplayan mean() fonksiyonunu anlamak için yardım alabiliriz</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="basit-veri-yapıları" class="level1">
+<h1>6. Basit Veri Yapıları</h1>
+<p>R dilinde, veriler çeşitli veri yapıları kullanılarak organize edilir. Temel veri yapıları, vektörler, listeler ve matrislerdir.</p>
+<section id="vektörler" class="level2">
+<h2 class="anchored" data-anchor-id="vektörler">Vektörler</h2>
+<p>R dilinde en temel veri yapılarından biri vektörlerdir. Vektörler, aynı veri türüne sahip bir dizi elemanı saklar. Vektör oluşturmak için c() fonksiyonu kullanılır.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sayısal vektör oluşturma</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>numeric_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Karakter vektör oluşturma</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>character_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mantıksal vektör oluşturma</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>logical_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Vektör elemanlarına erişim</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(numeric_vector[<span class="dv">1</span>])  <span class="co"># 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(character_vector[<span class="dv">3</span>])  <span class="co"># "c"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "c"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vektör elemanlarını güncelleme</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>numeric_vector[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Vektör toplama</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>sum_vector <span class="ot">&lt;-</span> numeric_vector <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Vektör elemanlarının toplamı</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>total_sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(numeric_vector)</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Güncellenmiş vektörleri yazdırma</span></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(numeric_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1 10  3  4  5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sum_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  2 11  4  5  6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(total_sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 23</code></pre>
+</div>
+</div>
+</section>
+<section id="listeler" class="level2">
+<h2 class="anchored" data-anchor-id="listeler">Listeler</h2>
+<p>Listeler, farklı türdeki verileri bir arada saklayabilen veri yapılarıdır. Bir liste içinde sayılar, karakterler, mantıksal değerler ve hatta başka vektörler bulunabilir.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste oluşturma</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">number =</span> <span class="dv">5</span>, <span class="at">greeting =</span> <span class="st">"Hello"</span>, <span class="at">flag =</span> <span class="cn">TRUE</span>, <span class="at">numbers =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste elemanlarına erişim</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>number)  <span class="co"># 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>greeting)  <span class="co"># "Hello"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hello"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>flag)  <span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list<span class="sc">$</span>numbers)  <span class="co"># c(1, 2, 3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste elemanlarını güncelleme</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>my_list<span class="sc">$</span>number <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>my_list<span class="sc">$</span>greeting <span class="ot">&lt;-</span> <span class="st">"Hi"</span></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Listeye yeni eleman ekleme</span></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>my_list<span class="sc">$</span>new_element <span class="ot">&lt;-</span> <span class="st">"New Element"</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste elemanlarını silme</span></span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>my_list<span class="sc">$</span>new_element <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Güncellenmiş listeyi yazdırma</span></span>
+<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$number
+[1] 10
+
+$greeting
+[1] "Hi"
+
+$flag
+[1] TRUE
+
+$numbers
+[1] 1 2 3</code></pre>
+</div>
+</div>
+</section>
+<section id="matrisler" class="level2">
+<h2 class="anchored" data-anchor-id="matrisler">Matrisler</h2>
+<p>Matrisler, satırlar ve sütunlar şeklinde organize edilmiş sayısal veri yapılarıdır. Tüm elemanlar aynı türde olmalıdır.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2x3 boyutunda bir matris oluşturma</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Matris elemanlarına erişim</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_matrix[<span class="dv">1</span>, <span class="dv">2</span>])  <span class="co"># 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_matrix[<span class="dv">2</span>, ])  <span class="co"># c(4, 5, 6)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2 4 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_matrix[, <span class="dv">3</span>])  <span class="co"># c(5, 6)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matris elemanlarını güncelleme</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>my_matrix[<span class="dv">1</span>, <span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Matris toplama</span></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>matrix1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>matrix2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>sum_matrix <span class="ot">&lt;-</span> matrix1 <span class="sc">+</span> matrix2</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Matris çarpma</span></span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a>product_matrix <span class="ot">&lt;-</span> matrix1 <span class="sc">%*%</span> matrix2</span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Güncellenmiş matrisleri yazdırma</span></span>
+<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1   10    5
+[2,]    2    4    6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sum_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    6   10
+[2,]    8   12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(product_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]   23   31
+[2,]   34   46</code></pre>
+</div>
+</div>
+</section>
+<section id="data-framler" class="level2">
+<h2 class="anchored" data-anchor-id="data-framler">Data Framler</h2>
+<p>Data frameler, R dilinde kullanılan ve farklı veri türlerine sahip sütunları içerebilen iki boyutlu veri yapılarıdır. Data frameler, genellikle tablo şeklinde verileri saklamak için kullanılır ve her sütun bir vektör olarak temsil edilir. Data frameler, data.frame() fonksiyonu kullanılarak oluşturulur.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame oluşturma</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>my_data_frame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">numbers =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">letters =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>),</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">logicals =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame elemanlarına erişim</span></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_data_frame[<span class="dv">1</span>, <span class="dv">2</span>])  <span class="co"># "a"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] a
+Levels: a b c d e</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_data_frame[<span class="dv">2</span>, ])  <span class="co"># c(2, "b", FALSE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  numbers letters logicals
+2       2       b    FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_data_frame[, <span class="dv">3</span>])  <span class="co"># c(TRUE, FALSE, TRUE, FALSE, TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE  TRUE FALSE  TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_data_frame<span class="sc">$</span>numbers)  <span class="co"># c(1, 2, 3, 4, 5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame elemanlarını güncelleme</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>my_data_frame[<span class="dv">1</span>, <span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"z"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in `[&lt;-.factor`(`*tmp*`, iseq, value = "z"): invalid factor level, NA
+generated</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>my_data_frame<span class="sc">$</span>numbers[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Yeni bir sütun ekleme</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>my_data_frame<span class="sc">$</span>new_column <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Satır ekleme</span></span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>new_row <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">numbers =</span> <span class="dv">6</span>, <span class="at">letters =</span> <span class="st">"f"</span>, <span class="at">logicals =</span> <span class="cn">FALSE</span>, <span class="at">new_column =</span> <span class="dv">60</span>)</span>
+<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>my_data_frame <span class="ot">&lt;-</span> <span class="fu">rbind</span>(my_data_frame, new_row)</span>
+<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Sütun ekleme</span></span>
+<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a>new_column <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">500</span>, <span class="dv">600</span>)</span>
+<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>my_data_frame <span class="ot">&lt;-</span> <span class="fu">cbind</span>(my_data_frame, new_column)</span>
+<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Güncellenmiş data frame'i yazdırma</span></span>
+<span id="cb90-15"><a href="#cb90-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_data_frame)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  numbers letters logicals new_column new_column
+1       1    &lt;NA&gt;     TRUE         10        100
+2      10       b    FALSE         20        200
+3       3       c     TRUE         30        300
+4       4       d    FALSE         40        400
+5       5       e     TRUE         50        500
+6       6       f    FALSE         60        600</code></pre>
+</div>
+</div>
+<p><img src="https://th.bing.com/th/id/OIP.JjZYjvyBurwgQa1RBRtzAAAAAA?rs=1&amp;pid=ImgDetMain" class="img-fluid"></p>
+</section>
+</section>
+<section id="veri-içe-aktarma-ve-kaydetme" class="level1">
+<h1>7. Veri İçe Aktarma ve Kaydetme</h1>
+<p>Veri içe aktarma ve temel manipülasyon, veri analizi sürecinin önemli adımlarıdır. R dilinde veri içe aktarma ve temel manipülasyon işlemleri için çeşitli fonksiyonlar ve paketler kullanılır.</p>
+<section id="veri-içe-aktarma" class="level2">
+<h2 class="anchored" data-anchor-id="veri-içe-aktarma">Veri İçe Aktarma</h2>
+<p>R dilinde veri içe aktarmak için read.csv(), read.table(), read_excel() gibi fonksiyonlar kullanılır.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CSV dosyasını içe aktarma</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/datasciencedojo/datasets/refs/heads/master/titanic.csv"</span>)   <span class="co"># ("path/to/your/file.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># readxl paketini yükleme</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/home/codespace/R/x86_64-pc-linux-gnu-library/3.6'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Excel dosyasını içe aktarma</span></span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- read_excel("https://github.com/HakanMehmetcik/IST2083/blob/main/Data/sample_excel.xlsx")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="veri-kaydetme" class="level2">
+<h2 class="anchored" data-anchor-id="veri-kaydetme">Veri Kaydetme</h2>
+<p>R dilinde veri kaydetmek için çeşitli fonksiyonlar kullanabilirsiniz. En yaygın kullanılan dosya formatları arasında CSV, Excel ve RDS dosyaları bulunur.</p>
+<p><strong>CSV Dosyasına Veri Kaydetme</strong> Veri çerçevesini CSV dosyasına kaydetmek için write.csv() fonksiyonunu kullanabilirsiniz:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Veri çerçevesini CSV dosyasına kaydetme</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(data, "path/to/your/file.csv", row.names = FALSE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Excel Dosyasına Veri Kaydetme</strong> Excel dosyasına veri kaydetmek için writexl paketini kullanabilirsiniz:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># writexl paketini yükleme</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"writexl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/home/codespace/R/x86_64-pc-linux-gnu-library/3.6'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Veri çerçevesini Excel dosyasına kaydetme</span></span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="co"># write_xlsx(data, "path/to/your/file.xlsx")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="veri-yapısını-inceleme" class="level2">
+<h2 class="anchored" data-anchor-id="veri-yapısını-inceleme">Veri Yapısını İnceleme</h2>
+<p>Veri inceleme, veri analizi sürecinin önemli bir parçasıdır. R dilinde veri incelemek için çeşitli fonksiyonlar ve paketler kullanabilirsiniz. Bu işlemler arasında veri yapısını kontrol etme, özet istatistikler oluşturma ve veri görselleştirme gibi işlemler bulunur. Veri yapısını incelemek için str(), summary(), head(), ve tail() fonksiyonlarını kullanabilirsiniz.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Veri yapısını kontrol etme</span></span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   891 obs. of  12 variables:
+ $ PassengerId: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Survived   : int  0 1 1 1 0 0 0 0 1 1 ...
+ $ Pclass     : int  3 1 3 1 3 3 1 3 3 2 ...
+ $ Name       : Factor w/ 891 levels "Abbing, Mr. Anthony",..: 109 191 358 277 16 559 520 629 417 581 ...
+ $ Sex        : Factor w/ 2 levels "female","male": 2 1 1 1 2 2 2 2 1 1 ...
+ $ Age        : num  22 38 26 35 35 NA 54 2 27 14 ...
+ $ SibSp      : int  1 1 0 1 0 0 0 3 0 1 ...
+ $ Parch      : int  0 0 0 0 0 0 0 1 2 0 ...
+ $ Ticket     : Factor w/ 681 levels "110152","110413",..: 524 597 670 50 473 276 86 396 345 133 ...
+ $ Fare       : num  7.25 71.28 7.92 53.1 8.05 ...
+ $ Cabin      : Factor w/ 148 levels "","A10","A14",..: 1 83 1 57 1 1 131 1 1 1 ...
+ $ Embarked   : Factor w/ 4 levels "","C","Q","S": 4 2 4 4 4 3 4 4 4 2 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Özet istatistikler</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  PassengerId       Survived          Pclass     
+ Min.   :  1.0   Min.   :0.0000   Min.   :1.000  
+ 1st Qu.:223.5   1st Qu.:0.0000   1st Qu.:2.000  
+ Median :446.0   Median :0.0000   Median :3.000  
+ Mean   :446.0   Mean   :0.3838   Mean   :2.309  
+ 3rd Qu.:668.5   3rd Qu.:1.0000   3rd Qu.:3.000  
+ Max.   :891.0   Max.   :1.0000   Max.   :3.000  
+                                                 
+                                    Name         Sex           Age       
+ Abbing, Mr. Anthony                  :  1   female:314   Min.   : 0.42  
+ Abbott, Mr. Rossmore Edward          :  1   male  :577   1st Qu.:20.12  
+ Abbott, Mrs. Stanton (Rosa Hunt)     :  1                Median :28.00  
+ Abelson, Mr. Samuel                  :  1                Mean   :29.70  
+ Abelson, Mrs. Samuel (Hannah Wizosky):  1                3rd Qu.:38.00  
+ Adahl, Mr. Mauritz Nils Martin       :  1                Max.   :80.00  
+ (Other)                              :885                NA's   :177    
+     SibSp           Parch             Ticket         Fare       
+ Min.   :0.000   Min.   :0.0000   1601    :  7   Min.   :  0.00  
+ 1st Qu.:0.000   1st Qu.:0.0000   347082  :  7   1st Qu.:  7.91  
+ Median :0.000   Median :0.0000   CA. 2343:  7   Median : 14.45  
+ Mean   :0.523   Mean   :0.3816   3101295 :  6   Mean   : 32.20  
+ 3rd Qu.:1.000   3rd Qu.:0.0000   347088  :  6   3rd Qu.: 31.00  
+ Max.   :8.000   Max.   :6.0000   CA 2144 :  6   Max.   :512.33  
+                                  (Other) :852                   
+         Cabin     Embarked
+            :687    :  2   
+ B96 B98    :  4   C:168   
+ C23 C25 C27:  4   Q: 77   
+ G6         :  4   S:644   
+ C22 C26    :  3           
+ D          :  3           
+ (Other)    :186           </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlk birkaç satırı görüntüleme</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  PassengerId Survived Pclass
+1           1        0      3
+2           2        1      1
+3           3        1      3
+4           4        1      1
+5           5        0      3
+6           6        0      3
+                                                 Name    Sex Age SibSp Parch
+1                             Braund, Mr. Owen Harris   male  22     1     0
+2 Cumings, Mrs. John Bradley (Florence Briggs Thayer) female  38     1     0
+3                              Heikkinen, Miss. Laina female  26     0     0
+4        Futrelle, Mrs. Jacques Heath (Lily May Peel) female  35     1     0
+5                            Allen, Mr. William Henry   male  35     0     0
+6                                    Moran, Mr. James   male  NA     0     0
+            Ticket    Fare Cabin Embarked
+1        A/5 21171  7.2500              S
+2         PC 17599 71.2833   C85        C
+3 STON/O2. 3101282  7.9250              S
+4           113803 53.1000  C123        S
+5           373450  8.0500              S
+6           330877  8.4583              Q</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Son birkaç satırı görüntüleme</span></span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    PassengerId Survived Pclass                                     Name    Sex
+886         886        0      3     Rice, Mrs. William (Margaret Norton) female
+887         887        0      2                    Montvila, Rev. Juozas   male
+888         888        1      1             Graham, Miss. Margaret Edith female
+889         889        0      3 Johnston, Miss. Catherine Helen "Carrie" female
+890         890        1      1                    Behr, Mr. Karl Howell   male
+891         891        0      3                      Dooley, Mr. Patrick   male
+    Age SibSp Parch     Ticket   Fare Cabin Embarked
+886  39     0     5     382652 29.125              Q
+887  27     0     0     211536 13.000              S
+888  19     0     0     112053 30.000   B42        S
+889  NA     1     2 W./C. 6607 23.450              S
+890  26     0     0     111369 30.000  C148        C
+891  32     0     0     370376  7.750              Q</code></pre>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
