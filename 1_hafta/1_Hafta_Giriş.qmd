@@ -1,0 +1,225 @@
+
+# **1. R ve R'ın Temel Yapısı**
+
+## **R Dilinin Genel Özellikleri ve Kullanımı**
+
+R, veri analizi, istatistiksel hesaplamalar ve grafiksel görselleştirme için tasarlanmış güçlü ve açık kaynaklı bir programlama dilidir. R’ın temel avantajlarından biri, akademik ve profesyonel dünyada geniş bir kullanım alanına sahip olmasıdır. R, özellikle büyük veri setleri üzerinde hızlı ve etkili analizler yapmayı sağlar.
+
+## **R ile neler yapabilirsiniz**?
+- Sayısal veriler üzerinde işlem yapabilir, istatistiksel analizler gerçekleştirebilirsiniz.
+- Verilerinizi görselleştirmek için grafikler ve çizelgeler oluşturabilirsiniz.
+- Gelişmiş istatistiksel modeller kurabilir, veriler üzerinde tahminlerde bulunabilirsiniz.
+
+## **R’ın Veri Analizi ve İstatistikteki Yeri**
+
+R, özellikle veri bilimciler, istatistikçiler ve araştırmacılar tarafından veri analizi için yaygın olarak kullanılır. Akademik dünyada, bilimsel araştırmalarda ve iş dünyasında veri analizi için standart bir araçtır. Bunun nedeni R’ın geniş bir paket ekosistemine sahip olmasıdır; yani, özel amaçlar için kullanabileceğiniz binlerce hazır fonksiyon ve paket bulunur.
+
+R’ın Avantajları:
+- Esneklik: R, çok farklı veri türleri ve analizlerle çalışmanıza olanak sağlar.
+- Geniş Paket Desteği: R, geniş bir topluluğa sahiptir ve hemen hemen her türlü veri analizi için uygun bir paket bulabilirsiniz (örneğin: `ggplot2`, `dplyr`, `tidyverse`).
+- Veri Görselleştirme: Grafiksel görselleştirme için R, güçlü araçlar sunar. Karmaşık veri setlerini kolayca anlaşılır grafiklere dönüştürebilirsiniz.
+
+## **R'ı GitHub Codespaces Üzerinde Kullanmaya Başlama**
+
+Bu derste, GitHub Codespaces kullanarak R ile çalışacağız. Codespaces, bulut tabanlı bir geliştirme ortamıdır. Yani, bilgisayarınıza herhangi bir yazılım yüklemeden GitHub üzerinde R projeleri geliştirebilirsiniz. GitHub Codespaces, R dili için hazır bir çalışma ortamı sağlar ve GitHub repository’nizle entegre bir şekilde çalışmanıza olanak tanır.
+
+### **R ile GitHub Codespaces’te Çalışmaya Başlama Adımları:**
+1. Repository’ye Erişin: GitHub’da ders için oluşturulan repository’ye gidin (örneğin: [IST2083 GitHub Repository](https://github.com/HakanMehmetcik/IST2083.git)).
+2. Codespace’i Açın: Repository sayfasında "Code" butonuna tıklayın ve "Open with Codespaces" seçeneğini seçin.
+3. Ortamı Başlatın: Codespace, sizin için bir geliştirme ortamı oluşturacak. Bu ortamda R kodları yazabilir ve çalıştırabilirsiniz.
+4. Dosyalarla Çalışma: R dilinde yazılmış `.qmd` (Quarto) dosyalarını açarak ders notlarını inceleyebilir ve R konsolu üzerinde örnek kodları çalıştırabilirsiniz.
+
+### **GitHub Codespaces’in Avantajları:**
+- Kurulum Gerektirmez: Hiçbir yazılım indirip kurmanıza gerek kalmaz, her şey tarayıcı üzerinde çalışır.
+- Bulut Tabanlı: Tüm verileriniz ve projeleriniz bulutta saklanır, böylece her yerden erişim sağlayabilirsiniz.
+- Anında Kullanıma Hazır: R dili ve ilgili paketler önceden yüklenmiştir; hemen kullanmaya başlayabilirsiniz.
+
+**Sonuç Olarak:** R, veri analizi ve istatistik için en güçlü araçlardan biridir. GitHub Codespaces ise bu dili kullanmayı kolaylaştıran bir platform sunar. Bu derste, GitHub Codespaces kullanarak R ile nasıl çalışılacağını ve temel veri analizi kavramlarını öğrenmeye başlayacaksınız.
+
+# **2. R Konsolu ve Temel Aritmetik İşlemler**
+
+R, bir programlama dili olmasının yanı sıra, aynı zamanda bir hesap makinesi gibi basit matematiksel işlemler yapabileceğiniz bir ortam sağlar. R konsolunu kullanarak basit komutları hemen çalıştırabilirsiniz. Aşağıda R konsolunda nasıl çalışacağınızı ve temel matematiksel işlemleri nasıl gerçekleştireceğinizi öğreneceksiniz.
+
+## **R Konsolunu Kullanarak Basit Komutlar Çalıştırma**
+
+GitHub Codespaces’te R konsolunu açarak komutlar yazabilirsiniz. R konsolu, yazdığınız her komutu anında çalıştırır ve size sonucu gösterir. Örneğin, R konsoluna aşağıdaki gibi bir toplama işlemi yazabilirsiniz:
+
+```r
+3 + 5
+```
+
+Bu komutu çalıştırdığınızda, R size işlemin sonucunu gösterecektir:
+
+```r
+[1] 8
+```
+
+## **Temel Matematiksel İşlemler**
+
+R, toplama, çıkarma, çarpma ve bölme gibi temel matematiksel işlemleri doğrudan konsol üzerinde yapabilir. Aşağıda bazı temel matematiksel işlemlerin örnekleri verilmiştir:
+
+### **Toplama**
+İki sayıyı toplamak için `+` operatörünü kullanabilirsiniz:
+
+```r
+10 + 7
+```
+Çıktı:
+```r
+[1] 17
+```
+
+### **Çıkarma**
+Çıkarma işlemi için `-` operatörünü kullanabilirsiniz:
+
+```r
+15 - 3
+```
+Çıktı:
+```r
+[1] 12
+```
+
+### **Çarpma**
+Çarpma işlemi için `*` operatörünü kullanabilirsiniz:
+
+```r
+6 * 4
+```
+Çıktı:
+```r
+[1] 24
+```
+
+### **Bölme**
+Bölme işlemi için `/` operatörünü kullanabilirsiniz:
+
+```r
+20 / 4
+```
+Çıktı:
+```r
+[1] 5
+```
+
+### **Üs Alma**
+R, üs alma işlemi için `^` operatörünü kullanır:
+
+```r
+2^3
+```
+Çıktı:
+```r
+[1] 8
+```
+
+## **Hata Mesajlarını Anlama ve Çözme**
+
+R ile çalışırken bazen hatalarla karşılaşabilirsiniz. Hatalar, kodunuzda bir sorun olduğunu ve R’ın bunu çalıştıramadığını belirtir. Ancak endişelenmenize gerek yok, bu hatalar çoğunlukla küçük yazım veya kullanım hatalarından kaynaklanır.
+
+### **Örnek Bir Hata:**
+Aşağıdaki komutta `*` yerine `x` yazıldığı için bir hata oluşacaktır:
+
+```r
+3 x 5
+```
+Çıktı:
+```r
+Error: unexpected symbol in "3 x"
+```
+
+Bu hata, R’ın `x` sembolünü tanımadığını ve bu yüzden işlemi gerçekleştiremediğini belirtir. Bu hatayı düzeltmek için `x` sembolünü `*` ile değiştirebilirsiniz:
+
+```r
+3 * 5
+```
+Bu sefer doğru sonuç olan `15` çıktısını elde edeceksiniz.
+
+### **Genel Hata Çözme İpuçları:**
+1. Sembolleri Doğru Kullanın: R'da toplama için `+`, çarpma için `*`, bölme için `/` gibi semboller kullanılır. Yanlış bir sembol kullanırsanız hata alırsınız.
+2. Kodunuzda Yazım Hataları Olup Olmadığını Kontrol Edin: R büyük/küçük harfe duyarlıdır, yani `A` ve `a` R için farklı şeyler ifade eder. Yazım hatalarına dikkat edin.
+3. Hata Mesajını Dikkatlice Okuyun: R’ın verdiği hata mesajları, sorunun ne olduğunu anlamanıza yardımcı olabilir. Örneğin, yukarıdaki hata mesajı, "unexpected symbol" ifadesiyle bir sembol hatası olduğunu belirtmiştir.
+
+---
+
+# **3. Değişkenler ve Veri Türleri**
+R dilinde, verileri saklamak ve işlemek için değişkenler kullanılır. Değişkenler, belirli bir değeri tutar ve bu değer üzerinde işlemler yapmanıza olanak tanır.
+
+Değişken Tanımlama (<- Operatörü)
+R’da bir değişken tanımlamak için <- operatörü kullanılır. Bu operatör, sağdaki değeri soldaki değişkene atar.
+
+```r
+x <- 10   # x değişkenine 10 değerini atar
+y <- "Merhaba"   # y değişkenine bir karakter dizisi atar
+``` 
+## **R'da Veri Türleri**
+R’da değişkenlerin farklı veri türleri olabilir. R’ın sık kullanılan veri türleri şunlardır:
+
+- **Sayısal (Numeric)**: Ondalıklı veya tam sayı olarak saklanan sayılar.
+a <- 5.7   # Ondalıklı bir sayısal veri
+b <- 10    # Tam sayı olarak bir sayısal veri
+
+- **Karakter (Character)**: Metin veya harf dizisi olarak saklanan veriler.,
+c <- "R programlama dili"   # Karakter veri türünde bir veri
+
+- **Mantıksal (Logical)**: TRUE veya FALSE değerlerini saklayan değişkenler.
+
+## Değişkenlerle Matematiksel İşlemler
+Sayısal veri türüne sahip değişkenlerde matematiksel işlemler yapabilirsiniz. Örneğin: 
+a <- 5
+b <- 3
+
+# Toplama
+toplam <- a + b
+print(toplam)  # Çıktı: 8
+
+# Çıkarma
+cikarma <- a - b
+print(cikarma)  # Çıktı: 2
+
+# Çarpma
+carpma <- a * b
+print(carpma)  # Çıktı: 15
+
+# Bölme
+bolme <- a / b
+print(bolme)  # Çıktı: 1.666667
+
+# Üs Alma
+us <- a^b
+print(us)  # Çıktı: 125
+
+# R'da Temel Fonksiyonlar
+
+R programlama dilinde temel fonksiyonlar, veri analizi ve istatistiksel hesaplamalar için yaygın olarak kullanılır. İşte bazı temel fonksiyonlar ve örnek kullanımları:
+
+R’ın Yerleşik Fonksiyonları
+Yerleşik fonksiyonlar, R dilinin varsayılan olarak sunduğu işlevlerdir. Örneğin, mean() fonksiyonu bir vektörün ortalamasını hesaplar, sum() toplamını verir ve length() bir vektörün kaç eleman içerdiğini gösterir.
+
+Örnekler:
+1. print(): Bir nesneyi konsola yazdırır.
+
+```{r}
+print("Merhaba Dünya")
+```
+2. sum(): Bir vektörün elemanlarının toplamını hesaplar.
+toplam <- sum(c(1, 2, 3, 4, 5))
+3. mean(): Bir vektörün elemanlarının ortalamasını hesaplar.
+ortalama <- mean(c(1, 2, 3, 4, 5))
+4. sd(): Bir vektörün standart sapmasını hesaplar.
+standart_sapma <- sd(c(1, 2, 3, 4, 5))
+5. length(): Bir vektörün uzunluğunu döndürür.
+uzunluk <- length(c(1, 2, 3, 4, 5))
+6. seq(): Belirli bir aralıkta ardışık sayılar oluşturur.
+dizi <- seq(1, 10, by=2)
+7. rep(): Bir değeri belirli sayıda tekrar eder
+tekrar <- rep(1, times=5)
+8. c(): Vektör oluşturur.
+vektor <- c(1, 2, 3, 4, 5)
+9. data.frame(): Veri çerçevesi oluşturur.
+veri <- data.frame(
+  isim = c("Ali", "Ayşe", "Fatma"),
+  yas = c(25, 30, 35)
+)
+10. summary(): Bir nesnenin özet istatistiklerini döndürür.
+ozet <- summary(c(1, 2, 3, 4, 5))
