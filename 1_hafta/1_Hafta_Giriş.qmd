@@ -1,7 +1,13 @@
 ---
 title: "1. Hafta: Giriş"
 author: "Hakan Mehmetcik"
-format: html
+format: pdf
+editor: visual
+execute: 
+  echo: true
+  warning: true
+  output: asis
+df-print: kable
 ---
 
 # 1. R ve R'ın Temel Yapısı
