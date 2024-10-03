@@ -1,6 +1,7 @@
 ---
 title: "2. Hafta: R'da Veri Türleri ve Temel Fonksiyonlar"
 author: "Hakan Mehmetcik"
+date: "`r Sys.Date()`"
 format: pdf
 editor: visual
 execute: 
