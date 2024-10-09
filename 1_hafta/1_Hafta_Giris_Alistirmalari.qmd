@@ -1,4 +1,3 @@
-
 ---
 title: "1. Hafta - Giriş Alıştırmaları"
 author: "Hakan Mehmetcik"
@@ -14,11 +13,9 @@ df-print: kable
 
 ## 1. R Konsolu ve Temel Matematiksel İşlemler
 
-**Soru:**
-R konsolunda temel matematiksel işlemler gerçekleştirilirken nelere dikkat etmeliyiz? Aritmetik operatörlerin kullanımında sık karşılaşılan hataları nasıl düzeltebiliriz?
+**Soru:** R konsolunda temel matematiksel işlemler gerçekleştirilirken nelere dikkat etmeliyiz? Aritmetik operatörlerin kullanımında sık karşılaşılan hataları nasıl düzeltebiliriz?
 
-**Alıştırma:**
-Aşağıdaki işlemleri R konsolunda gerçekleştirin ve sonuçlarını inceleyin:
+**Alıştırma:** Aşağıdaki işlemleri R konsolunda gerçekleştirin ve sonuçlarını inceleyin:
 
 ```{r}
 # İşlem 1
@@ -32,15 +29,13 @@ Aşağıdaki işlemleri R konsolunda gerçekleştirin ve sonuçlarını inceleyi
 5^-2
 ```
 
----
+------------------------------------------------------------------------
 
 ## 2. Karşılaştırma Operatörleri ve Mantıksal İfadeler
 
-**Soru:**
-R dilinde karşılaştırma operatörleri hangi koşullar altında kullanılır? `==`, `!=`, `>=`, `<=` gibi operatörler nasıl farklı sonuçlar verir?
+**Soru:** R dilinde karşılaştırma operatörleri hangi koşullar altında kullanılır? `==`, `!=`, `>=`, `<=` gibi operatörler nasıl farklı sonuçlar verir?
 
-**Alıştırma:**
-Aşağıdaki ifadeleri R’da çalıştırın ve sonuçları açıklayın:
+**Alıştırma:** Aşağıdaki ifadeleri R’da çalıştırın ve sonuçları açıklayın:
 
 ```{r}
 # İşlem 1
@@ -56,15 +51,13 @@ Aşağıdaki ifadeleri R’da çalıştırın ve sonuçları açıklayın:
 (5 == 5) | (3 > 1)
 ```
 
----
+------------------------------------------------------------------------
 
 ## 3. Mantıksal Operatörlerle Kombinasyonlar
 
-**Soru:**
-Mantıksal operatörler ile nasıl daha karmaşık şartlar oluşturabilirsiniz? `&` ve `|` operatörlerinin kullanım farkları nelerdir?
+**Soru:** Mantıksal operatörler ile nasıl daha karmaşık şartlar oluşturabilirsiniz? `&` ve `|` operatörlerinin kullanım farkları nelerdir?
 
-**Alıştırma:**
-Aşağıdaki örneklerde hem `&` hem de `|` operatörlerini kullanarak sonuçları inceleyin:
+**Alıştırma:** Aşağıdaki örneklerde hem `&` hem de `|` operatörlerini kullanarak sonuçları inceleyin:
 
 ```{r}
 # İşlem 1
@@ -76,25 +69,21 @@ Aşağıdaki örneklerde hem `&` hem de `|` operatörlerini kullanarak sonuçlar
 (5 > 3) | (2 < 1)
 ```
 
----
+------------------------------------------------------------------------
 
 ## 4. R’da Mesajları Anlama ve Hata Çözme
 
-**Soru:**
-R dilinde sık karşılaşılan hata mesajları nelerdir ve bu mesajlar nasıl çözülür? Bir örnek verin ve nasıl düzeltileceğini açıklayın.
+**Soru:** R dilinde sık karşılaşılan hata mesajları nelerdir ve bu mesajlar nasıl çözülür? Bir örnek verin ve nasıl düzeltileceğini açıklayın.
 
-**Alıştırma:**
-Aşağıdaki kodları R konsolunda çalıştırın ve hata mesajlarını inceleyin. Hataları düzelterek doğru sonucu elde edin:
+**Alıştırma:** Aşağıdaki kodları R konsolunda çalıştırın ve hata mesajlarını inceleyin. Hataları düzelterek doğru sonucu elde edin:
 
 ```{r}
-# Hatalı İşlem 1
+#aşağıdaki iki işlem aynı sonucu verecek. Neden? 
 3 ** 5
-
-# Düzeltilmiş İşlem
 3 ^ 5
 
-# Hatalı İşlem 2
-7 // 2
+# Hatalı İşlem 
+# 7 // 2
 
 # Düzeltilmiş İşlem
 7 %/% 2

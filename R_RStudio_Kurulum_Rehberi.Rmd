@@ -1,7 +1,7 @@
 
 ---
 title: "R ve RStudio Kurulum Rehberi"
-author: "Eğitmen"
+author: "Hakan Mehmetcik"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -54,4 +54,5 @@ print("Merhaba, R ve RStudio'ya hoş geldiniz!")
 
 ---
 
-Bu rehberle R ve RStudio’yu başarıyla kurabilirsiniz. Eğer kurulum sırasında herhangi bir sorunla karşılaşırsanız, öğretmeninize veya arkadaşlarınıza danışabilirsiniz. İyi çalışmalar!
+Bu rehberle R ve RStudio’yu başarıyla kurabilirsiniz. Eğer kurulum sırasında herhangi bir sorunla karşılaşırsanız, bana danışabilirsiniz. 
+İyi çalışmalar!
