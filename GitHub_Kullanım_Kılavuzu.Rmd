@@ -1,0 +1,54 @@
+
+---
+title: "GitHub Kullanım Kılavuzu"
+author: "Eğitmen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## GitHub Kullanım Kılavuzu
+
+Bu kılavuz, öğrencilerin GitHub üzerinde nasıl hesap açacaklarını ve belirtilen repository'i RStudio'da nasıl klonlayacaklarını adım adım açıklamaktadır.
+
+### 1. GitHub Hesabı Oluşturma
+
+1. **GitHub'a Gidin**:
+   - [GitHub](https://github.com/) web sitesine gidin.
+
+2. **Hesap Oluşturun**:
+   - Sayfanın sağ üst köşesinde bulunan “Sign up” (Kayıt Ol) butonuna tıklayın.
+   - GitHub, bir kullanıcı adı, e-posta adresi ve şifre girmenizi isteyecektir. 
+   - Burada, .edu.tr uzantılı öğrenci e-postanızı kullanarak kayıt olmalısınız. Bu, öğrenci statünüzü doğrulamak için gereklidir.
+
+3. **Hesabı Onaylayın**:
+   - Kayıt işlemini tamamladıktan sonra, verdiğiniz e-posta adresine bir onay e-postası gelecektir. E-postayı açın ve hesap onaylama talimatlarını izleyin.
+
+### 2. Repository’i Klonlama
+
+1. **RStudio’yu Açın**:
+   - RStudio’yu başlatın.
+
+2. **Yeni Bir Proje Oluşturun**:
+   - RStudio’da üst menüden “File” (Dosya) -> “New Project” (Yeni Proje) seçeneğine tıklayın.
+   - “Version Control” (Versiyon Kontrolü) seçeneğini seçin.
+   - “Git” seçeneğine tıklayın.
+
+3. **Repository URL’sini Girin**:
+   - Açılan pencerede, URL alanına aşağıdaki repository bağlantısını yapıştırın:
+   ```
+   https://github.com/HakanMehmetcik/IST2083.git
+   ```
+
+4. **Proje Adını Belirleyin**:
+   - Proje adını seçin ve projeyi kaydedeceğiniz yerel dizini belirleyin.
+
+5. **Proje Oluşturun**:
+   - “Create Project” (Proje Oluştur) butonuna tıklayarak işlemi tamamlayın.
+
+### 3. Projeyi Kullanma
+
+- Repository klonlandığında, RStudio’da projenizin dosyalarını görebileceksiniz. Artık bu dosyalar üzerinde çalışmaya başlayabilirsiniz.
+
+---
+
+Bu kılavuzla GitHub’da bir hesap açabilir ve RStudio ile repository’i klonlayabilirsiniz. Eğer herhangi bir sorunla karşılaşırsanız, öğretmeniniz veya arkadaşlarınız ile iletişime geçebilirsiniz. İyi çalışmalar!
