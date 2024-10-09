@@ -27,31 +27,14 @@ R, veri analizi, istatistiksel hesaplamalar ve grafiksel görselleştirme için 
 
 R, özellikle veri bilimciler, istatistikçiler ve araştırmacılar tarafından veri analizi için yaygın olarak kullanılır. Akademik dünyada, bilimsel araştırmalarda ve iş dünyasında veri analizi için standart bir araçtır. Bunun nedeni R’ın geniş bir paket ekosistemine sahip olmasıdır; yani, özel amaçlar için kullanabileceğiniz binlerce hazır fonksiyon ve paket bulunur.
 
-## R’ın Avantajları: 
-- Esneklik: R, çok farklı veri türleri ve analizlerle çalışmanıza olanak sağlar. 
-- Geniş Paket Desteği: R, geniş bir topluluğa sahiptir ve hemen hemen her türlü veri analizi için uygun bir paket bulabilirsiniz (örneğin: `ggplot2`, `dplyr`, `tidyverse`). - Veri Görselleştirme: Grafiksel görselleştirme için R, güçlü araçlar sunar. Karmaşık veri setlerini kolayca anlaşılır grafiklere dönüştürebilirsiniz.
+## R’ın Avantajları:
+
+-   Esneklik: R, çok farklı veri türleri ve analizlerle çalışmanıza olanak sağlar.
+-   Geniş Paket Desteği: R, geniş bir topluluğa sahiptir ve hemen hemen her türlü veri analizi için uygun bir paket bulabilirsiniz (örneğin: `ggplot2`, `dplyr`, `tidyverse`). - Veri Görselleştirme: Grafiksel görselleştirme için R, güçlü araçlar sunar. Karmaşık veri setlerini kolayca anlaşılır grafiklere dönüştürebilirsiniz.
 
 ## R'ı GitHub Codespaces Üzerinde Kullanmaya Başlama
 
 Bu derste, GitHub Codespaces kullanarak R ile çalışacağız. Codespaces, bulut tabanlı bir geliştirme ortamıdır. Yani, bilgisayarınıza herhangi bir yazılım yüklemeden GitHub üzerinde R projeleri geliştirebilirsiniz. GitHub Codespaces, R dili için hazır bir çalışma ortamı sağlar ve GitHub repository’nizle entegre bir şekilde çalışmanıza olanak tanır.
-
-### R ile GitHub Codespaces’te Çalışmaya Başlama Adımları:
-
-1.  Repository’ye Erişin: GitHub’da ders için oluşturulan repository’ye gidin (örneğin: [IST2083 GitHub Repository](https://github.com/HakanMehmetcik/IST2083.git)).
-2.  Codespace’i Açın: Repository sayfasında "Code" butonuna tıklayın ve "Open with Codespaces" seçeneğini seçin.
-3.  Ortamı Başlatın: Codespace, sizin için bir geliştirme ortamı oluşturacak. Bu ortamda R kodları yazabilir ve çalıştırabilirsiniz.
-4.  Dosyalarla Çalışma: R dilinde yazılmış `.qmd` (Quarto) dosyalarını açarak ders notlarını inceleyebilir ve R konsolu üzerinde örnek kodları çalıştırabilirsiniz.
-
-### GitHub Codespaces’in Avantajları:
-
--   Kurulum Gerektirmez: Hiçbir yazılım indirip kurmanıza gerek kalmaz, her şey tarayıcı üzerinde çalışır.
--   Bulut Tabanlı: Tüm verileriniz ve projeleriniz bulutta saklanır, böylece her yerden erişim sağlayabilirsiniz.
--   Anında Kullanıma Hazır: R dili ve ilgili paketler önceden yüklenmiştir; hemen kullanmaya başlayabilirsiniz.
-
-**Sonuç Olarak:** 
-R, veri analizi ve istatistik için en güçlü araçlardan biridir. GitHub Codespaces ise bu dili kullanmayı kolaylaştıran bir platform sunar. Bu derste, GitHub Codespaces kullanarak R ile nasıl çalışılacağını ve temel veri analizi kavramlarını öğrenmeye başlayacaksınız.
-
-------------------------------------------------------------------------
 
 # 2. R Konsolu ve Temel İşlemler
 
@@ -73,13 +56,14 @@ Bu komutu çalıştırdığınızda, R size işlemin sonucunu gösterecektir:
 
 ## Temel Matematiksel İşlemler
 
-R, toplama, çıkarma, çarpma ve bölme gibi temel matematiksel işlemleri doğrudan konsol üzerinde yapabilir. 
+R, toplama, çıkarma, çarpma ve bölme gibi temel matematiksel işlemleri doğrudan konsol üzerinde yapabilir.
 
-:::: {.callout-note}
-Bu tür işlemler aynı zamanda temel matematiksel işlemleri gerçekleştirmek için R'da sunulan çeşitli **aritmetik operatörler** olarak adlandırılırlar. 
+::: callout-note
+Bu tür işlemler aynı zamanda temel matematiksel işlemleri gerçekleştirmek için R'da sunulan çeşitli **aritmetik operatörler** olarak adlandırılırlar.
 :::
 
 Aşağıda bazı temel matematiksel işlemlerin örnekleri verilmiştir:
+
 ```{r}
 # Toplama
 toplam <- 5 + 3
@@ -110,8 +94,8 @@ tam_bolme <- 5 %/% 3
 print(tam_bolme)  # 1
 ```
 
-
 ## Karşılaştırma Operatörleri
+
 Karşılaştırma operatörleri, iki değeri karşılaştırarak TRUE ya da FALSE değerleri döndürür. R dilinde yaygın olarak kullanılan karşılaştırma operatörleri şunlardır:
 
 ```{r}
@@ -143,12 +127,10 @@ print(3 <= 5)  # TRUE
 ```
 
 ## Mantıksal Operatörler
-Mantıksal operatörler, R dilinde mantıksal ifadeleri değerlendirmek ve birleştirmek için kullanılır. Bu operatörler, genellikle karşılaştırma operatörleri ile birlikte kullanılarak daha karmaşık koşullar oluşturur. İşte R dilinde yaygın olarak kullanılan mantıksal operatörler:
-**1. Ve (& ve &&)**
 
-İki mantıksal ifadenin her ikisi de doğruysa TRUE döner.
-& operatörü vektörler üzerinde eleman bazında çalışır.
-&& operatörü yalnızca ilk elemanları karşılaştırır.
+Mantıksal operatörler, R dilinde mantıksal ifadeleri değerlendirmek ve birleştirmek için kullanılır. Bu operatörler, genellikle karşılaştırma operatörleri ile birlikte kullanılarak daha karmaşık koşullar oluşturur. İşte R dilinde yaygın olarak kullanılan mantıksal operatörler: **1. Ve (& ve &&)**
+
+İki mantıksal ifadenin her ikisi de doğruysa TRUE döner. & operatörü vektörler üzerinde eleman bazında çalışır. && operatörü yalnızca ilk elemanları karşılaştırır.
 
 ```{r}
 TRUE & TRUE   # TRUE
@@ -157,11 +139,9 @@ TRUE && TRUE  # TRUE
 TRUE && FALSE # FALSE
 ```
 
-**2. Veya (| ve ||)**
+**2. Veya (\| ve \|\|)**
 
-İki mantıksal ifadeden en az biri doğruysa TRUE döner.
-| operatörü vektörler üzerinde eleman bazında çalışır.
-|| operatörü yalnızca ilk elemanları karşılaştırır.
+İki mantıksal ifadeden en az biri doğruysa TRUE döner. \| operatörü vektörler üzerinde eleman bazında çalışır. \|\| operatörü yalnızca ilk elemanları karşılaştırır.
 
 ```{r}
 TRUE | TRUE   # TRUE
@@ -186,7 +166,9 @@ Bir mantıksal ifadenin tersini döner.
 R dilinde çeşitli operatörler, veri manipülasyonu ve analizinde sıkça kullanılır. İşte R dilinde yaygın olarak kullanılan bazı önemli operatörler:
 
 ### Kolon Operatörü (`:`)
+
 Kolon operatörü, belirli bir aralıktaki sayıları oluşturmak için kullanılır.
+
 ```{r}
 # 1'den 10'a kadar olan sayıları oluşturma
 sequence <- 1:10
@@ -194,7 +176,9 @@ print(sequence)  # 1 2 3 4 5 6 7 8 9 10
 ```
 
 ### Atama Operatörü (`<-` ve `=`)
+
 Atama operatörleri, bir değeri bir değişkene atamak için kullanılır.
+
 ```{r}
 # Atama operatörleri
 x <- 10
@@ -204,7 +188,9 @@ print(y)  # 20
 ```
 
 ### Üye Olma Operatörü (`%in%`)
+
 Üye olma operatörü, bir elemanın bir vektörde olup olmadığını kontrol eder.
+
 ```{r}
 # Üye olma operatörü
 vec <- c(1, 2, 3, 4, 5)
@@ -213,7 +199,9 @@ print(6 %in% vec)  # FALSE
 ```
 
 ### Dizi Operatörü (`seq()`)
+
 Dizi operatörü, belirli bir aralıkta ve adım büyüklüğünde sayılar oluşturmak için kullanılır.
+
 ```{r}
 # Dizi operatörü
 sequence <- seq(1, 10, by = 2)
@@ -221,7 +209,9 @@ print(sequence)  # 1 3 5 7 9
 ```
 
 ### Tekrar Operatörü (`rep()`)
+
 Tekrar operatörü, belirli bir değeri veya vektörü tekrar etmek için kullanılır.
+
 ```{r}
 # Tekrar operatörü
 repeated <- rep(1:3, times = 3)
@@ -231,9 +221,10 @@ print(repeated)  # 1 2 3 1 2 3 1 2 3
 ------------------------------------------------------------------------
 
 # 3. R’da Mesajlarını Anlama ve Çözme ve Yardım Alma
+
 R ile çalışırken bazen hatalarla karşılaşabilirsiniz. Hatalar, kodunuzda bir sorun olduğunu ve R’ın bunu çalıştıramadığını belirtir. Ancak endişelenmenize gerek yok, bu hatalar çoğunlukla küçük yazım veya kullanım hatalarından kaynaklanır.
 
-**Örnek Bir Hata:
+\*\*Örnek Bir Hata:
 
 Aşağıdaki komutta `*` yerine `x` yazıldığı için bir hata oluşacaktır:
 

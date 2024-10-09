@@ -1,7 +1,7 @@
 
 ---
 title: "GitHub Kullanım Kılavuzu"
-author: "Eğitmen"
+author: "Hakan Mehmetcik"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -51,4 +51,5 @@ Bu kılavuz, öğrencilerin GitHub üzerinde nasıl hesap açacaklarını ve bel
 
 ---
 
-Bu kılavuzla GitHub’da bir hesap açabilir ve RStudio ile repository’i klonlayabilirsiniz. Eğer herhangi bir sorunla karşılaşırsanız, öğretmeniniz veya arkadaşlarınız ile iletişime geçebilirsiniz. İyi çalışmalar!
+Bu kılavuzla GitHub’da bir hesap açabilir ve RStudio ile repository’i klonlayabilirsiniz. Eğer herhangi bir sorunla karşılaşırsanız, benimle ile iletişime geçebilirsiniz. 
+İyi çalışmalar!
