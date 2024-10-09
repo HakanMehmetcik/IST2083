@@ -1,0 +1,57 @@
+
+---
+title: "R ve RStudio Kurulum Rehberi"
+author: "Eğitmen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## R ve RStudio Kurulum Rehberi
+
+Bu rehber, R ve RStudio’yu bilgisayarınıza nasıl kuracağınızı adım adım anlatmaktadır. R, veri analizi ve istatistiksel hesaplamalar için kullanılan bir programlama dilidir. RStudio ise R ile çalışmayı kolaylaştıran bir geliştirme ortamıdır.
+
+### 1. R’ı İndirin ve Kurun
+
+1. **R’ı İndirin**:
+   - [CRAN (Comprehensive R Archive Network)](https://cran.r-project.org/) web sitesine gidin.
+   - Ana sayfada, “Download R for…” kısmından işletim sisteminize uygun olan seçeneği seçin (Windows, macOS veya Linux).
+   - İlgili bağlantıya tıklayın ve ardından "base" altında bulunan “Download R x.x.x for Windows” (veya diğer işletim sistemleri) seçeneğine tıklayın.
+
+2. **R’ı Kurun**:
+   - İndirdiğiniz dosyayı açın.
+   - Ekranda çıkan kurulum sihirbazında “Next” (İleri) butonuna tıklayarak devam edin.
+   - Lisans sözleşmesini kabul edin.
+   - Varsayılan ayarları seçerek kurulumu tamamlayın. 
+
+### 2. RStudio’yu İndirin ve Kurun
+
+1. **RStudio’yu İndirin**:
+   - [RStudio İndirme Sayfası](https://www.rstudio.com/products/rstudio/download/)na gidin.
+   - “RStudio Desktop” altında “Free” (Ücretsiz) seçeneğine tıklayın.
+   - İşletim sisteminize uygun olan indirme bağlantısına tıklayın.
+
+2. **RStudio’yu Kurun**:
+   - İndirdiğiniz dosyayı açın.
+   - Ekranda çıkan kurulum sihirbazında “Next” (İleri) butonuna tıklayarak devam edin.
+   - Lisans sözleşmesini kabul edin.
+   - Varsayılan ayarları seçerek kurulumu tamamlayın. 
+
+### 3. R ve RStudio’yu Başlatma
+
+- R ve RStudio kurulumunu tamamladıktan sonra, bilgisayarınızın başlat menüsünden veya uygulama menüsünden RStudio’yu bulun ve açın.
+- RStudio açıldığında, R programı otomatik olarak başlatılacaktır.
+
+### 4. İlk Komutunuzu Çalıştırma
+
+- RStudio açıldıktan sonra, sağ üst köşede bulunan "Console" (Konsol) bölümüne gidin.
+- Aşağıdaki komutu yazın ve “Enter” tuşuna basın:
+
+```R
+print("Merhaba, R ve RStudio'ya hoş geldiniz!")
+```
+
+- Eğer “Merhaba, R ve RStudio'ya hoş geldiniz!” mesajını görüyorsanız, kurulumunuz başarılı olmuştur!
+
+---
+
+Bu rehberle R ve RStudio’yu başarıyla kurabilirsiniz. Eğer kurulum sırasında herhangi bir sorunla karşılaşırsanız, öğretmeninize veya arkadaşlarınıza danışabilirsiniz. İyi çalışmalar!
