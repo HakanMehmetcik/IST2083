@@ -7,7 +7,6 @@ editor: visual
 execute: 
   echo: true
   warning: true
-  output: asis
 df-print: kable
 ---
 
@@ -94,12 +93,15 @@ R programlama dilinde temel fonksiyonlar, veri analizi ve istatistiksel hesaplam
 
 R’ın Yerleşik Fonksiyonları Yerleşik fonksiyonlar, R dilinin varsayılan olarak sunduğu işlevlerdir. Örneğin, mean() fonksiyonu bir vektörün ortalamasını hesaplar, sum() toplamını verir ve length() bir vektörün kaç eleman içerdiğini gösterir.
 
-Örnekler: 
-1. print(): Bir nesneyi konsola yazdırır.
+Örnekler:
+
+1.  print() Bir nesneyi konsola yazdırır.
+
     ```{r}
     print("Merhaba Dünya")
     ```
 
+<!-- -->
 
 2.  sum(): Bir vektörün elemanlarının toplamını hesaplar.
 
@@ -156,22 +158,24 @@ R’ın Yerleşik Fonksiyonları Yerleşik fonksiyonlar, R dilinin varsayılan o
     ```
 
 ## Parametrelerle Fonksiyon Kullanımı
+
 Fonksiyonlar, belirli bir işlevi gerçekleştirmek için parametre alabilir. Parametreler, fonksiyonun nasıl çalışacağını belirler. Örneğin, mean() fonksiyonuna na.rm = TRUE parametresi eklenerek eksik değerleri göz ardı edebilirsiniz.
+
 ```{r}
 sayilar <- c(10, 20, NA, 40, 50)
 ortalama <- mean(sayilar, na.rm = TRUE)   # NA değerini göz ardı ederek ortalama hesaplar
 ```
 
 ## Fonksiyon Oluşturma
+
 R dilinde kendi fonksiyonlarınızı oluşturmak oldukça basittir. Fonksiyonlar, belirli bir işlevi gerçekleştirmek için bir dizi komut içerir ve gerektiğinde parametreler alabilir. Fonksiyonlar, function anahtar kelimesi kullanılarak tanımlanır.
 
-Fonksiyon Oluşturma
-Bir fonksiyon oluşturmak için aşağıdaki adımları izleyebilirsiniz:
+Fonksiyon Oluşturma Bir fonksiyon oluşturmak için aşağıdaki adımları izleyebilirsiniz:
 
-- function anahtar kelimesini kullanarak fonksiyonunuzu tanımlayın.
-- Fonksiyonun alacağı parametreleri parantez içinde belirtin.
-- Fonksiyonun gövdesinde, fonksiyonun gerçekleştireceği işlemleri yazın.
-- return() fonksiyonunu kullanarak fonksiyonun döndüreceği değeri belirtin (isteğe bağlı).
+-   function anahtar kelimesini kullanarak fonksiyonunuzu tanımlayın.
+-   Fonksiyonun alacağı parametreleri parantez içinde belirtin.
+-   Fonksiyonun gövdesinde, fonksiyonun gerçekleştireceği işlemleri yazın.
+-   return() fonksiyonunu kullanarak fonksiyonun döndüreceği değeri belirtin (isteğe bağlı).
 
 ```{r}
 # Toplama fonksiyonu oluşturma
@@ -186,6 +190,7 @@ print(toplam)  # 8
 ```
 
 ## R Fonksiyonları İçin Yardım Alma ( ? ve help() Komutları)
+
 Bir R fonksiyonu hakkında bilgi almak için ? veya help() komutlarını kullanabilirsiniz. Bu komutlar, ilgili fonksiyonun nasıl kullanılacağı ve parametrelerinin ne olduğu hakkında detaylı bilgi verir.
 
 **Örnekler**:
@@ -198,6 +203,7 @@ help(sum)  # sum() fonksiyonu hakkında yardım alır
 Bu komutlar, fonksiyonun açıklamasını, hangi argümanları kabul ettiğini ve nasıl çalıştırılacağını gösteren bir dokümantasyon penceresi açar.
 
 ## Belgeleme ve Fonksiyonların Anlamı
+
 R’ın tüm fonksiyonlarının nasıl çalıştığını, örnekler ve açıklamalarla birlikte görebilirsiniz. R'da her fonksiyonun geniş bir açıklaması bulunur ve bu belgeleme, fonksiyonların nasıl kullanılacağını öğrenmenin etkili bir yoludur.
 
 **Örnek**:
@@ -207,9 +213,11 @@ help(mean)  # Ortalama hesaplayan mean() fonksiyonunu anlamak için yardım alab
 ```
 
 # 4. Basit Veri Yapıları
+
 R dilinde, veriler çeşitli veri yapıları kullanılarak organize edilir. Temel veri yapıları, vektörler, listeler ve matrislerdir.
 
 ## Vektörler
+
 R dilinde en temel veri yapılarından biri vektörlerdir. Vektörler, aynı veri türüne sahip bir dizi elemanı saklar. Vektör oluşturmak için c() fonksiyonu kullanılır.
 
 ```{r}
@@ -242,6 +250,7 @@ print(total_sum)
 ```
 
 ## Listeler
+
 Listeler, farklı türdeki verileri bir arada saklayabilen veri yapılarıdır. Bir liste içinde sayılar, karakterler, mantıksal değerler ve hatta başka vektörler bulunabilir.
 
 ```{r}
@@ -269,6 +278,7 @@ print(my_list)
 ```
 
 ## Matrisler
+
 Matrisler, satırlar ve sütunlar şeklinde organize edilmiş sayısal veri yapılarıdır. Tüm elemanlar aynı türde olmalıdır.
 
 ```{r}
@@ -297,7 +307,8 @@ print(sum_matrix)
 print(product_matrix)
 ```
 
-## Data Frameler 
+## Data Frameler
+
 Data frameler, R dilinde kullanılan ve farklı veri türlerine sahip sütunları içerebilen iki boyutlu veri yapılarıdır. Data frameler, genellikle tablo şeklinde verileri saklamak için kullanılır ve her sütun bir vektör olarak temsil edilir. Data frameler, data.frame() fonksiyonu kullanılarak oluşturulur.
 
 ```{r}
@@ -336,9 +347,11 @@ print(my_data_frame)
 ![](https://th.bing.com/th/id/OIP.JjZYjvyBurwgQa1RBRtzAAAAAA?rs=1&pid=ImgDetMain)
 
 # 5. Veri İçe Aktarma ve Kaydetme
+
 Veri içe aktarma ve temel manipülasyon, veri analizi sürecinin önemli adımlarıdır. R dilinde veri içe aktarma ve temel manipülasyon işlemleri için çeşitli fonksiyonlar ve paketler kullanılır.
 
 ## Veri İçe Aktarma
+
 R dilinde veri içe aktarmak için read.csv(), read.table(), read_excel() gibi fonksiyonlar kullanılır.
 
 ```{r}
@@ -346,41 +359,40 @@ R dilinde veri içe aktarmak için read.csv(), read.table(), read_excel() gibi f
 data <- read.csv("https://raw.githubusercontent.com/datasciencedojo/datasets/refs/heads/master/titanic.csv")   # ("path/to/your/file.csv")
 ```
 
-
 ```{r}
 # readxl paketini yükleme
-install.packages("readxl")
+# install.packages("readxl")
 library(readxl)
 
 # Excel dosyasını içe aktarma
-# data <- read_excel("https://github.com/HakanMehmetcik/IST2083/blob/main/Data/sample_excel.xlsx")
+data <- read_excel("~/Desktop/IST2083/Data/sample_excel.xlsx")
 ```
+
 ## Veri Kaydetme
+
 R dilinde veri kaydetmek için çeşitli fonksiyonlar kullanabilirsiniz. En yaygın kullanılan dosya formatları arasında CSV, Excel ve RDS dosyaları bulunur.
 
-**CSV Dosyasına Veri Kaydetme**
-Veri çerçevesini CSV dosyasına kaydetmek için write.csv() fonksiyonunu kullanabilirsiniz:
+**CSV Dosyasına Veri Kaydetme** Veri çerçevesini CSV dosyasına kaydetmek için write.csv() fonksiyonunu kullanabilirsiniz:
 
 ```{r}
 # Veri çerçevesini CSV dosyasına kaydetme
 # write.csv(data, "path/to/your/file.csv", row.names = FALSE)
 ```
 
-**Excel Dosyasına Veri Kaydetme**
-Excel dosyasına veri kaydetmek için writexl paketini kullanabilirsiniz:
+**Excel Dosyasına Veri Kaydetme** Excel dosyasına veri kaydetmek için writexl paketini kullanabilirsiniz:
 
 ```{r}
 # writexl paketini yükleme
-install.packages("writexl")
-library(writexl)
+# install.packages("writexl")
+# library(writexl)
 
 # Veri çerçevesini Excel dosyasına kaydetme
 # write_xlsx(data, "path/to/your/file.xlsx")
 ```
 
 ## Veri Yapısını İnceleme
-Veri inceleme, veri analizi sürecinin önemli bir parçasıdır. R dilinde veri incelemek için çeşitli fonksiyonlar ve paketler kullanabilirsiniz. Bu işlemler arasında veri yapısını kontrol etme, özet istatistikler oluşturma ve veri görselleştirme gibi işlemler bulunur. 
-Veri yapısını incelemek için str(), summary(), head(), ve tail() fonksiyonlarını kullanabilirsiniz. 
+
+Veri inceleme, veri analizi sürecinin önemli bir parçasıdır. R dilinde veri incelemek için çeşitli fonksiyonlar ve paketler kullanabilirsiniz. Bu işlemler arasında veri yapısını kontrol etme, özet istatistikler oluşturma ve veri görselleştirme gibi işlemler bulunur. Veri yapısını incelemek için str(), summary(), head(), ve tail() fonksiyonlarını kullanabilirsiniz.
 
 ```{r}
 # Veri yapısını kontrol etme
