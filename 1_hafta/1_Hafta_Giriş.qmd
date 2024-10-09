@@ -32,17 +32,13 @@ R, özellikle veri bilimciler, istatistikçiler ve araştırmacılar tarafından
 -   Esneklik: R, çok farklı veri türleri ve analizlerle çalışmanıza olanak sağlar.
 -   Geniş Paket Desteği: R, geniş bir topluluğa sahiptir ve hemen hemen her türlü veri analizi için uygun bir paket bulabilirsiniz (örneğin: `ggplot2`, `dplyr`, `tidyverse`). - Veri Görselleştirme: Grafiksel görselleştirme için R, güçlü araçlar sunar. Karmaşık veri setlerini kolayca anlaşılır grafiklere dönüştürebilirsiniz.
 
-## R'ı GitHub Codespaces Üzerinde Kullanmaya Başlama
-
-Bu derste, GitHub Codespaces kullanarak R ile çalışacağız. Codespaces, bulut tabanlı bir geliştirme ortamıdır. Yani, bilgisayarınıza herhangi bir yazılım yüklemeden GitHub üzerinde R projeleri geliştirebilirsiniz. GitHub Codespaces, R dili için hazır bir çalışma ortamı sağlar ve GitHub repository’nizle entegre bir şekilde çalışmanıza olanak tanır.
-
 # 2. R Konsolu ve Temel İşlemler
 
 R, bir programlama dili olmasının yanı sıra, aynı zamanda bir hesap makinesi gibi basit matematiksel işlemler yapabileceğiniz bir ortam sağlar. R konsolunu kullanarak basit komutları hemen çalıştırabilirsiniz. Aşağıda R konsolunda nasıl çalışacağınızı ve temel matematiksel işlemleri nasıl gerçekleştireceğinizi öğreneceksiniz.
 
 ## R Konsolunu Kullanarak Basit Komutlar Çalıştırma
 
-GitHub Codespaces’te R konsolunu açarak komutlar yazabilirsiniz. R konsolu, yazdığınız her komutu anında çalıştırır ve size sonucu gösterir. Örneğin, R konsoluna aşağıdaki gibi bir toplama işlemi yazabilirsiniz:
+Rstudio'da R script/console açarak komutlar yazabilirsiniz. R konsolu, yazdığınız her komutu anında çalıştırır ve size sonucu gösterir. Örneğin, R konsoluna aşağıdaki gibi bir toplama işlemi yazabilirsiniz:
 
 ```{r}
 3+5
