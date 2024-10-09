@@ -88,8 +88,6 @@ us <- a^b
 print(us) # Çıktı: 125
 ```
 
-------------------------------------------------------------------------
-
 # 3. R'da Temel Fonksiyonlar
 
 R programlama dilinde temel fonksiyonlar, veri analizi ve istatistiksel hesaplamalar için yaygın olarak kullanılır. İşte bazı temel fonksiyonlar ve örnek kullanımları:
@@ -207,7 +205,6 @@ R’ın tüm fonksiyonlarının nasıl çalıştığını, örnekler ve açıkla
 ```{r}
 help(mean)  # Ortalama hesaplayan mean() fonksiyonunu anlamak için yardım alabiliriz
 ```
-------------------------------------------------------------------------
 
 # 4. Basit Veri Yapıları
 R dilinde, veriler çeşitli veri yapıları kullanılarak organize edilir. Temel veri yapıları, vektörler, listeler ve matrislerdir.
@@ -337,7 +334,6 @@ print(my_data_frame)
 ```
 
 ![](https://th.bing.com/th/id/OIP.JjZYjvyBurwgQa1RBRtzAAAAAA?rs=1&pid=ImgDetMain)
-------------------------------------------------------------------------
 
 # 5. Veri İçe Aktarma ve Kaydetme
 Veri içe aktarma ve temel manipülasyon, veri analizi sürecinin önemli adımlarıdır. R dilinde veri içe aktarma ve temel manipülasyon işlemleri için çeşitli fonksiyonlar ve paketler kullanılır.
@@ -397,5 +393,3 @@ head(data)
 # Son birkaç satırı görüntüleme
 tail(data)
 ```
-
------------------------------------------------------------------------- 
