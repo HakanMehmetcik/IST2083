@@ -30,7 +30,8 @@ R, özellikle veri bilimciler, istatistikçiler ve araştırmacılar tarafından
 ## R’ın Avantajları:
 
 -   Esneklik: R, çok farklı veri türleri ve analizlerle çalışmanıza olanak sağlar.
--   Geniş Paket Desteği: R, geniş bir topluluğa sahiptir ve hemen hemen her türlü veri analizi için uygun bir paket bulabilirsiniz (örneğin: `ggplot2`, `dplyr`, `tidyverse`). - Veri Görselleştirme: Grafiksel görselleştirme için R, güçlü araçlar sunar. Karmaşık veri setlerini kolayca anlaşılır grafiklere dönüştürebilirsiniz.
+-   Geniş Paket Desteği: R, geniş bir topluluğa sahiptir ve hemen hemen her türlü veri analizi için uygun bir paket bulabilirsiniz (örneğin: `ggplot2`, `dplyr`, `tidyverse`).
+-   Veri Görselleştirme: Grafiksel görselleştirme için R, güçlü araçlar sunar. Karmaşık veri setlerini kolayca anlaşılır grafiklere dönüştürebilirsiniz.
 
 # 2. R Konsolu ve Temel İşlemler
 
