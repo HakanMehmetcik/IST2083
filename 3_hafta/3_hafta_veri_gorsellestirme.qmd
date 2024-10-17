@@ -171,7 +171,7 @@ Estetikler, bir grafik üzerindeki nesnelerin görsel özelliklerini tanımlayan
 **Tablo 1: Estetikler**
 
 | Estetik | Veri Türü | Açıklama |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | `x` | Sayısal / Kategorik | X ekseninde gösterilecek değişken. |
 | `y` | Sayısal | Y ekseninde gösterilecek değişken. |
 | `fill` | Kategorik / Sayısal | Çubuk, alan veya noktaların iç rengini belirler. |
@@ -192,7 +192,7 @@ Görsel ipuçları, grafiklerde belirli bilgileri iletmek için kullanılan graf
 **Tablo 2: Görsel ipuçları ve anlamları.**
 
 | Görsel İpucu | Değişken Türü | Soru |
-|------------------|------------------|-------------------------------------|
+|------------------|------------------|------------------------------------|
 | Konum | sayısal | Diğer şeylerle ilişkili olarak nerede? |
 | Uzunluk | sayısal | Ne kadar büyük (bir boyutta)? |
 | Açı | sayısal | Ne kadar geniş? Bir şeyle paralel mi? |
@@ -542,7 +542,7 @@ ggplot(data = CIACountries, aes(x = gdp, y = pop)) +
 
 Aşağıdaki grafikte, `roadways` değişkenini kullanarak bir çubuk grafiği oluşturalım. Bu grafikte `gdp` ve `pop` değişkenleri ile birlikte `fill` estetiği ekleyelim.
 
-```{r}
+```{r warning=FALSE}
 # Çubuk grafiği oluşturma
 ggplot(data = CIACountries, aes(x = reorder(country, roadways), y = roadways)) +
   geom_col(aes(fill = factor(net_users))) +  # Dolgu rengi internet kullanıcılarına göre
@@ -579,7 +579,7 @@ Her veri bilimcisinin bilmesi ve yorumlaması gereken birkaç veri grafiği vard
 **Tablo 3: Temel Grafik Türleri**
 
 | Grafik Türü | Tanım | Kullanım | Veri Türü | ggplot Estetikleri | Olası Diğer Unsurlar |
-|------------|-------------|------------|------------|------------|------------|
+|------------|------------|------------|------------|------------|------------|
 | **Tek Değişkenli Grafikler** |  |  |  |  |  |
 | **Histogram** | Sayısal verilerin dağılımını gösteren çubuk grafiği. | Sürekli değişkenlerin dağılımını analiz etmek için. | Sürekli sayısal | `x`, `fill` | Bin genişliği, eksen etiketleri |
 | **Kutu Grafiği** | Veri setinin özet istatistiklerini gösteren grafik. | Verinin dağılımını ve aykırı değerleri incelemek için. | Sürekli sayısal, kategorik | `x`, `y`, `fill` | Medyan, çeyrekler, aykırı değerler |
@@ -608,11 +608,8 @@ Tek bir değişkenin dağılımını anlamak genellikle faydalıdır. Eğer değ
 Aşağıdaki kod, bir histogram oluşturmak için ggplot2 kullanır. Bu histogram, her eyaletin matematik SAT puanlarının dağılımını göstermektedir:
 
 ```{r}
-# Gerekli kütüphaneleri yükleyin
-library(ggplot2)
-
 # Histogram oluşturma
-ggplot(SAT_2010, aes(x = math)) +
+ggplot(data= SAT_2010, aes(x = math)) +
   geom_histogram(binwidth = 10, fill = "lightblue", color = "black") +
   labs(title = "Matematik Puanlarının Dağılımı",
        x = "Matematik Puanı",
@@ -937,7 +934,7 @@ Aşağıda, çeşitli sayısal ve kategorik değişkenler için önerilen grafik
 **Tablo 4: Temel Grafik Türleri Özet**
 
 | Yanıt ($y$) | Açıklayıcı ($x$) | Grafik Türü | `geom_*()` Fonksiyonu | Ek Bilgiler |
-|--------------|--------------|--------------|--------------|-----------------|
+|---------------|---------------|---------------|---------------|---------------|
 | Kategorik | Kategorik | Çubuk Grafiği | `geom_bar()` | Frekans veya toplam değer gösterir. |
 | Kategorik | Kategorik | Yığılmış Çubuk Grafiği | `geom_bar(position = "fill")` | Oranları gösterir. |
 | Sayısal | Kategorik | Kutu Grafiği | `geom_boxplot()` | Medyan, çeyrekler ve aykırı değerleri gösterir. |
@@ -965,4 +962,3 @@ Aşağıda, çeşitli sayısal ve kategorik değişkenler için önerilen grafik
 -   **Zaman Serisi Grafiği (`geom_line()`)**: Zaman içinde değişimi göstermek için kullanılır. Genellikle çizgi şeklinde gösterilir ve veri noktaları arasında bağlantı sağlar.
 
 -   **Bubbles Grafiği (`geom_point(aes(size = <size_var>))`)**: Çok değişkenli analizlerde, boyut bilgisi eklenerek verilerin daha etkili görselleştirilmesine olanak tanır.
-
