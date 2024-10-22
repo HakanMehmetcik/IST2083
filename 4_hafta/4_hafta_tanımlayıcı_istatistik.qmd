@@ -1,0 +1,380 @@
+---
+title: "4_hafta_temel_istatistik"
+author: "Hakan Mehmetcik"
+date: "`r Sys.Date()`"
+format: pdf
+editor: visual
+execute: 
+  echo: true
+  warning: true
+  output: asis
+df-print: kable
+---
+
+# Temel İstatistik Kavramlarına Giriş
+
+## Tanımlayıcı İstatistik
+
+Verileri özetlemenin bir yolunu bulmalısınız; işte tanımlayıcı istatistiklerin ana konusu budur. Ayrıca, tanımlayıcı istatistiklerden kesin kararlar veremeyiz—veya vermemeliyiz. Bunun yerine, tanımlayıcı istatistikler, veri setinde neler olup bittiğine dair genel bir fikir vermekle kalmaz, aynı zamanda veri setindeki değişkenler arasındaki ilginç ilişkiler için bizi yönlendirebilir.
+
+Unutmayın ki istatistik, verilerden sorularımızı yanıtlamamıza yardımcı olmak için vardır.
+
+![](images/Sample-vs-Population.png)
+
+Popülasyon ve parametreler, genellikle popülasyon hakkında bilinmeyen bilgilerdir. Bu parametreleri tahmin etmek için, tasarlanmış bir deneyden veya gözlemsel bir çalışmadan elde edilen örneğimize ihtiyaç duyarız. Ancak, tüm örneği kullanamayacağımız gibi, parametrelerimizi tahmin etmek için örneğin uygun şekilde seçilmiş özet sayılarına dayanmak zorundayız. İşte bu, istatistik ya da örneğimizden hesaplanan herhangi bir sayıdır.
+
+### Kategorik Değişkenlerle Kullanılabilen Tanımlayıcı İstatistikler
+
+1.  **Frekans (Frequency)**:
+
+    -   Kategorik değişkenlerin her bir seviyesinin kaç kez tekrarlandığını gösterir. Örneğin, bir anket sonucunda "evet" ve "hayır" cevaplarının sayısı.
+
+2.  **Yüzde (Percentage)**:
+
+    -   Her bir kategorinin toplam içindeki oranını gösterir. Frekansların toplam gözlem sayısına bölünmesiyle elde edilir. Örneğin, "evet" cevabının yüzdesi, "evet" sayısının toplam cevap sayısına bölünmesi ile hesaplanır.
+
+        $$
+        p = \frac{\text{kategori içindeki birey sayısı}}{\text{örneklem büyüklüğü}}
+        $$
+
+3.  **Mod (Mode)**:
+
+    -   En sık rastlanan kategori veya değer. Kategorik veriler için en yaygın olan seviyeyi belirtir. Örneğin, bir sınıftaki en çok tercih edilen renk.
+
+4.  **Çapraz Tablo (Contingency Table)**:
+
+    -   İki veya daha fazla kategorik değişken arasındaki ilişkiyi gösterir. Her bir kategorinin kesişimindeki frekansları içerir. Örneğin, cinsiyet ve hayatta kalma durumu arasındaki ilişkiyi gösteren bir tablo.
+
+#### Örnek 1: Kitap okuma Oranları ve Bilim Haberlerine İlgi
+
+```{r}
+# Kitap okuma kategorileri ve sayıları
+books_readers <- c("no_books"=395, "print_only"=577, "digital_only"=91, "print_and_digital"=425)
+books_readers  # Kitap okuyanların sayısını görüntüle
+
+# Sadece basılı kitap okuyanların örnek oranını hesaplama
+
+```
+
+### 1. Frekans
+
+**Kitap Okuma Kategorileri ve Sayıları**:
+
+-   **Basılı Kitap Okumayan (no_books)**: 395
+
+-   **Sadece Basılı Kitap Okuyan (print_only)**: 577
+
+-   **Sadece Dijital Kitap Okuyan (digital_only)**: 91
+
+-   **Hem Basılı Hem Dijital Kitap Okuyan (print_and_digital)**: 425
+
+Bu frekanslar, her kitap okuma kategorisinde kaç okuyucu bulunduğunu gösterir.
+
+### 2. Yüzde
+
+**Toplam Okuyucu Sayısı**:
+
+```{r}
+toplam_okuyucu <- sum(books_readers)  # Toplam okuyucu sayısını hesapla
+print_only_proportion <- books_readers["print_only"] / toplam_okuyucu  # Sadece basılı kitap okuyanların oranı
+print_only_proportion  # Oranı görüntüle
+
+# Kesirli tablolar, iki veya daha fazla kategorik değişken arasındaki tüm olası varyasyonları listeler!
+# Burada, kitap okuma kategorilerinin oranlarını içeren bir tablo oluşturuluyor
+oran_tablosu <- books_readers / toplam_okuyucu
+oran_tablosu  # Oluşturulan oran tablosunu görüntüle
+
+```
+
+### 3. Mod
+
+**Mod**:
+
+-   **En Sık Görülen Kategori**: "Sadece Basılı Kitap Okuyan" (577). Bu, en çok okunan kitap türüdür.
+
+### 4. Çapraz Tablo
+
+**Etnik Gruplar ve Bilim Haberlerine İlgi**:
+
+```{r}
+# Bilim haberlerini aktif, sıradan veya ilgisiz bir şekilde tüketiyor musunuz?
+# Farklı etnik grupların bilim haberlerine olan ilgisini göstermek için kategoriler ve sayıları
+white <- c("active"=487, "casual"=916, "uninterested"=1431, "no_answer"=28)
+black <- c("active"=59, "casual"=98, "uninterested"=227, "no_answer"=8)
+hispanic <- c("active"=89, "casual"=152, "uninterested"=183, "no_answer"=23)
+
+# Elde edilen verileri bir veri çerçevesi (data frame) olarak birleştirme
+my_table <- as.data.frame(rbind(white, black, hispanic))
+
+# Her bir grubun toplamını hesaplama
+my_table$rowsum <- rowSums(my_table)  # Her bir satırın toplamını hesapla
+my_table["colsum",] <- colSums(my_table)  # Her bir sütunun toplamını hesapla
+
+# Sonuçları görüntüleme
+my_table  # Hesaplanan tabloyu görüntüle
+```
+
+**Yorumlar:**
+
+**Sadece Basılı Kitap Okuyanların Oranı:** 0.3877688 (yaklaşık %38.78), toplam okuyucu sayısının yaklaşık %38.78'inin yalnızca basılı kitap okuduğunu göstermektedir. Bu oran, okuyucuların çoğunluğunun basılı kitapları tercih ettiğini ortaya koymaktadır.
+
+-   **no_books:** %26.55 (yaklaşık) kişi, hiç kitap okumadığını belirtmiştir.
+
+-   **print_only:** %38.78, yalnızca basılı kitap okuduğunu ifade etmiştir.
+
+-   **digital_only:** %6.12, yalnızca dijital kitap okuduğunu belirtmiştir.
+
+-   **print_and_digital:** %28.56, hem basılı hem de dijital kitap okuduğunu söylemiştir.
+
+Bu oranlar, kitap okuma alışkanlıklarının dağılımını daha net bir şekilde gösterir. Yalnızca basılı kitap okuma oranı en yüksekken, yalnızca dijital kitap okuma oranı oldukça düşüktür.
+
+-   **Bilim Haberlerine Tüketim:** Her üç grup arasında "ilgili" ve "sıradan" olarak sınıflandırılan birey sayısının yüksek olması dikkat çekicidir. Ancak "ilgisiz" olanların sayısı en yüksektir, bu da bilim haberlerine olan ilgisizliği göstermektedir.
+
+-   **Etnik Grupa Göre Dağılım:** Beyaz grubun, diğer gruplara göre bilim haberlerine daha fazla ilgi gösterdiği gözlemlenmektedir. Siyah ve hispanik grupların "aktif" oranları daha düşüktür.
+
+-   **Cevap Vermeyenler:** Cevap vermeyenlerin sayısı oldukça düşük kalmış, bu da verilerin güvenilirliğini artırmaktadır.
+
+### Sonuç
+
+Bu analiz, hem kitap okuma kategorileri hem de etnik grupların bilim haberlerine olan ilgisini anlamak için çeşitli tanımlayıcı istatistikler kullanmaktadır. Frekanslar, her kategorideki okuyucu sayısını, yüzdeler, belirli grupların toplam içindeki oranlarını, mod en sık rastlanan kategoriyi ve çapraz tablo ise iki veya daha fazla değişken arasındaki ilişkiyi göstermektedir.
+
+#### Örnek 2: Titanik'te Hayatta Kalma ORanları
+
+```{r}
+# Titanic verisini okuma
+titanic <- read.csv("https://raw.githubusercontent.com/bio304-class/bio304-course-notes/master/datasets/titanic_data.csv")
+
+# Gerekli kütüphaneleri yükleyin
+library(tidyverse)
+
+# Cinsiyet dağılımı tablosu
+table(titanic$sex)
+
+# Cinsiyet dağılımını gösteren çubuk grafiği
+barplot(table(titanic$sex), main = "Cinsiyet Dağılımı", xlab = "Cinsiyet", ylab = "Frekans", col = "lightblue")
+
+# Hayatta kalma durumu tablosu
+table(titanic$survived)
+
+# Hayatta kalma durumunu gösteren çubuk grafiği
+barplot(table(titanic$survived), main = "Hayatta Kalma Durumu", xlab = "Hayatta Kalma", ylab = "Frekans", col = "lightgreen")
+
+# Cinsiyet ve hayatta kalma durumu arasındaki tablo
+table_1 <- table(titanic$sex, titanic$survived)
+
+# Toplamları ekleyerek tabloyu gösterme
+addmargins(table_1)
+
+# Oran tablosunu gösterme
+prop.table(table_1, margin = 2)
+
+# Cinsiyet ve hayatta kalma durumu için çubuk grafiği
+barplot(table_1, legend.text = TRUE, main = "Cinsiyet ve Hayatta Kalma", xlab = "Cinsiyet", ylab = "Frekans")
+
+# Sınıf ve hayatta kalma durumu arasındaki tablo
+table_2 <- table(titanic$pclass, titanic$survived)
+
+# Toplamları ekleyerek tabloyu gösterme
+addmargins(table_2)
+
+# Oran tablosunu gösterme
+prop.table(table_2)
+
+# Sınıf ve hayatta kalma durumu için çubuk grafiği
+barplot(table_2, legend.text = TRUE, main = "Sınıf ve Hayatta Kalma", xlab = "Sınıf", ylab = "Frekans")
+
+# Yaş ve hayatta kalma durumu arasındaki tablo
+table_3 <- table(titanic$age, titanic$survived)
+
+# Toplamları ekleyerek tabloyu gösterme
+addmargins(table_3)
+
+# Yaş dağılımını gösteren kutu grafiği
+boxplot(titanic$age ~ titanic$survived, main = "Yaş Dağılımı", xlab = "Hayatta Kalma", ylab = "Yaş")
+
+```
+
+**Yorumlar:**
+
+-   **Grup 1**: 123 kişi ölmüş, 200 kişi hayatta kalmış. Toplamda 323 kişi.
+
+-   **Grup 2**: 158 kişi ölmüş, 119 kişi hayatta kalmış. Toplamda 277 kişi.
+
+-   **Grup 3**: 528 kişi ölmüş, 181 kişi hayatta kalmış. Toplamda 709 kişi.
+
+<!-- -->
+
+-   **Toplamlar**:
+
+    -   Tüm gruplarda toplam 1309 kişi gözlemlenmiştir.
+
+    -   Ölenlerin toplamı 809, hayatta kalanların toplamı ise 500'dür.
+
+-   **Hayatta Kalma Oranı**:
+
+    -   En yüksek hayatta kalma sayısına sahip grup 1'dir (200 kişi hayatta), en yüksek ölüm sayısına sahip grup ise 3'tür (528 kişi ölmüş).
+
+<!-- -->
+
+-   **Hayatta Kalma Oranları**: Kadınların hayatta kalma oranı (67.8%) erkeklerin hayatta kalma oranından (32.2%) oldukça yüksektir. Bu, kadınların Titanic faciasında erkeklere göre daha yüksek bir hayatta kalma oranına sahip olduğunu göstermektedir.
+
+-   **Ölüm Oranları**: Erkekler için ölüm oranı (84.3%) oldukça yüksekken, kadınlar için bu oran çok daha düşüktür (15.7%). Bu durum, kadınların daha iyi korunmuş olabileceğini veya bazı sosyal faktörlerin etkisiyle hayatta kalma şanslarının artmış olabileceğini düşündürmektedir.
+
+### Sayısal Değişkenlerle Kullanılabilen Tanımlayıcı İstatistikler
+
+1.  **Ortalama (Mean)**:
+
+    -   **Tanım**: Verilerin aritmetik ortalaması, tüm değerlerin toplamının gözlem sayısına bölünmesi ile hesaplanır.
+
+    -   **Matematiksel Gösterim**:
+        $$\text{Ortalama} = \frac{\sum_{i=1}^{n} x_i}{n}$$ ​​
+
+    -   **R Formülü**:
+
+        ```{r}
+        veri_vektoru <- c(34, 67, 23, 45, 89, 12, 56, 78, 99, 5, 62, 48, 39, 75, 80, 22, 90, 11, 36, 50)
+
+        mean(veri)  # veri, ortalamasını almak istediğiniz sayısal vektördür.
+        ```
+
+2.  **Medyan (Median)**:
+
+    -   **Tanım**: Verilerin sıralandıktan sonra ortadaki değeri. Özellikle aşırı değerlerin etkisini azaltır.
+
+    <!-- -->
+
+    -   **Matematiksel Gösterim**:
+
+        -   **Eğer** nnn tek ise:
+
+            $$
+            \text{Medyan} = x_{\left(\frac{n+1}{2}\right)}
+            $$
+
+        -   **Eğer** nnn çift ise:
+
+            $$
+            \text{Medyan} = \frac{x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)}}{2}
+            $$
+
+    ```{r}
+    median(veri)  # veri, medyanını almak istediğiniz sayısal vektördür.
+    ```
+
+    ::: callout-note
+    ⚠️ Ortalama, veri setinin "ağırlık merkezi"dir: verilerin histogramını katı bir cisim olarak hayal ederseniz, onu dengeleyebileceğiniz nokta (bir tahterevalli gibi) ortalamadır. Buna karşılık, medyan ortadaki gözlemdir. Gözlemlerin yarısı daha küçüktür ve yarısı daha büyüktür.
+
+    ```{r}
+    # Gerekli kütüphaneleri yükleyin
+    library(ggplot2)
+
+    # Rastgele bir veri vektörü oluşturma
+    set.seed(42)
+    veri_vektoru <- sample(1:100, 100, replace = TRUE)  # 1 ile 100 arasında 100 rastgele tam sayı
+
+    # Ortalamayı ve medyanı hesaplama
+    ortalama <- mean(veri_vektoru)
+    medyan <- median(veri_vektoru)
+
+    # Histogram oluşturma
+    ggplot(data = data.frame(değerler = veri_vektoru), aes(x = değerler)) +
+      geom_histogram(bins = 10, fill = "lightblue", alpha = 0.7, aes(y = ..density..)) +
+      geom_density(color = "blue") +
+      geom_vline(aes(xintercept = ortalama), color = "red", linetype = "dashed", size = 1) +
+      geom_vline(aes(xintercept = medyan), color = "green", linetype = "dashed", size = 1) +
+      labs(title = "Veri Vektörünün Histogramı", x = "Değerler", y = "Yoğunluk") +
+      theme_minimal() +
+      theme(plot.title = element_text(hjust = 0.5)) +
+      annotate("text", x = ortalama, y = 0.01, label = paste("Ortalama:", round(ortalama, 2)), color = "red") +
+      annotate("text", x = medyan, y = 0.01, label = paste("Medyan:", round(medyan, 2)), color = "green")
+
+    ```
+    :::
+
+3.  **Mod (Mode)**:
+
+    -   **Tanım**: En sık rastlanan sayısal değer. Sayısal veriler için de kullanılabilir, ancak genellikle kategorik verilerle daha yaygındır.
+
+    -   **R Formülü:**
+
+```{r}
+mode_function <- function(x) {
+  uniq_x <- unique(x)
+  uniq_x[which.max(tabulate(match(x, uniq_x)))]
+}
+mode_function(veri)  # veri, modunu almak istediğiniz sayısal vektördür.
+
+```
+
+4.  **Aralık (Range)**:
+    -   **Matematiksel Gösterim**:
+        $$\text{Aralık} = \max(x) - \min(x)$$
+
+    -   **R Formülü:**
+
+```{r}
+range(veri)  # veri, aralığını almak istediğiniz sayısal vektördür.
+max(veri) - min(veri)  # Aralığın hesaplanması
+```
+
+4.  **Standart Sapma (Standard Deviation)**:
+    -   **Tanım:** Verilerin ortalamadan ne kadar yayıldığını gösterir. Verilerin ne kadar değişken olduğunu ölçer.
+
+    -   **Matematiksel Gösterim:**
+        $$\text{Standart Sapma} = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}} $$
+
+    -   **R Formülü**
+
+```{r}
+sd(veri)  # veri, standart sapmasını almak istediğiniz sayısal vektördür.
+```
+
+4.  **Varyans (Variance)**:
+
+    -   **Tanım**: Verilerin ortalamadan ne kadar saptığını gösteren bir ölçüdür. Standart sapmanın karesidir. Veriler arasındaki dağılımın ne kadar farklı olduğunu anlamamıza yardımcı olur.
+
+    <!-- -->
+
+    -   **Matematiksel Gösterim**:
+        $$ \text{Varyans} = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}​$$
+
+    -   **R Formülü**
+
+```{r}
+var(veri)  # veri, varyansını almak istediğiniz sayısal vektördür.
+```
+
+4.  **Çeyrekler Aralığı (Interquartile Range, IQR)**:
+
+    -   **Tanım**: Verilerin ortasındaki yarısını kapsayan yayılımı gösterir. 1. çeyrek (Q1) ile 3. çeyrek (Q3) arasındaki farktır.
+
+    <!-- -->
+
+    -   **Matematiksel Gösterim**:
+        $$ \text{IQR} = Q3 - Q1 $$
+
+    -   **R Formülü**
+
+```{r}
+IQR(veri)  # veri, çeyrekler aralığını almak istediğiniz sayısal vektördür.
+```
+
+4.  **Küçük ve Büyük Çeyrekler (Quantiles)**:
+    -   Verilerin belirli bir yüzdesine karşılık gelen değerlerdir. Örneğin, %25'lik çeyrek (Q1) ve %75'lik çeyrek (Q3).
+
+    -   **R Formulü:**
+
+```{r}
+quantile(veri, probs = c(0.25, 0.75))  # %25 ve %75'lik çeyrekler
+```
+
+4.  **Skewness (Eğrilik)**:
+    -   Verinin dağılımının simetrik olup olmadığını gösterir. Pozitif veya negatif eğrilik değerleri, veri dağılımının sağa veya sola kaydığını belirtir.
+5.  **Kurtosis (Basıklık)**:
+    -   Verinin dağılımının ne kadar "keskin" veya "düz" olduğunu ölçer. Yüksek kurtosis, veri dağılımının keskin zirvelere sahip olduğunu gösterirken, düşük kurtosis daha düz bir dağılımı işaret eder.
+
+    -   **R Formülü:**
+
+```{r}
+kurtosis(veri)  # veri, basıklığını almak istediğiniz sayısal vektördür.
+```
