@@ -1,0 +1,286 @@
+"","Event","Type","Record","Athlete","Nationality","Location","Year"
+"1","Mens 100m","time",10.06,"Bob Hayes","United States","Tokyo, Japan",1964
+"2","Mens 100m","time",10.03,"Jim Hines","United States","Sacramento, USA",1968
+"3","Mens 100m","time",10.02,"Charles Greene","United States","Mexico City, Mexico",1968
+"4","Mens 100m","time",9.95,"Jim Hines","United States","Mexico City, Mexico",1968
+"5","Mens 100m","time",9.93,"Calvin Smith","United States","Colorado Springs, USA",1983
+"6","Mens 100m","time",9.92,"Carl Lewis","United States","Seoul, South Korea",1988
+"7","Mens 100m","time",9.9,"Leroy Burrell","United States","New York, USA",1991
+"8","Mens 100m","time",9.86,"Carl Lewis","United States","Tokyo, Japan",1991
+"9","Mens 100m","time",9.85,"Leroy Burrell","United States","Lausanne, Switzerland",1994
+"10","Mens 100m","time",9.84,"Donovan Bailey","Canada","Atlanta, USA",1996
+"11","Mens 100m","time",9.79,"Maurice Greene","United States","Athens, Greece",1999
+"12","Mens 100m","time",9.78,"Tim Montgomery","United States","Paris, France",2002
+"13","Mens 100m","time",9.77,"Asafa Powell","Jamaica","Athens, Greece",2005
+"14","Mens 100m","time",9.74,"Asafa Powell","Jamaica","Rieti, Italy",2007
+"15","Mens 100m","time",9.72,"Usain Bolt","Jamaica","New York, USA",2008
+"16","Mens 100m","time",9.69,"Usain Bolt","Jamaica","Beijing, China",2008
+"17","Mens 100m","time",9.58,"Usain Bolt","Jamaica","Berlin, Germany",2009
+"18","Womens 100m","time",11.07,"Wyomia Tyus"," United States","Mexico City, Mexico",1968
+"19","Womens 100m","time",11.07,"Renate Stecher"," East Germany","Munich, West Germany",1972
+"20","Womens 100m","time",11.04,"Inge Helten"," West Germany","Fürth, West Germany",1976
+"21","Womens 100m","time",11.01,"Annegret Richter"," West Germany","Montreal, Canada",1976
+"22","Womens 100m","time",10.88,"Marlies Oelsner"," East Germany","Dresden, East Germany",1977
+"23","Womens 100m","time",10.88,"Marlies Göhr"," East Germany","Karl-Marx-Stadt, East Germany",1982
+"24","Womens 100m","time",10.81,"Marlies Göhr"," East Germany","Berlin, East Germany",1983
+"25","Womens 100m","time",10.79,"Evelyn Ashford"," United States","US Air Force Academy, United States",1983
+"26","Womens 100m","time",10.76,"Evelyn Ashford"," United States","Zürich, Switzerland",1984
+"27","Womens 100m","time",10.49,"Florence Griffith-Joyner"," United States","Indianapolis, United States",1988
+"28","Mens 800m","time",111.9," Ted Meredith","USA","Stockholm, Sweden",1912
+"29","Mens 800m","time",111.6," Otto Peltzer","GER","London, United Kingdom",1926
+"30","Mens 800m","time",110.6," Sera Martin","FRA","Paris, France",1928
+"31","Mens 800m","time",109.8," Tommy Hampson","GBR","Los Angeles, USA",1932
+"32","Mens 800m","time",109.8," Ben Eastman","USA","Princeton, USA",1934
+"33","Mens 800m","time",109.7," Glenn Cunningham","USA","Stockholm, Sweden",1936
+"34","Mens 800m","time",109.6," Elroy Robinson","USA","New York, USA",1937
+"35","Mens 800m","time",108.4," Sydney Wooderson","GBR","Motspur Park, United Kingdom",1938
+"36","Mens 800m","time",106.6," Rudolf Harbig","GER","Milan, Italy",1939
+"37","Mens 800m","time",105.7," Roger Moens","BEL","Oslo, Norway",1955
+"38","Mens 800m","time",104.3," Peter Snell","NZL","Christchurch, New Zealand",1962
+"39","Mens 800m","time",104.3," Ralph Doubell","AUS","Mexico City, Mexico",1968
+"40","Mens 800m","time",104.3," Dave Wottle","USA","Eugene, USA",1972
+"41","Mens 800m","time",103.7," Marcello Fiasconaro","ITA","Milan, Italy",1973
+"42","Mens 800m","time",103.5," Alberto Juantorena","CUB","Montreal, Canada",1976
+"43","Mens 800m","time",103.4," Alberto Juantorena","CUB","Sofia, Bulgaria",1977
+"44","Mens 800m","time",102.4," Sebastian Coe","GBR","Oslo, Norway",1979
+"45","Mens 800m","time",101.7," Sebastian Coe","GBR","Florence, Italy",1981
+"46","Mens 800m","time",101.7," Wilson Kipketer","DEN","Stockholm, Sweden",1997
+"47","Mens 800m","time",101.2," Wilson Kipketer","DEN","Zürich, Switzerland",1997
+"48","Mens 800m","time",101.1," Wilson Kipketer","DEN","Cologne, Germany",1997
+"49","Mens 800m","time",101.1," David Rudisha","KEN","Berlin, Germany",2010
+"50","Mens 800m","time",101," David Rudisha","KEN","Rieti, Italy",2010
+"51","Mens 800m","time",100.9," David Rudisha","KEN","London, United Kingdom",2012
+"52","Womens 800m","time",150.4," Georgette Lenoir","FRA","Paris, France",1922
+"53","Womens 800m","time",146.6," Mary Lines","GBR","London, United Kingdom",1922
+"54","Womens 800m","time",143.8," Lina Radke","GER","Breslau, Germany",1927
+"55","Womens 800m","time",140.4," Inga Gentzel","SWE","Stockholm, Sweden",1928
+"56","Womens 800m","time",139.6," Lina Radke ","GER","Brieg, Poland",1928
+"57","Womens 800m","time",136.8," Lina Radke","GER","Amsterdam, Netherlands",1928
+"58","Womens 800m","time",135.9," Anna Larsson","SWE","Stockholm, Sweden",1944
+"59","Womens 800m","time",134.8," Anna Larsson","SWE","Hälsingborg, Sweden",1945
+"60","Womens 800m","time",133.8," Anna Larsson ","SWE","Stockholm, Sweden",1945
+"61","Womens 800m","time",133," Yevdokia Vasilyeva","URS","Moscow, Soviet Union",1950
+"62","Womens 800m","time",132.2," Valentina Pomogayeva","URS","Moscow, Soviet Union",1951
+"63","Womens 800m","time",132," Nina Otkalenko","URS","Minsk, Soviet Union",1951
+"64","Womens 800m","time",128.5," Nina Otkalenko","URS","Kiev, Soviet Union",1952
+"65","Womens 800m","time",127.3," Nina Otkalenko","URS","Moscow, Soviet Union",1953
+"66","Womens 800m","time",126.6," Nina Otkalenko","URS","Kiev, Soviet Union",1954
+"67","Womens 800m","time",125," Nina Otkalenko","URS","Zagreb, Yugoslavia",1955
+"68","Womens 800m","time",124.3," Lyudmila Shevtsova","URS","Moscow, Soviet Union",1960
+"69","Womens 800m","time",124.3," Lyudmila Shevtsova","URS","Rome, Italy",1960
+"70","Womens 800m","time",121.2," Dixie Willis","AUS","Perth, Australia",1962
+"71","Womens 800m","time",121.1," Ann Packer","GBR","Tokyo, Japan",1964
+"72","Womens 800m","time",121," Judy Pollock","AUS","Helsinki, Finland",1967
+"73","Womens 800m","time",120.5," Vera Nikolic","YUG","London, United Kingdom",1968
+"74","Womens 800m","time",118.5," Hildegard Falck","FRG","Stuttgart, Germany",1971
+"75","Womens 800m","time",117.5," Svetla Zlateva","BUL","Athens, Greece",1973
+"76","Womens 800m","time",116," Valentina Gerasimova","URS","Kiev, Soviet Union",1976
+"77","Womens 800m","time",114.9," Tatyana Kazankina","URS","Montreal, Canada",1976
+"78","Womens 800m","time",114.9," Nadezhda Olizarenko","URS","Moscow, Soviet Union",1980
+"79","Womens 800m","time",113.5," Nadezhda Olizarenko","URS","Moscow, Soviet Union",1980
+"80","Womens 800m","time",113.3," Jarmila Kratochvílová","TCH","Munich, West Germany",1983
+"81","Mens TripleJump","distance",15.52," Dan Ahearn ","USA","New York, U.S.",1911
+"82","Mens TripleJump","distance",15.52," Nick Winter ","AUS","Paris, France",1924
+"83","Mens TripleJump","distance",15.58," Mikio Oda ","JPN","Tokyo, Japan",1931
+"84","Mens TripleJump","distance",15.72," Chuhei Nambu ","JPN","Los Angeles, U.S.",1932
+"85","Mens TripleJump","distance",15.78," Jack Metcalfe ","AUS","Sydney, Australia",1935
+"86","Mens TripleJump","distance",16," Naoto Tajima ","JPN","Berlin, Germany",1936
+"87","Mens TripleJump","distance",16," Adhemar da Silva ","BRA","São Paulo, Brazil",1950
+"88","Mens TripleJump","distance",16.01," Adhemar da Silva ","BRA","Rio de Janeiro, Brazil",1951
+"89","Mens TripleJump","distance",16.12," Adhemar da Silva ","BRA","Helsinki, Finland",1952
+"90","Mens TripleJump","distance",16.22," Adhemar da Silva ","BRA","Helsinki, Finland",1952
+"91","Mens TripleJump","distance",16.23," Leonid Shcherbakov ","URS","Moscow, Soviet Union",1953
+"92","Mens TripleJump","distance",16.56," Adhemar da Silva ","BRA","Mexico City, Mexico",1955
+"93","Mens TripleJump","distance",16.59," Oleg Ryakhovskiy ","URS","Moscow, Soviet Union",1958
+"94","Mens TripleJump","distance",16.7," Oleg Fyodoseyev ","URS","Nalchik, Soviet Union",1959
+"95","Mens TripleJump","distance",17.03," Józef Szmidt ","POL","Olsztyn, Poland",1960
+"96","Mens TripleJump","distance",17.1," Giuseppe Gentile ","ITA","Mexico City, Mexico",1968
+"97","Mens TripleJump","distance",17.22," Giuseppe Gentile ","ITA","Mexico City, Mexico",1968
+"98","Mens TripleJump","distance",17.23," Viktor Sanyeyev ","URS","Mexico City, Mexico",1968
+"99","Mens TripleJump","distance",17.27," Nelson Prudêncio ","BRA","Mexico City, Mexico",1968
+"100","Mens TripleJump","distance",17.39," Viktor Sanyeyev ","URS","Mexico City, Mexico",1968
+"101","Mens TripleJump","distance",17.4," Pedro Pérez ","CUB","Cali, Colombia",1971
+"102","Mens TripleJump","distance",17.44," Viktor Sanyeyev ","URS","Sukhumi, Soviet Union",1972
+"103","Mens TripleJump","distance",17.89," João Carlos de Oliveira ","BRA","Mexico City, Mexico",1975
+"104","Mens TripleJump","distance",17.97," Willie Banks ","USA","Indianapolis, U.S.",1985
+"105","Mens TripleJump","distance",18.29," Jonathan Edwards ","GBR","Gothenburg, Sweden",1995
+"106","Mens Mile","time",254.4,"John Paul Jones"," United States","Allston, Mass.",1913
+"107","Mens Mile","time",252.6,"Norman Taber"," United States","Allston, Mass.",1915
+"108","Mens Mile","time",250.4,"Paavo Nurmi"," Finland","Stockholm",1923
+"109","Mens Mile","time",249.2,"Jules Ladoumègue"," France","Paris",1931
+"110","Mens Mile","time",247.6,"Jack Lovelock"," New Zealand","Princeton, N.J.",1933
+"111","Mens Mile","time",246.8,"Glenn Cunningham"," United States","Princeton, N.J.",1934
+"112","Mens Mile","time",246.4,"Sydney Wooderson"," United Kingdom","Motspur Park",1937
+"113","Mens Mile","time",246.2,"Gunder Hägg"," Sweden","Göteborg",1942
+"114","Mens Mile","time",246.2,"Arne Andersson"," Sweden","Stockholm",1942
+"115","Mens Mile","time",244.6,"Gunder Hägg"," Sweden","Stockholm",1942
+"116","Mens Mile","time",242.6,"Arne Andersson"," Sweden","Göteborg",1943
+"117","Mens Mile","time",241.6,"Arne Andersson"," Sweden","Malmö",1944
+"118","Mens Mile","time",241.4,"Gunder Hägg"," Sweden","Malmö",1945
+"119","Mens Mile","time",239.4,"Roger Bannister"," United Kingdom","Oxford",1954
+"120","Mens Mile","time",238,"John Landy"," Australia","Turku",1954
+"121","Mens Mile","time",237.2,"Derek Ibbotson"," United Kingdom","London",1957
+"122","Mens Mile","time",234.5,"Herb Elliott"," Australia","Santry, Dublin",1958
+"123","Mens Mile","time",234.4,"Peter Snell"," New Zealand","Wanganui",1962
+"124","Mens Mile","time",234.1,"Peter Snell"," New Zealand","Auckland",1964
+"125","Mens Mile","time",233.6,"Michel Jazy"," France","Rennes",1965
+"126","Mens Mile","time",231.3,"Jim Ryun"," United States","Berkeley, Cal.",1966
+"127","Mens Mile","time",231.1,"Jim Ryun"," United States","Bakersfield, Cal.",1967
+"128","Mens Mile","time",231,"Filbert Bayi"," Tanzania","Kingston",1975
+"129","Mens Mile","time",229.4,"John Walker"," New Zealand","Göteborg",1975
+"130","Mens Mile","time",229,"Sebastian Coe"," United Kingdom","Oslo",1979
+"131","Mens Mile","time",228.8,"Steve Ovett"," United Kingdom","Oslo",1980
+"132","Mens Mile","time",228.5,"Sebastian Coe"," United Kingdom","Zürich",1981
+"133","Mens Mile","time",228.4,"Steve Ovett"," United Kingdom","Koblenz",1981
+"134","Mens Mile","time",227.3,"Sebastian Coe"," United Kingdom","Bruxelles",1981
+"135","Mens Mile","time",226.3,"Steve Cram"," United Kingdom","Oslo",1985
+"136","Mens Mile","time",224.4,"Noureddine Morceli"," Algeria","Rieti",1993
+"137","Mens Mile","time",223.1,"Hicham El Guerrouj"," Morocco","Rome",1999
+"138","Womens Mile","time",277,"Anne Rosemary Smith"," United Kingdom","London",1967
+"139","Womens Mile","time",276.8,"Maria Gommers"," Netherlands","Leicester",1969
+"140","Womens Mile","time",275.3,"Ellen Tittel"," West Germany","Sittard",1971
+"141","Womens Mile","time",269.5,"Paola Pigni"," Italy","Viareggio",1973
+"142","Womens Mile","time",263.8,"Natalia Marasescu"," Romania","Bucharest",1977
+"143","Womens Mile","time",262.1,"Natalia Marasescu"," Romania","Auckland",1979
+"144","Womens Mile","time",261.7,"Mary Slaney"," United States","Auckland",1980
+"145","Womens Mile","time",260.9,"Lyudmila Veselkova"," Soviet Union","Bologna",1981
+"146","Womens Mile","time",258.1,"Mary Slaney"," United States","Paris",1982
+"147","Womens Mile","time",257.4,"Maricica Puic?"," Romania","Rieti",1982
+"148","Womens Mile","time",256.7,"Mary Slaney"," United States","Zürich",1985
+"149","Womens Mile","time",255.6,"Paula Ivan"," Romania","Nice",1989
+"150","Womens Mile","time",252.6,"Svetlana Masterkova"," Russia","Zürich",1996
+"151","Mens Polevault","distance",4.78,"Robert Gutowski"," United States","Palo Alto, U.S.",1957
+"152","Mens Polevault","distance",4.8,"Don Bragg"," United States","Palo Alto, U.S.",1960
+"153","Mens Polevault","distance",4.83,"George Davies"," United States","Boulder, U.S.",1961
+"154","Mens Polevault","distance",4.89,"John Uelses"," United States","Santa Barbara, U.S.",1962
+"155","Mens Polevault","distance",4.93,"Dave Tork"," United States","Walnut, U.S.",1962
+"156","Mens Polevault","distance",4.94,"Pentti Nikula"," Finland","Kauhava, Finland",1962
+"157","Mens Polevault","distance",5,"Brian Sternberg"," United States","Philadelphia, U.S.",1963
+"158","Mens Polevault","distance",5.08,"Brian Sternberg"," United States","Compton",1963
+"159","Mens Polevault","distance",5.13,"John Pennel"," United States","London, England",1963
+"160","Mens Polevault","distance",5.2,"John Pennel"," United States","Coral Gables, U.S.",1963
+"161","Mens Polevault","distance",5.23,"Fred Hansen"," United States","San Diego, U.S.",1964
+"162","Mens Polevault","distance",5.28,"Fred Hansen"," United States","Los Angeles, U.S.",1964
+"163","Mens Polevault","distance",5.32,"Bob Seagren"," United States","Fresno, U.S.",1966
+"164","Mens Polevault","distance",5.34,"John Pennel"," United States","Los Angeles, U.S.",1966
+"165","Mens Polevault","distance",5.36,"Bob Seagren"," United States","San Diego, U.S.",1967
+"166","Mens Polevault","distance",5.38,"Paul Wilson"," United States","Bakersfield, U.S.",1967
+"167","Mens Polevault","distance",5.41,"Bob Seagren"," United States","Lake Tahoe, U.S.",1968
+"168","Mens Polevault","distance",5.44,"John Pennel"," United States","Sacramento, U.S.",1969
+"169","Mens Polevault","distance",5.45,"Wolfgang Nordwig"," East Germany","Berlin, Germany",1970
+"170","Mens Polevault","distance",5.46,"Wolfgang Nordwig"," East Germany","Turin, Italy",1970
+"171","Mens Polevault","distance",5.49,"Christos Papanikolaou"," Greece","Athens, Greece",1970
+"172","Mens Polevault","distance",5.51,"Kjell Isaksson"," Sweden","Austin, U.S.",1972
+"173","Mens Polevault","distance",5.54,"Kjell Isaksson"," Sweden","Los Angeles, U.S.",1972
+"174","Mens Polevault","distance",5.55,"Kjell Isaksson"," Sweden","Helsingborg, Sweden",1972
+"175","Mens Polevault","distance",5.63,"Bob Seagren"," United States","Eugene, U.S.",1972
+"176","Mens Polevault","distance",5.65,"David Roberts"," United States","Gainesville, U.S.",1975
+"177","Mens Polevault","distance",5.67,"Earl Bell"," United States","Wichita, U.S.",1976
+"178","Mens Polevault","distance",5.7,"David Roberts"," United States","Eugene, U.S.",1976
+"179","Mens Polevault","distance",5.72,"W?adys?aw Kozakiewicz"," Poland","Milan, Italy",1980
+"180","Mens Polevault","distance",5.75,"Thierry Vigneron"," France","Paris, France",1980
+"181","Mens Polevault","distance",5.75,"Thierry Vigneron"," France","Lille, France",1980
+"182","Mens Polevault","distance",5.77,"Philippe Houvion"," France","Paris, France",1980
+"183","Mens Polevault","distance",5.78,"W?adys?aw Kozakiewicz"," Poland","Moscow, Soviet Union",1980
+"184","Mens Polevault","distance",5.8,"Thierry Vigneron"," France","Mâcon, France",1981
+"185","Mens Polevault","distance",5.81,"Vladimir Polyakov"," Soviet Union","Tbilisi, Georgia",1981
+"186","Mens Polevault","distance",5.82,"Pierre Quinon"," France","Cologne, Germany",1983
+"187","Mens Polevault","distance",5.83,"Thierry Vigneron"," France","Rome, Italy",1983
+"188","Mens Polevault","distance",5.85,"Sergey Bubka"," Soviet Union","Bratislava, Czechoslovakia",1984
+"189","Mens Polevault","distance",5.88,"Sergey Bubka"," Soviet Union","Paris, France",1984
+"190","Mens Polevault","distance",5.9,"Sergey Bubka"," Soviet Union","London, England",1984
+"191","Mens Polevault","distance",5.91,"Thierry Vigneron"," France","Rome, Italy",1984
+"192","Mens Polevault","distance",5.94,"Sergey Bubka"," Soviet Union","Rome, Italy",1984
+"193","Mens Polevault","distance",6,"Sergey Bubka"," Soviet Union","Paris, France",1985
+"194","Mens Polevault","distance",6.01,"Sergey Bubka"," Soviet Union","Moscow, Soviet Union",1986
+"195","Mens Polevault","distance",6.03,"Sergey Bubka"," Soviet Union","Prague, Czechoslovakia",1987
+"196","Mens Polevault","distance",6.05,"Sergey Bubka"," Soviet Union","Bratislava, Czechoslovakia",1988
+"197","Mens Polevault","distance",6.06,"Sergey Bubka"," Soviet Union","Nice, France",1988
+"198","Mens Polevault","distance",6.07,"Sergey Bubka"," Soviet Union","Shizuoka, Japan",1991
+"199","Mens Polevault","distance",6.08,"Sergey Bubka"," Soviet Union","Moscow, Soviet Union",1991
+"200","Mens Polevault","distance",6.09,"Sergey Bubka"," Soviet Union","Formia, Italy",1991
+"201","Mens Polevault","distance",6.1,"Sergey Bubka"," Soviet Union","Malmö, Sweden",1991
+"202","Mens Polevault","distance",6.11,"Sergey Bubka"," Ukraine","Dijon, France",1992
+"203","Mens Polevault","distance",6.12,"Sergey Bubka"," Ukraine","Padua, Italy",1992
+"204","Mens Polevault","distance",6.13,"Sergey Bubka"," Ukraine","Tokyo, Japan",1992
+"205","Mens Polevault","distance",6.14,"Sergey Bubka"," Ukraine","Sestriere, Italy",1994
+"206","Mens Shotput","distance",17.68," Charlie Fonville ","USA","Lawrence, U.S.",1948
+"207","Mens Shotput","distance",17.79," Jim Fuchs ","USA","Oslo, Norway",1949
+"208","Mens Shotput","distance",17.82," Jim Fuchs ","USA","Los Angeles, U.S.",1950
+"209","Mens Shotput","distance",17.9," Jim Fuchs ","USA","Visby, Sweden",1950
+"210","Mens Shotput","distance",17.95," Jim Fuchs ","USA","Eskilstuna, Sweden",1950
+"211","Mens Shotput","distance",18," Parry O'Brien ","USA","Fresno, U.S.",1953
+"212","Mens Shotput","distance",18.04," Parry O'Brien ","USA","Compton, U.S.",1953
+"213","Mens Shotput","distance",18.42," Parry O'Brien ","USA","Los Angeles, U.S.",1954
+"214","Mens Shotput","distance",18.43," Parry O'Brien ","USA","Los Angeles, U.S.",1954
+"215","Mens Shotput","distance",18.54," Parry O'Brien ","USA","Los Angeles, U.S.",1954
+"216","Mens Shotput","distance",18.62," Parry O'Brien ","USA","Salt Lake City, U.S.",1956
+"217","Mens Shotput","distance",18.69," Parry O'Brien ","USA","Los Angeles, U.S.",1956
+"218","Mens Shotput","distance",19.06," Parry O'Brien ","USA","Eugene, U.S.",1956
+"219","Mens Shotput","distance",19.25," Parry O'Brien ","USA","Los Angeles, U.S.",1956
+"220","Mens Shotput","distance",19.25," Dallas Long ","USA","Santa Barbara, U.S.",1959
+"221","Mens Shotput","distance",19.3," Parry O'Brien ","USA","Albuquerque, U.S.",1959
+"222","Mens Shotput","distance",19.38," Dallas Long ","USA","Los Angeles, U.S.",1960
+"223","Mens Shotput","distance",19.45," Bill Nieder ","USA","Palo Alto, U.S.",1960
+"224","Mens Shotput","distance",19.67," Dallas Long ","USA","Los Angeles, U.S.",1960
+"225","Mens Shotput","distance",19.99," Bill Nieder ","USA","Austin, U.S.",1960
+"226","Mens Shotput","distance",20.06," Bill Nieder ","USA","Walnut, U.S.",1960
+"227","Mens Shotput","distance",20.08," Dallas Long ","USA","Los Angeles, U.S.",1962
+"228","Mens Shotput","distance",20.1," Dallas Long ","USA","Los Angeles, U.S.",1964
+"229","Mens Shotput","distance",20.2," Dallas Long ","USA","Los Angeles, U.S.",1964
+"230","Mens Shotput","distance",20.68," Dallas Long ","USA","Los Angeles, U.S.",1964
+"231","Mens Shotput","distance",21.52," Randy Matson ","USA","College Station, U.S.",1965
+"232","Mens Shotput","distance",21.78," Randy Matson ","USA","College Station, U.S.",1967
+"233","Mens Shotput","distance",21.82," Al Feuerbach ","USA","San Jose, U.S.",1973
+"234","Mens Shotput","distance",21.85," Terry Albritton ","USA","Honolulu, Hawaii, U.S.",1976
+"235","Mens Shotput","distance",22," Aleksandr Baryshnikov ","URS","Paris, France",1976
+"236","Mens Shotput","distance",22.15," Udo Beyer ","GDR","Gothenburg, Sweden",1978
+"237","Mens Shotput","distance",22.22," Udo Beyer ","GDR","Los Angeles, U.S.",1983
+"238","Mens Shotput","distance",22.62," Ulf Timmermann ","GDR","Berlin, Germany",1985
+"239","Mens Shotput","distance",22.64," Udo Beyer ","GDR","Berlin, Germany",1986
+"240","Mens Shotput","distance",22.72," Alessandro Andrei ","ITA","Viareggio, Italy",1987
+"241","Mens Shotput","distance",22.84," Alessandro Andrei ","ITA","Viareggio, Italy",1987
+"242","Mens Shotput","distance",22.91," Alessandro Andrei ","ITA","Viareggio, Italy",1987
+"243","Mens Shotput","distance",23.06," Ulf Timmermann ","GDR","Chania, Greece",1988
+"244","Mens Shotput","distance",23.12," Randy Barnes ","USA","Los Angeles, U.S.",1990
+"245","Womens Shotput","distance",14.59," Tatyana Sevryukova ","URS","Moscow, Soviet Union",1948
+"246","Womens Shotput","distance",14.86," Klavdia Tochonova ","URS","Tbilisi, Soviet Union",1949
+"247","Womens Shotput","distance",15.02," Anna Andreeva ","URS","Ploie?ti, Romania",1950
+"248","Womens Shotput","distance",15.28," Galina Zybina ","URS","Helsinki, Finland",1952
+"249","Womens Shotput","distance",15.37," Galina Zybina ","URS","Frunze, Soviet Union",1952
+"250","Womens Shotput","distance",15.42," Galina Zybina ","URS","Frunze, Soviet Union",1952
+"251","Womens Shotput","distance",16.2," Galina Zybina ","URS","Malmö, Sweden",1953
+"252","Womens Shotput","distance",16.28," Galina Zybina ","URS","Kiev, Soviet Union",1954
+"253","Womens Shotput","distance",16.28," Galina Zybina ","URS","Leningrad, Soviet Union",1955
+"254","Womens Shotput","distance",16.67," Galina Zybina ","URS","Tbilisi, Soviet Union",1955
+"255","Womens Shotput","distance",16.76," Galina Zybina ","URS","Tashkent, Soviet Union",1956
+"256","Womens Shotput","distance",17.25," Tamara Press ","URS","Nalchik, Soviet Union",1959
+"257","Womens Shotput","distance",17.42," Tamara Press ","URS","Moscow, Soviet Union",1960
+"258","Womens Shotput","distance",17.78," Tamara Press ","URS","Moscow, Soviet Union",1960
+"259","Womens Shotput","distance",18.55," Tamara Press ","URS","Leipzig, East Germany",1962
+"260","Womens Shotput","distance",18.55," Tamara Press ","URS","Beograd, Yugoslavia",1962
+"261","Womens Shotput","distance",18.59," Tamara Press ","URS","Kassel, West Germany",1965
+"262","Womens Shotput","distance",18.67," Nadezhda Chizhova ","URS","Sochi, Soviet Union",1968
+"263","Womens Shotput","distance",18.87," Margitta Gummel ","GDR","Frankfurt (Oder), East Germany",1968
+"264","Womens Shotput","distance",19.07," Margitta Gummel ","GDR","Mexico City, Mexico",1968
+"265","Womens Shotput","distance",19.61," Margitta Gummel ","GDR","Mexico City, Mexico",1968
+"266","Womens Shotput","distance",19.72," Nadezhda Chizhova ","URS","Moscow, Soviet Union",1969
+"267","Womens Shotput","distance",20.09," Nadezhda Chizhova ","URS","Chorzów, Poland",1969
+"268","Womens Shotput","distance",20.1," Margitta Gummel ","GDR","East Berlin, East Germany",1969
+"269","Womens Shotput","distance",20.1," Nadezhda Chizhova ","URS","Athens, Greece",1969
+"270","Womens Shotput","distance",20.43," Nadezhda Chizhova ","URS","Athens, Greece",1969
+"271","Womens Shotput","distance",20.43," Nadezhda Chizhova ","URS","Moscow, Soviet Union",1971
+"272","Womens Shotput","distance",20.63," Nadezhda Chizhova ","URS","Sochi, Soviet Union",1972
+"273","Womens Shotput","distance",21.03," Nadezhda Chizhova ","URS","Munich, West Germany",1972
+"274","Womens Shotput","distance",21.2," Nadezhda Chizhova ","URS","Lvov, Soviet Union",1973
+"275","Womens Shotput","distance",21.6," Marianne Adam ","GDR","East Berlin, East Germany",1975
+"276","Womens Shotput","distance",21.67," Marianne Adam ","GDR","Karl-Marx-Stadt, East Germany",1976
+"277","Womens Shotput","distance",21.87," Ivanka Khristova ","BUL","Belmeken, Bulgaria",1976
+"278","Womens Shotput","distance",21.89," Ivanka Khristova ","BUL","Belmeken, Bulgaria",1976
+"279","Womens Shotput","distance",21.99," Helena Fibingerová ","TCH","Opava, Czechoslovakia",1976
+"280","Womens Shotput","distance",22.32," Helena Fibingerová ","TCH","Nitra, Czechoslovakia",1977
+"281","Womens Shotput","distance",22.36," Ilona Slupianek ","GDR","Celje, Yugoslavia",1980
+"282","Womens Shotput","distance",22.45," Ilona Slupianek ","GDR","Potsdam, East Germany",1980
+"283","Womens Shotput","distance",22.53," Natalya Lisovskaya ","URS","Sochi, Soviet Union",1984
+"284","Womens Shotput","distance",22.6," Natalya Lisovskaya ","URS","Moscow, Soviet Union",1987
+"285","Womens Shotput","distance",22.63," Natalya Lisovskaya ","URS","Moscow, Soviet Union",1987
