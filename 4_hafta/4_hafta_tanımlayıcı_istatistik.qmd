@@ -15,9 +15,9 @@ df-print: kable
 
 ## Tanımlayıcı İstatistik
 
-Verileri özetlemenin bir yolu, **tanımlayıcı istatistikler** kullanmaktır. Bu istatistikler, veri setindeki genel durumu anlamamıza yardımcı olur. Ancak, tanımlayıcı istatistiklerin sonuçlarına dayanarak kesin kararlar vermememiz gerekir. Bunun yerine, tanımlayıcı istatistikler bize veri setindeki değişkenler arasındaki ilginç ilişkileri keşfetme fırsatı sunar.
+**İstatistiğin Amacı**: İstatistik, verilerden sorularımızı yanıtlamamıza yardımcı olmak için vardır. Yani, verileri analiz ederek, onları anlamaya çalışırız. Fakat ilk olarak verileri anlamamız ve özetlememiz gereklidir.
 
-**İstatistiğin Amacı**: İstatistik, verilerden sorularımızı yanıtlamamıza yardımcı olmak için vardır. Yani, verileri analiz ederek, onları anlamaya çalışırız.
+Verileri özetlemenin bir yolu, **tanımlayıcı istatistikler** kullanmaktır. Bu istatistikler, veri setindeki genel durumu anlamamıza yardımcı olur. Ancak, tanımlayıcı istatistiklerin sonuçlarına dayanarak kesin kararlar vermememiz gerekir. Bunun yerine, tanımlayıcı istatistikler bize veri setindeki değişkenler arasındaki ilginç ilişkileri keşfetme fırsatı sunar.
 
 ::: callout-note
 ⚠️ Veri analizi bağlamında, **tanımlayıcı istatistik** ve **yorumlayıcı istatistik** iki önemli kavramdır. Bu iki istatistik türü, verileri farklı şekillerde kullanmamıza olanak tanır.
@@ -26,7 +26,11 @@ Verileri özetlemenin bir yolu, **tanımlayıcı istatistikler** kullanmaktır. 
 
 **Yorumlayıcı İstatistik** Yorumlayıcı istatistik ise verileri analiz etmekle ilgilidir; yani verileri özetlemek yerine, örnek verilerden tüm popülasyon hakkında çıkarımlar yapmayı amaçlar. Yani, yorumlayıcı istatistik, örnek verileri kullanarak popülasyon hakkında sonuçlar çıkarmak veya çıkarımlarda bulunmak için kullanılır. Bu bağlamda, yorumlayıcı istatistik, popülasyon hakkında ne kadar güvenilir sonuçlar çıkarabileceğimizi belirlemek için korelasyonlar, olasılık, regresyon gibi çeşitli istatistiksel yöntemler kullanır.
 
-**Özetle** - **Tanımlayıcı İstatistik**: Veri setinin genel özelliklerini özetler, kesin kararlar vermez.
+**Özetle**:
+
+-   **Tanımlayıcı İstatistik**: Veri setinin genel özelliklerini özetler, kesin kararlar vermez.
+
+<!-- -->
 
 -   **Yorumlayıcı İstatistik**: Verileri analiz eder ve örnek verilerden popülasyon hakkında çıkarımlar yapar.
 :::
@@ -310,22 +314,22 @@ max(veri) - min(veri)  # Aralığın hesaplanması
 ```
 
 5.  **Standart Sapma (Standard Deviation)**:
+    -   **Tanım:** Verilerin ortalamadan ne kadar yayıldığını gösterir. Verilerin ne kadar değişken olduğunu ölçer.
 
--   **Tanım:** Verilerin ortalamadan ne kadar yayıldığını gösterir. Verilerin ne kadar değişken olduğunu ölçer.
+    -   **Matematiksel Gösterim:** $$\text{Standart Sapma} = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}} $$
 
--   **Matematiksel Gösterim:** $$\text{Standart Sapma} = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}} $$
-
--   **R Formülü**
+    -   **R Formülü**
 
 ```{r}
 sd(veri)  # veri, standart sapmasını almak istediğiniz sayısal vektördür.
 ```
 
 6.  **Varyans (Variance)**:
+    -   **Tanım**: Verilerin ortalamadan ne kadar saptığını gösteren bir ölçüdür. Standart sapmanın karesidir. Veriler arasındaki dağılımın ne kadar farklı olduğunu anlamamıza yardımcı olur.
 
--   **Tanım**: Verilerin ortalamadan ne kadar saptığını gösteren bir ölçüdür. Standart sapmanın karesidir. Veriler arasındaki dağılımın ne kadar farklı olduğunu anlamamıza yardımcı olur.
--   **Matematiksel Gösterim**: $$ \text{Varyans} = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}​$$
--   **R Formülü**
+    -   **Matematiksel Gösterim**: $$ \text{Varyans} = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}​$$
+
+    -   **R Formülü**
 
 ```{r}
 var(veri)  # veri, varyansını almak istediğiniz sayısal vektördür.
@@ -336,35 +340,115 @@ var(veri)  # veri, varyansını almak istediğiniz sayısal vektördür.
 ![](images/varsdtab.png){fig-align="center"}
 
 7.  **Çeyrekler Aralığı (Interquartile Range, IQR)**:
+    -   **Tanım**: Verilerin ortasındaki yarısını kapsayan yayılımı gösterir. 1. çeyrek (Q1) ile 3. çeyrek (Q3) arasındaki farktır.
 
--   **Tanım**: Verilerin ortasındaki yarısını kapsayan yayılımı gösterir. 1. çeyrek (Q1) ile 3. çeyrek (Q3) arasındaki farktır.
--   **Matematiksel Gösterim**: $$ \text{IQR} = Q3 - Q1 $$
--   **R Formülü**
+    -   **Matematiksel Gösterim**: $$ \text{IQR} = Q3 - Q1 $$
+
+    -   **R Formülü**
 
 ```{r}
 IQR(veri)  # veri, çeyrekler aralığını almak istediğiniz sayısal vektördür.
 ```
 
 8.  **Küçük ve Büyük Çeyrekler (Quantiles)**:
+    -   **Tanım:** Verilerin belirli bir yüzdesine karşılık gelen değerlerdir. Örneğin, %25'lik çeyrek (Q1) ve %75'lik çeyrek (Q3).
 
--   Verilerin belirli bir yüzdesine karşılık gelen değerlerdir. Örneğin, %25'lik çeyrek (Q1) ve %75'lik çeyrek (Q3).
-
--   **R Formulü:**
+    -   **R Formulü:**
 
 ```{r}
 quantile(veri, probs = c(0.25, 0.75))  # %25 ve %75'lik çeyrekler
 ```
 
 9.  **Skewness (Eğrilik)**:
-
--   Verinin dağılımının simetrik olup olmadığını gösterir. Pozitif veya negatif eğrilik değerleri, veri dağılımının sağa veya sola kaydığını belirtir.
+    -   **Tanım:** Verinin dağılımının simetrik olup olmadığını gösterir. Pozitif veya negatif eğrilik değerleri, veri dağılımının sağa veya sola kaydığını belirtir.
 
 ![](images/skew.png)
 
-10. **Kurtosis (Basıklık)**:
+::: callout-note
+💡 Hertür eğrilikte Median daha merkezi bir tanımlayıcı istatistiğe dönüşür.
 
--   Verinin dağılımının ne kadar "keskin" veya "düz" olduğunu ölçer. Yüksek kurtosis, veri dağılımının keskin zirvelere sahip olduğunu gösterirken, düşük kurtosis daha düz bir dağılımı işaret eder.
+![](images/relationship_between_mean_and_median_under_different_skewness8100144901166854637.png){fig-align="center" width="667"}
+:::
+
+10. **Kurtosis (Basıklık)**:
+    -   **Tanım:** Verinin dağılımının ne kadar "keskin" veya "düz" olduğunu ölçer. Yüksek kurtosis, veri dağılımının keskin zirvelere sahip olduğunu gösterirken, düşük kurtosis daha düz bir dağılımı işaret eder.
 
 ![](images/kurtosis.png){fig-align="center"}
 
-![](images/relationship_between_mean_and_median_under_different_skewness8100144901166854637.png){fig-align="center" width="667"}
+### Ortalama, Medyan, Mod, IQR ve Aralık (Range) Kullanım Rehberi
+
+Veri analizi sırasında, ortalama, medyan, mod, çeyrekler aralığı (IQR) ve aralık (range) gibi tanımlayıcı istatistikleri kullanarak verilerimizi özetleyebiliriz. Ancak, her bir istatistiğin kullanımı, veri setinin özelliklerine bağlıdır. Aşağıda, bu istatistiklerin hangi durumlarda kullanılacağına dair detaylı bir rehber sunulmaktadır.
+
+------------------------------------------------------------------------
+
+#### 1. Ortalama (Mean)
+
+-   **Kullanım Durumu**: Sayısal verilerin merkezi eğilimini ölçmek için kullanılır.
+
+-   **Uygun Durumlar**:
+
+    -   Veriler normal dağılım gösteriyorsa.
+
+    -   Aşırı değerler (outlier) yoksa.
+
+-   **Örnek**: Bir sınıfın notları 70, 75, 80, 85, 90 olduğunda ortalama 80’dir. Ancak, eğer sınıfta 0 alan bir öğrenci varsa (notlar: 0, 70, 75, 80, 85, 90), ortalama 50 olur ki bu yanıltıcıdır.
+
+#### 2. Medyan (Median)
+
+-   **Kullanım Durumu**: Veri setinin ortasındaki değeri bulmak için kullanılır.
+
+-   **Uygun Durumlar**:
+
+    -   Veriler asimetrik dağılım gösteriyorsa.
+
+    -   Aşırı değerler mevcutsa, çünkü medyan bu değerlerden etkilenmez.
+
+-   **Örnek**: Bir ev fiyatları seti 100.000, 120.000, 130.000, 1.000.000, 1.200.000 olduğunda, ortalama fiyat 510.000, ancak medyan 130.000’dir. Medyan, veri setinin çoğunluğunu daha iyi temsil eder.
+
+#### 3. Mod (Mode)
+
+-   **Kullanım Durumu**: En sık rastlanan değeri bulmak için kullanılır.
+
+-   **Uygun Durumlar**:
+
+    -   Kategorik verilerde kullanılır.
+
+    -   Verilerin birden fazla mod değeri (bimodal veya multimodal) varsa.
+
+-   **Örnek**: Bir anket sonucu olarak, katılımcıların tercih ettiği meyveler: Elma, Muz, Elma, Portakal, Elma, Muz. Burada mod "Elma"dır çünkü en sık rastlanan değerdir.
+
+#### 4. Çeyrekler Aralığı (IQR)
+
+-   **Kullanım Durumu**: Verilerin yayılımını ölçmek için kullanılır.
+
+-   **Uygun Durumlar**:
+
+    -   Verilerin ortasındaki yayılımı anlamak için.
+
+    -   Aşırı değerlere karşı dayanıklıdır, bu yüzden özellikle asimetrik dağılımlarda tercih edilir.
+
+-   **Örnek**: Bir test notları setinde, 60, 70, 75, 80, 85, 90, 95, 100 değerleri mevcutsa, IQR (Q3 - Q1) hesaplanarak veri setinin ortasında yer alan yayılım gösterilir. Q1 = 72.5 ve Q3 = 90 ise, IQR = 90 - 72.5 = 17.5 olacaktır.
+
+#### 5. Aralık (Range)
+
+-   **Kullanım Durumu**: Verilerin en küçük ve en büyük değeri arasındaki farkı bulmak için kullanılır.
+
+-   **Uygun Durumlar**:
+
+    -   Veri setinin yayılımını genel olarak anlamak için.
+
+    -   Aşırı değerlere dikkat edilmelidir, çünkü aralık bu değerlerden etkilenir.
+
+-   **Örnek**: Bir grup öğrencinin notları 50, 60, 70, 80, 90 olduğunda, aralık 90 - 50 = 40’tır. Ancak, 0 alan bir öğrenci eklenirse (notlar: 0, 50, 60, 70, 80, 90), aralık 90 - 0 = 90 olacaktır.
+
+------------------------------------------------------------------------
+
+### Hangi İstatistiğin Kullanılacağına Dair Karar Verirken Dikkat Edilmesi Gerekenler
+
+-   **Veri Dağılımı**: Verilerin normal mi yoksa asimetrik mi dağıldığına bakın. Normal dağılımda ortalama kullanılabilirken, asimetrik dağılımda medyan daha iyi bir temsil sunar.
+
+-   **Aşırı Değerler**: Veri setinde aşırı değerlerin (outlier) olup olmadığına dikkat edin. Aşırı değerlerin varlığında medyan ve IQR daha güvenilir ölçümler sağlar.
+
+-   **Veri Türü**: Verilerin sayısal mı yoksa kategorik mi olduğunu belirleyin. Kategorik veriler için mod, sayısal veriler için ortalama ve medyan daha uygundur.
+
+-   **Analiz Amacı**: Hangi bilgiyi elde etmek istediğinizi düşünün. Eğer yayılımı ölçmek istiyorsanız, IQR veya aralık kullanın; merkezi eğilimi ölçmek istiyorsanız, ortalama veya medyan tercih edin.
