@@ -647,13 +647,11 @@ Bir iç birleştirme (`inner join`), her iki tabloda da görünen gözlemleri tu
 `flights` ve `weather` tabloları ortak değişkenlerinde eşleşir: `year`, `month`, `day`, `hour` ve `origin`.
 
 ```{r}
-flights_joined |> 
-  left_join(weather)
+# flights_joined |> left_join(weather)
 ```
 
 ```{r}
-flights_joined |> 
-  left_join(planes, by="tailnum")
+# flights_joined |> left_join(planes, by="tailnum")
 ```
 
 ## **Filtreleme Birleştirmeleri (Filtering Joins)**

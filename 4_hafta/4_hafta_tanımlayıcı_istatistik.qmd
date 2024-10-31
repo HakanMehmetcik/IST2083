@@ -10,6 +10,20 @@ execute:
 df-print: kable
 ---
 
+```{r setup, echo=FALSE, message=FALSE}
+# loaded packages
+library(here)
+library(tidyverse)
+library(ggplot2)
+library(mdsr)
+library(mosaicData)
+library(fec16)
+library(nycflights13)
+
+here <- here::here()
+dpath <- "data"
+```
+
 # Temel İstatistik Kavramlarına Giriş
 
 ## Tanımlayıcı/Betimsel İstatistik
