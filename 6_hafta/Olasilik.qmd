@@ -1,0 +1,237 @@
+---
+title: "Olasılık"
+author: "Hakan Mehmetcik"
+date: "2024-11-06"
+format: pdf
+editor: visual
+execute: 
+  echo: true
+  warning: true
+  output: asis
+df-print: kable
+---
+
+```{r setup, echo=FALSE, message=FALSE}
+# loaded packages
+library(here)
+library(tidyverse)
+
+here <- here::here()
+dpath <- "data"
+```
+
+# Olasılık ve Rasgelelik
+
+## 1. Olasılık Nedir?
+
+**Olasılık**, bir olayın gerçekleşme ihtimalini ifade eden bir kavramdır. Günlük yaşamda olasılık hakkında düşündüğümüz birçok durum vardır: Örneğin, "Yarın yağmur yağma olasılığı nedir?" veya "Bu sınavı geçme şansım ne kadar yüksek?" gibi sorular aslında olasılık kavramının birer yansımasıdır.
+
+**Olasılık değerleri** 0 ile 1 arasında değişir:
+
+-   Bir olayın gerçekleşme olasılığı **0** ise, bu olayın kesinlikle gerçekleşmeyeceği anlamına gelir.
+
+-   Olasılık **1** ise, bu olayın kesinlikle gerçekleşeceği anlamına gelir.
+
+-   Bir olayın olasılığı **0.5** olduğunda, bu olayın gerçekleşme ve gerçekleşmeme ihtimalleri eşittir.
+
+**Örneğin:** Bir madeni parayı attığınızda yazı gelme olasılığı 0.5'tir; yani %50'dir. Bu, yazı ya da tura gelme şansının eşit olduğu anlamına gelir.
+
+## 2. Olasılık Nasıl Hesaplanır?
+
+Olasılığı hesaplamak için kullanılan temel formül şudur:
+
+$$ \text{Olasılık (P)} = \frac{\text{İstenen sonuçların sayısı}}{\text{Olası tüm sonuçların sayısı}}$$
+
+Bu formül, olasılık kavramının en temel halidir ve birçok durumda geçerlidir.
+
+**Örnek 1: Bir Zar Atma**
+
+Bir zarın altı yüzü vardır ve her yüzün gelme olasılığı eşittir. Herhangi bir yüzün gelme olasılığı:
+
+$$ \text{Olasılık} = \frac{1}{6} \approx 0.166 \text{ veya \%16.6}$$
+
+**Örnek 2: Çift Sayı Gelme Olasılığı**
+
+Bir zar atıldığında çift sayı gelme olasılığı nedir? Çift sayılar {2, 4, 6} olmak üzere toplam üç tanedir, dolayısıyla:
+
+$$
+\text{Olasılık} = \frac{3}{6} = 0.5 \text{ veya \%50}
+$$
+
+**Örnek 3: Tek Sayı Gelme Olasılığı**
+
+Bir zar atıldığında tek sayı gelme olasılığı nedir? Tek sayılar {1, 3, 5} olmak üzere üç tanedir, dolayısıyla:
+
+$$
+\text{Olasılık} = \frac{3}{6} = 0.5 \text{ veya \%50}
+$$
+
+**Örnek 4: Zarın 5 veya 6 Gelme Olasılığı**
+
+Bir zar atıldığında 5 veya 6 gelme olasılığı nedir? Bu durumda iki olası sonuç vardır (5 ve 6), dolayısıyla:
+
+$$
+\text{Olasılık} = \frac{2}{6} = 0.333 \text{ veya yaklaşık \%33.3}
+$$
+
+**Örnek 5: Bir Deste Karttan As Çekme Olasılığı**
+
+Bir destede 52 kart vardır ve bu kartlardan dört tanesi as’tır (maça, karo, sinek, kupa). Bir as çekme olasılığı:
+
+$$
+\text{Olasılık} = \frac{4}{52} \approx 0.077 \text{ veya \%7.7}
+$$
+
+**Örnek 6: İskambil Deste Karttan Kırmızı Kart Çekme Olasılığı**
+
+Bir destede 26 kırmızı kart (kupa ve karo) vardır. Bir kırmızı kart çekme olasılığı:
+
+$$
+\text{Olasılık} = \frac{26}{52} = 0.5 \text{ veya \%50} 
+$$
+
+**Örnek 7: Bir Deste Karttan Kupa Çekme Olasılığı**
+
+Bir destede 13 kupa kartı vardır. Bir kupa çekme olasılığı:
+
+$$
+\text{Olasılık} = \frac{13}{52} = 0.25 \text{ veya \%25}
+$$
+
+**Örnek 8: Çift Sayı Olan Bir Kart Çekme Olasılığı**
+
+Bir destede her takımdan 9’a kadar çift numaralar (2, 4, 6, 8) olmak üzere dört çift kart bulunur. Dolayısıyla toplamda 16 çift numaralı kart vardır. Bir çift numaralı kart çekme olasılığı:
+
+$$
+ \text{Olasılık} = \frac{16}{52} \approx 0.307 \text{ veya \%30.7}
+$$
+
+**Örnek 9: Bir Zarın 1’den Farklı Bir Sayı Gelmesi**
+
+Bir zar atıldığında 1’den farklı bir sayı gelme olasılığı, 2, 3, 4, 5 veya 6 yüzlerinden herhangi birinin gelme olasılığına eşittir (toplam 5 olasılık):
+
+$$
+\text{Olasılık} = \frac{5}{6} \approx 0.833 \text{ veya \%83.3}
+$$
+
+**Örnek 10: İki Zar Atıldığında Toplamın 7 Gelme Olasılığı**
+
+İki zar atıldığında toplamda 7 gelme olasılığını inceleyelim. Zarların 7 yapacak sonuç kombinasyonları şunlardır: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1). Toplamda 6 farklı kombinasyon vardır ve iki zarın 36 olası sonucu olduğundan:
+
+$$
+\text{Olasılık} = \frac{6}{36} = 0.166 \text{ veya \%16.6} 
+$$
+
+## 3. Olasılığın Temel Kavramları
+
+Olasılığı açıklarken temel birkaç kavramı anlamak önemlidir:
+
+1.  **Deney**: Sonuçlarının belirsiz olduğu herhangi bir işlem ya da durum. Örneğin, bir madeni para atmak ya da zar atmak birer deneydir.
+
+2.  **Örneklem Uzayı**: Tüm olası sonuçları içeren küme. Bir madeni paranın atılması durumunda örneklem uzayı "yazı" ve "tura"dır. Bir zar atıldığında ise örneklem uzayı {1, 2, 3, 4, 5, 6} şeklindedir.
+
+3.  **Olay**: Örneklem uzayının belirli bir alt kümesi olan durumdur. Örneğin, bir zar atıldığında "3 veya daha yüksek bir sayı gelmesi" bir olaydır.
+
+4.  **Bağımsız Olaylar**: Bir olayın sonucu diğer olayın sonucunu etkilemiyorsa bu olaylar bağımsızdır. Örneğin, iki zarın aynı anda atılması.
+
+5.  **Birleşik Olaylar**: Birden fazla olayın birlikte gerçekleşme olasılığını ifade eder. Örneğin, hem bir zarın 5 gelmesi hem de diğer zarın 3 gelmesi gibi.
+
+## 4. Olasılık Türleri
+
+1.  **Teorik Olasılık**: Matematiksel olarak hesaplanan olasılıktır. Örneğin, bir madeni parayı attığınızda yazı gelme olasılığı teorik olarak %50’dir.
+
+2.  **Deneysel Olasılık**: Bir olayın, deney sonucunda gerçekleşme sıklığına göre hesaplanan olasılıktır. Örneğin, madeni parayı 100 kez attıktan sonra 48 kez yazı geldiğini gördüğünüzde, deneysel olasılık 0.48 yani %48 olur. Teorik olasılığa yaklaşmak için deneyin sayısını artırmak gerekir.
+
+3.  **Öznel Olasılık**: Kesin bir matematiksel temeli olmadan, kişinin tahminine veya bilgi birikimine dayalı olasılıktır. Örneğin, bir seçimde bir adayın kazanma şansının yüksek olduğunu düşünmek öznel bir olasılıktır.
+
+## 5. Olasılıkta Temel Kurallar
+
+Olasılık hesaplamalarında kullanılan bazı temel kurallar şunlardır:
+
+1.  **Toplam Olasılık Kuralı**: Olasılıkların toplamı 1 olmalıdır. Örneğin, bir zar attığınızda herhangi bir yüzün gelme olasılığı 1/6 iken, tüm yüzlerin gelme olasılıklarının toplamı 1 olacaktır.
+
+2.  **Toplama Kuralı (Veya Kuralı)**: İki veya daha fazla olaydan en az birinin gerçekleşme olasılığı, olayların olasılıklarının toplamıdır. Bağımsız olaylarda, iki olayın birlikte gerçekleşme olasılığı genellikle olayların olasılıklarının çarpımı ile bulunur.
+
+3.  **Çarpma Kuralı (Ve Kuralı)**: İki olayın birlikte gerçekleşme olasılığı, olayların olasılıklarının çarpımıdır. Örneğin, iki madeni paranın da aynı anda yazı gelme olasılığı 0.5×0.5=0.250.5 \times 0.5 = 0.250.5×0.5=0.25 yani %25’tir.
+
+# **Rastgele Değişkenler ve Olasılık Dağılımları**
+
+Rastgele değişkenler, rastgele olayların sayısal bir özetini sunar. Sayısal değişkenlerden bahsedildiğinde, aslında bir olayın sonuçlarının sayısal karşılıkları ifade edilir.
+
+### 1. Kesikli ve Sürekli Rastgele Değişkenler
+
+-   **Kesikli Rastgele Değişken**: Sonuçları sayılabilir nitelikte olan değişkenlerdir. Örneğin, bir ailedeki çocuk sayısı, sinemada bir gecede katılımcı sayısı veya onluk bir kutuda bulunan hatalı ampul sayısı kesikli rastgele değişkenlere örnektir.
+
+-   **Sürekli Rastgele Değişken**: Sonsuz sayıda olası sonuca sahip, ölçülebilir değişkenlerdir. Örneğin, sıcaklık, kütle, hız veya boy gibi ölçümler sürekli değişkenler olarak sınıflandırılır.
+
+![](images/rasgeledegisken.png)
+
+### 2. Rastgele Değişkenlerde Olasılık Dağılımı
+
+Bir rastgele değişkenin olasılık dağılımı, değişkenin alabileceği tüm olası değerleri ve bu değerlerin gerçekleşme olasılıklarını gösterir. Kesikli rastgele değişkenler için **olasılık kütle fonksiyonu (PMF)** kullanılırken, sürekli rastgele değişkenler için **olasılık yoğunluk fonksiyonu (PDF)** kullanılır. Bu fonksiyonlar, rastgele olayların sayısal olarak modellenmesini sağlar ve belirli durumları analiz etmek için farklı dağılım türlerinden faydalanır.
+
+### 2.1 Binom Dağılımı
+
+Binom dağılımı, belirli sayıda bağımsız denemenin her birinde iki olasılıktan birinin gerçekleştiği (örneğin, başarı/başarısızlık) durumları modellemek için kullanılır. Örneğin, bir madeni parayı 10 kez attığınızı düşünün ve her atışta yazı gelme sayısını sayıyorsunuz; bu durumda binom dağılımı kullanılır.
+
+**Binom Dağılımının Özellikleri**:
+
+\- **Kesikli Sonuçlar**: Sonuçlar sayılabilir, örneğin 10 atışta 4 kez yazı gelmesi gibi.
+
+\- **Sabit Deneme Sayısı**: Deneme sayısı bellidir (örneğin 10 kez).
+
+\- **İki Olası Sonuç**: Her atışta iki olasılık vardır: yazı veya tura.
+
+\- **Sabit Olasılık**: Her atışta yazı gelme olasılığı aynıdır (örneğin %50).
+
+💡 **Kullanım Alanları**: Binom dağılımı, özellikle tekrarlanan deneylerde iki olası sonucun olduğu durumlar için kullanılır. Örneğin:
+
+\- **Anket ve Kamuoyu Araştırmaları**: Bir ankette "Evet" veya "Hayır" yanıtı verenlerin sayısını modellemek.
+
+\- **Sağlık Araştırmaları**: Belirli bir tedaviye olumlu yanıt veren hasta sayısını incelemek.
+
+\- **Kalite Kontrol**: Bir üretim hattında kusurlu ürün sayısını belirlemek.
+
+### 2.2 Normal (Gauss) Dağılımı
+
+Normal dağılım, birçok doğal olayın sonuçlarının merkezi eğilim etrafında simetrik olarak dağıldığı durumlar için kullanılır. Örneğin, bir şehirdeki yetişkinlerin boy uzunlukları ölçüldüğünde, bu ölçümler normal dağılım gösterir ve çan şeklinde bir eğri ile ifade edilir.
+
+**Normal Dağılımın Özellikleri**:
+
+\- **Sürekli Sonuçlar**: Sonuçlar ölçülebilir ve sonsuz sayıda hassas değeri kapsayabilir.
+
+\- **Ortalamaya Göre Simetri**: Çan eğrisi ortalama değerde en yüksek noktaya ulaşır ve her iki yanda simetrik olarak azalır.
+
+\- **Sonsuz Değer Aralığı**: Teorik olarak tüm değer aralığını kapsar; ancak pratikte veriler belirli sınırlar içinde olur.
+
+💡 **Kullanım Alanları**: Normal dağılım, sürekli ve ortalama etrafında simetrik dağılım gösteren verilerde yaygın olarak kullanılır. Örneğin:
+
+\- **İnsan Özellikleri**: Boy, kilo, IQ skorları gibi kişisel özellikler.
+
+\- **Finans**: Hisse senedi getirileri ve finansal verilerde dalgalanma analizleri.
+
+\- **Akademik Performans**: Sınav notları, başarı oranları gibi verilerde genellikle ortalama etrafında simetrik bir dağılım gözlemlenir.
+
+### 2.3 Poisson Dağılımı
+
+Poisson dağılımı, belirli bir zaman diliminde veya mekanda nadir gerçekleşen olayların sayısını modellemek için kullanılır. Bu dağılım, olayların rastgele ve bağımsız bir şekilde belirli bir ortalama hızla meydana geldiği durumlar için uygundur. Örneğin, bir mağazaya belirli bir saatte gelen müşteri sayısı veya bir hastaneye acil durumda gelen hasta sayısı.
+
+**Poisson Dağılımının Özellikleri**:
+
+\- **Sabit Ortalama Olay Hızı (λ)**: Belirli bir süre veya alanda, olayların sabit bir ortalama hızda gerçekleşmesi beklenir.
+
+\- **Sonsuz Sayıda Olası Değer**: Olayların sayısı teorik olarak sonsuz olabilir; nadir olayların sayısını belirler.
+
+\- **Bağımsız Olaylar**: Bir olayın gerçekleşmesi, diğer olayların gerçekleşme olasılığını etkilemez.
+
+💡 **Kullanım Alanları**: Poisson dağılımı, özellikle belirli bir süre veya alanda nadir gerçekleşen olayların sayısının analiz edilmesi için uygundur. Örneğin:
+
+\- **Acil Servis Ziyaretleri**: Bir hastaneye saatte gelen acil hasta sayısının analizi.
+
+\- **Arıza Oranları**: Makine veya cihazların arıza yapma sıklığını incelemek.
+
+\- **Telefon Hattı Çağrıları**: Çağrı merkezine belirli bir dakikada gelen çağrı sayısını modellemek.
+
+![](images/dagilim.png)
+
+Bu üç temel dağılım türü, istatistiksel analizde önemli yer tutar. Her bir dağılım, belirli veri yapıları için özel analizler sunar ve farklı durumlarda belirsizliği ölçmek, tahminlerde bulunmak ve karar verme süreçlerine katkıda bulunmak için kullanılır.

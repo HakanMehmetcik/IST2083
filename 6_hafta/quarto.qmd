@@ -1,0 +1,162 @@
+---
+title: "Quarto"
+author: "Hakan Mehmetcik"
+date: "2024-11-06"
+format: pdf
+editor: visual
+---
+
+# Raporlama
+
+Şimdiye kadar, verilerinizi R'a aktarma, analiz için uygun bir forma dönüştürme ve ardından dönüşüm ve görselleştirme yoluyla verilerinizi anlama araçlarını öğrendiniz. Ancak analiziniz ne kadar iyi olursa olsun, sonuçları başkalarına açıklayamıyorsanız bir anlam ifade etmez: Sonuçlarınızı iletmeniz gerekir. Bunun için de raporlama/yazma oldukça önemlidir.
+
+**Quarto,** kodunuzu, sonuçlarınızı ve anlatımınızı bir araya getiren, veri bilimi için birleşik bir yazım çerçevesi sunar. Quarto belgeleri tamamen tekrarlanabilir olup PDF, Word dosyaları, sunumlar ve daha birçok formatı destekler.
+
+Quarto dosyaları üç şekilde kullanılacak şekilde tasarlanmıştır:
+
+1.  Analizin arkasındaki koda değil, sonuçlara odaklanmak isteyen karar vericilere hitap etmek için.
+2.  Sonuçlarınızın yanı sıra nasıl ulaştığınızı (kodunuzu) da görmek isteyen diğer veri bilimcilerle (gelecekteki kendiniz dahil!) işbirliği yapmak için.
+3.  Veri bilimi yapmak için modern bir laboratuvar not defteri gibi, yaptıklarınızı ve düşündüklerinizi kaydetmek için.
+
+👋 Detaylar için lütfen Quarto dokümantasyonuna başvurun.
+
+Herhangi bir Quarto belgesi üç önemli içerik türü içerir:
+
+-   --- ile çevrili (isteğe bağlı) bir YAML başlığı.
+-   \`\`\` ile çevrili R kod parçacıkları.
+-   Başlık (#) ve italik (*italik*) gibi basit metin biçimlendirmeleri ile karışık metin.
+
+### Markdown seçenekleri
+
+#### Metin biçimlendirme
+
+*italik* **kalın** ~~üzeri çizili~~ `kod`
+
+üst simge^2^ alt simge~2~
+
+[altı çizili]{.underline} [küçük harfler]{.smallcaps}
+
+### Başlıklar
+
+#### 1. Seviye Başlık
+
+#### 2. Seviye Başlık
+
+#### 3. Seviye Başlık
+
+### Listeler
+
+-   Madde işaretli liste öğesi 1
+-   Öğesi 2
+    -   Öğesi 2a
+    -   Öğesi 2b
+
+1.  Numaralı liste öğesi 1
+2.  Öğesi 2. Çıktıda numaralar otomatik olarak arttırılır.
+
+### Bağlantılar ve resimler
+
+<http://example.com>
+
+[bağlantı ifadesi](http://example.com)
+
+
+### Tablolar
+
+| İlk Başlık     | İkinci Başlık  |
+|----------------|----------------|
+| İçerik Hücresi | İçerik Hücresi |
+| İçerik Hücresi | İçerik Hücresi |
+
+### Kod Parçacıkları
+
+Bir Quarto belgesinde kod çalıştırmak için bir parçacık eklemeniz gerekir. Bunu yapmanın üç yolu vardır:
+
+-   Kısayol: Cmd + Option + I / Ctrl + Alt + I
+-   Düzenleyici araç çubuğundaki “Ekle” simgesi
+-   Parçacık sınırlarını elle yazmak: `{r}`
+
+Klavye kısayolunu öğrenmenizi tavsiye ederim; uzun vadede size çok zaman kazandıracaktır!
+
+#### Parçacık seçenekleri
+
+Parçacık çıktısı, parçacık başlığına eklenen seçeneklerle özelleştirilebilir. Knitr, kod parçacıklarını özelleştirmeniz için yaklaşık 60 seçenek sunar. Burada en sık kullanılan önemli parçacık seçeneklerini ele alacağız. Tam listeye <https://yihui.org/knitr/options> adresinden ulaşabilirsiniz.
+
+En önemli seçenekler, kod bloğunuzun yürütülüp yürütülmediğini ve hangi sonuçların nihai raporda gösterildiğini kontrol eder:
+
+-   `eval: false` kodun çalıştırılmasını engeller.
+-   `include: false` kodu çalıştırır, ancak kodu veya sonuçları nihai belgede göstermez.
+-   `echo: false` kodu gizler, ancak sonuçlar görünür.
+-   `message: false` veya `warning: false` iletilerin veya uyarıların nihai belgede görünmesini engeller.
+-   `results: hide` yazdırılan çıktıyı gizler; `fig-show: hide` ise grafiklerin gizlenmesini sağlar.
+-   `error: true` kod hata verse bile çalışmayı sürdürür.
+
+Bu parçacık seçenekleri, parçacık başlığına `#|` işareti ile eklenir. Örneğin, aşağıdaki parçacıkta sonuç `eval` `false` olarak ayarlandığından gösterilmez.
+
+```{r}
+#| label: basit-çarpma
+#| eval: false
+
+2 * 2
+```
+
+#### Genel Seçenekler
+
+Knitr ile daha fazla çalıştıkça, bazı varsayılan parçacık seçeneklerinin ihtiyaçlarınızı karşılamadığını ve bunları değiştirmek istediğinizi fark edebilirsiniz.
+
+Bu, tercih edilen seçenekleri belge YAML başlığına, execute altına ekleyerek yapılabilir. Örneğin, kodunuzu görmek istemeyen, yalnızca sonuçlar ve anlatımı görmek isteyen bir kitleye yönelik bir rapor hazırlıyorsanız, belge düzeyinde `echo: false` ayarı yapabilirsiniz.
+
+#### Satır İçi Kod
+
+Bir Quarto belgesinde R kodunu doğrudan metin içine ekleyebilirsiniz: `r`. Bu, verinizin özelliklerini metinde belirtirken çok kullanışlı olabilir.
+
+### Görseller
+
+Quarto belgelerindeki görseller gömülebilir veya bir kod parçacığının sonucu olarak oluşturulabilir.
+
+#### Görsel Boyutlandırma
+
+Quarto'da grafiklerle ilgili en büyük zorluk, görsellerin doğru boyut ve şekilde olmasını sağlamaktır. Görsel boyutlandırmayı kontrol eden beş ana seçenek vardır: `fig-width`, `fig-height`, `fig-asp`, `out-width` ve `out-height`.
+
+Önerilen üç ana seçenek:
+
+-   Grafiklerin tutarlı genişlikte olması genellikle estetik açıdan daha hoş görünmesini sağlar.
+-   Çıktı boyutunu `out-width` ile kontrol edin ve `%70` olarak ayarlayın.
+
+💡 Görsel boyutlandırma ve ölçeklendirme bir sanat ve bilimdir; doğru ayarı bulmak, deneme yanılma gerektirebilir.
+
+#### Tablolar
+
+Görsellere benzer şekilde, Quarto belgelerinde iki tür tablo kullanabilirsiniz. Belgede doğrudan oluşturduğunuz Markdown tabloları veya bir kod parçacığının sonucu olarak oluşturulan tablolar olabilir.
+
+```{r}
+mtcars[1:5, ]
+```
+
+```{r}
+knitr::kable(mtcars[1:5, ])
+```
+
+👋 `knitr::kable` özelliğinin diğer tablo özelleştirme yollarını görmek için `?knitr::kable` dokümantasyonunu okuyun.
+
+#### Önbellekleme
+
+Normalde, bir belgenin her bir çalıştırması tamamen temiz bir sayfadan başlar. Bu yeniden üretilebilirlik için harikadır, ancak uzun süren işlemler için zaman alıcı olabilir. Bu durumda `cache: true` çözüm olabilir.
+
+#### Bibliyografya ve Atıflar
+
+Quarto, çeşitli stillerde otomatik olarak atıf ve bibliyografya oluşturabilir. Bir Quarto belgesine atıf ve bibliyografya eklemenin en basit yolu, RStudio'daki görsel düzenleyiciyi kullanmaktır.
+
+Görsel düzenleyici ile bir atıf eklemek için **Ekle \> Atıf** yolunu izleyin. Atıflar aşağıdaki kaynaklardan eklenebilir:
+
+-   DOI (Belge Nesne Tanımlayıcısı) referansları.
+
+-   Kişisel veya grup Zotero kütüphaneleri.
+
+-   Crossref, DataCite veya PubMed üzerinden yapılan aramalar.
+
+-   Belgenizin dizininde bulunan bir .bib dosyası (bibliyografya dosyası).
+
+Görsel mod, arka planda atıflar için standart Pandoc markdown gösterimini kullanır (örneğin, \[\@citation\]).
+
+İlk üç yöntemden birini kullanarak bir atıf eklerseniz, görsel düzenleyici sizin için otomatik olarak bir `bibliography.bib` dosyası oluşturur ve referansı ekler. Ayrıca, bu referansları belge YAML başlığındaki bibliyografya alanına ekler. Yeni referanslar ekledikçe, bu dosya atıflarla doldurulacaktır. Bu dosyayı BibLaTeX, BibTeX, EndNote, Medline gibi birçok yaygın bibliyografya formatını kullanarak doğrudan düzenleyebilirsiniz.
