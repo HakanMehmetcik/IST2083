@@ -1,13 +1,12 @@
 ---
 title: "week_5_veri_isleme"
 author: "Hakan Mehmetcik"
-date: "`r Sys.Date()`"
+date: "2024-10-31"
 format: pdf
 editor: visual
 execute: 
   echo: true
   warning: true
-  output: asis
 df-print: kable
 ---
 
@@ -102,7 +101,7 @@ Veri analizi yaparken sıklıkla verilerimiz üzerinde değişiklikler yapmamız
 ```{r}
 my_presidents <- presidential |>
   mutate(term.length = interval(start, end) / dyears(1))
-my_presidents
+head(my_presidents) 
 ```
 
 `mutate()` fonksiyonu, mevcut bir sütundaki verileri değiştirmek için de kullanılabilir. Örneğin, veri çerçevemize her başkanın seçildiği yılı içeren bir değişken eklemek istediğimizi düşünelim. İlk (basit) yaklaşımımız, her başkanın göreve başlamadan önceki yıl seçildiğini varsayabilir. `mutate()` fonksiyonunun bir veri çerçevesi döndürdüğünü unutmayın. Bu nedenle, mevcut veri çerçevemizi değiştirmek istiyorsak, onu yeni sonuçlarla güncellememiz gerekir.
@@ -110,7 +109,7 @@ my_presidents
 ```{r}
 my_presidents <- my_presidents |>
   mutate(elected = year(start) - 1)
-my_presidents
+head(my_presidents) 
 ```
 
 `rename()` fonksiyonu ise, değişkenlerin isimlerini değiştirmek için kullanılır.
@@ -118,7 +117,7 @@ my_presidents
 ```{r}
 my_presidents <- my_presidents |>
   rename(term_length = term.length)
-my_presidents
+head(my_presidents) 
 ```
 
 ::: callout-note
@@ -148,11 +147,6 @@ install.packages("janitor")
 
 library(janitor)
 :::
-
-```{r}
-library(janitor)
-clean_names(presidential)
-```
 
 ## 3. arrange()
 
@@ -405,7 +399,7 @@ flights_sml <- flights |>
   select(gain_per_hour, everything()) |> 
   filter(gain_per_hour > 400)
 
-flights_sml
+head(flights_sml)
 
 ```
 
@@ -495,7 +489,7 @@ Bu kurallar, çoğu gerçek analizin en azından biraz düzenleme gerektireceği
 `billboard` veri seti, 2000 yılındaki şarkıların Billboard sıralamasını kaydeder:
 
 ```{r}
-billboard
+head(billboard)
 ```
 
 Bu veri setinde her bir gözlem bir şarkıdır. İlk üç sütun (`artist`, `track` ve `date.entered`) şarkıyı tanımlayan değişkenlerdir. Sonra her hafta şarkının sıralamasını tanımlayan 76 sütunumuz (`wk1-wk76`) var. Burada, sütun adları bir değişkendir (hafta) ve hücre değerleri başka bir değişkendir (sıralama).
@@ -531,7 +525,7 @@ Burada üç önemli argüman vardır:
 Sütun adlarına sıkıştırılmış birden çok bilgi parçasına sahip olduğunuzda ve bunları ayrı yeni değişkenlerde depolamak istediğinizde daha zorlu bir durum ortaya çıkar. Örneğin, `table1` ve `friends` tablolarının kaynağı olan `who2` veri setini ele alalım:
 
 ```{r}
-who2
+head(who2)
 ```
 
 Dünya Sağlık Örgütü tarafından toplanan bu veri seti, tüberküloz teşhisleri hakkında bilgi kaydeder. Zaten değişken olan ve yorumlanması kolay iki sütun vardır: `country` ve `year`. Bunları `sp_m_014`, `ep_m_4554` ve `rel_m_3544` gibi 56 sütun izler. Bu sütunlara yeterince uzun süre bakarsanız, bir kalıp olduğunu fark edeceksiniz. Her sütun adı \_ ile ayrılmış üç parçadan oluşur. İlk parça, `sp/rel/ep`, teşhis için kullanılan yöntemi, ikinci parça, `m/f` cinsiyeti (bu veri setinde ikili bir değişken olarak kodlanmıştır) ve üçüncü parça, `014/1524/2534/3544/4554/5564/65` yaş aralığını açıklar (örneğin, 014, 0-14'ü temsil eder).
@@ -555,7 +549,7 @@ who2 |>
 Hastaların deneyimleri hakkında veri toplayan Medicare ve Medicaid Hizmetleri Merkezleri'nden bir veri seti olan `cms_patient_experience`'a bakarak başlayacağız:
 
 ```{r}
-cms_patient_experience
+head(cms_patient_experience)
 ```
 
 İncelenen temel birim bir kuruluştur, ancak her kuruluş, anketteki her ölçüm için bir satır olmak üzere altı satıra yayılmıştır. `measure_cd` ve `measure_title` için tüm değer kümesini `distinct()` kullanarak görebiliriz:
@@ -584,8 +578,7 @@ Bir veri analizinin yalnızca tek bir veri tablosu içermesi nadirdir. Genellikl
 
 İlişkisel verilerle çalışmak için tablo çiftleriyle çalışan fiillere ihtiyacınız vardır:
 
-![](images/joins.png){fig-align="center" width="650"}
-
+![](images/joins.png)
 **Örnekler**
 
 `dplyr`'daki iki tablolu fiilleri kullanarak `nycflights13`'ten ilişkisel verileri inceleyeceğiz.
@@ -647,11 +640,13 @@ Bir iç birleştirme (`inner join`), her iki tabloda da görünen gözlemleri tu
 `flights` ve `weather` tabloları ortak değişkenlerinde eşleşir: `year`, `month`, `day`, `hour` ve `origin`.
 
 ```{r}
-# flights_joined |> left_join(weather)
+flights_joined |> 
+  left_join(weather)
 ```
 
 ```{r}
-# flights_joined |> left_join(planes, by="tailnum")
+flights_joined |> 
+  left_join(planes, by="tailnum")
 ```
 
 ## **Filtreleme Birleştirmeleri (Filtering Joins)**
