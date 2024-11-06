@@ -2,12 +2,11 @@
 title: "week_5_veri_isleme"
 author: "Hakan Mehmetcik"
 date: "2024-10-31"
-format: pdf
+format: html
 editor: visual
 execute: 
   echo: true
   warning: true
-df-print: kable
 ---
 
 ```{r setup, echo=FALSE, message=FALSE}
@@ -578,8 +577,7 @@ Bir veri analizinin yalnızca tek bir veri tablosu içermesi nadirdir. Genellikl
 
 İlişkisel verilerle çalışmak için tablo çiftleriyle çalışan fiillere ihtiyacınız vardır:
 
-![](images/joins.png)
-**Örnekler**
+![](images/joins.png) **Örnekler**
 
 `dplyr`'daki iki tablolu fiilleri kullanarak `nycflights13`'ten ilişkisel verileri inceleyeceğiz.
 
