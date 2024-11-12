@@ -34,13 +34,13 @@ Yorumlayıcı istatistik geleneksel olarak dört ana alana ayrılır: örnekleme
 
 ![](images/yorumlayıcı.png){fig-align="center"}
 
-## **Örnekleme (Sampling):** 
+## **Örnekleme (Sampling):**
 
 Örnekleme, popülasyonun tamamı yerine, onu temsil edecek küçük bir grup seçmeyi kapsar. Bu süreç, popülasyon hakkında güvenilir çıkarımlar yapabilmek için oldukça kritiktir. Örneğin, bir şehirdeki tüm bireylerin gelir düzeyini incelemek yerine, iyi bir şekilde seçilmiş bir örneklemden elde edilen verilerle popülasyonun genel gelir düzeyi hakkında sonuçlar çıkarabiliriz. Örneklem uygun şekilde seçildiğinde, örneklemden elde edilen sonuçlar genelde popülasyonun tamamını doğru bir şekilde yansıtır.
 
 ![](images/ornekleme.png){fig-align="center"}
 
-## **Tahmin (Estimation):** 
+## **Tahmin (Estimation):**
 
 Tahmin, örneklem verilerini kullanarak popülasyonun bilinmeyen bir parametresini öngörmeyi amaçlar. Tahmin iki türde yapılabilir:
 
@@ -50,7 +50,7 @@ Tahmin, örneklem verilerini kullanarak popülasyonun bilinmeyen bir parametresi
 
 ![](images/tahmin.png){fig-align="center"}
 
-## **Regresyon/Modelleme**: 
+## **Regresyon/Modelleme**:
 
 Regresyon ve modelleme, veri içindeki değişkenler arasındaki ilişkileri incelemek ve bir sonuç değişkenini (bağımlı değişken) tahmin etmek için kullanılan yöntemlerdir. Regresyon analizinin temel amacı, bir veya birden fazla bağımsız değişkenin bağımlı değişken üzerindeki etkisini ölçmektir. Bu yöntem, sadece bir ilişkiyi tanımlamakla kalmaz, aynı zamanda bu ilişkiyi sayısal olarak modelleyerek gelecekteki gözlemler için tahmin yapmamızı sağlar.
 
@@ -88,7 +88,7 @@ Regresyon analizinde kullanılan birçok farklı modelleme tekniği, veri yapıs
 Bu farklı modeller, özellikle daha karmaşık veri yapılarında ve ileri düzey analizlerde kullanılır. Bu sayede, yalnızca doğrusal ilişkileri değil, çok boyutlu ve dinamik etkileri de kapsamlı bir şekilde analiz edebiliriz.
 :::
 
-## **Hipotez Testi (Hypothesis Testing):** 
+## **Hipotez Testi (Hypothesis Testing):**
 
 Hipotez testi, örneklem verilerine dayanarak popülasyon hakkında kararlar vermek veya iddiaları test etmek için kullanılır. Örneğin, bir şirket, müşteri memnuniyetinin %90 olduğunu iddia edebilir. Bu iddiayı test etmek için rastgele bir müşteri örnekleminden veriler toplanır ve sonuçlar analiz edilir.
 

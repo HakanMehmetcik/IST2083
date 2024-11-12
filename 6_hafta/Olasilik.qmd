@@ -134,7 +134,9 @@ Olasılığı açıklarken temel birkaç kavramı anlamak önemlidir:
 
 4.  **Bağımsız Olaylar**: Bir olayın sonucu diğer olayın sonucunu etkilemiyorsa bu olaylar bağımsızdır. Örneğin, iki zarın aynı anda atılması.
 
-5.  **Birleşik Olaylar**: Birden fazla olayın birlikte gerçekleşme olasılığını ifade eder. Örneğin, hem bir zarın 5 gelmesi hem de diğer zarın 3 gelmesi gibi.
+5.  **Bağımlı Olay**: Bağımlı olaylar, bir olayın sonucunun, diğer bir olayın sonucunu etkilediği durumlardır. Yani, birinci olayın gerçekleşmesi, ikinci olayın gerçekleşme olasılığını değiştirir. Bir desteden kart çekme işlemi, bağımlı olaylara güzel bir örnektir. İlk kartı çektiğinizde, destedeki kart sayısı azalır, bu nedenle ikinci çektiğiniz kartın kırmızı veya siyah olma olasılığı da değişir. Eğer ilk kart kırmızı ise, destede kalan kırmızı kart sayısı azalmış olur, bu da ikinci kartın kırmızı gelme olasılığını etkiler. Dolayısıyla, bu olaylar birbirine bağımlıdır.
+
+6.  **Birleşik Olaylar**: Birden fazla olayın birlikte gerçekleşme olasılığını ifade eder. Örneğin, hem bir zarın 5 gelmesi hem de diğer zarın 3 gelmesi gibi.
 
 ## 4. Olasılık Türleri
 
@@ -150,9 +152,28 @@ Olasılık hesaplamalarında kullanılan bazı temel kurallar şunlardır:
 
 1.  **Toplam Olasılık Kuralı**: Olasılıkların toplamı 1 olmalıdır. Örneğin, bir zar attığınızda herhangi bir yüzün gelme olasılığı 1/6 iken, tüm yüzlerin gelme olasılıklarının toplamı 1 olacaktır.
 
-2.  **Toplama Kuralı (Veya Kuralı)**: İki veya daha fazla olaydan en az birinin gerçekleşme olasılığı, olayların olasılıklarının toplamıdır. Bağımsız olaylarda, iki olayın birlikte gerçekleşme olasılığı genellikle olayların olasılıklarının çarpımı ile bulunur.
+2.  **Toplama Kuralı (Veya Kuralı)**
 
-3.  **Çarpma Kuralı (Ve Kuralı)**: İki olayın birlikte gerçekleşme olasılığı, olayların olasılıklarının çarpımıdır. Örneğin, iki madeni paranın da aynı anda yazı gelme olasılığı 0.5×0.5=0.250.5 \times 0.5 = 0.250.5×0.5=0.25 yani %25’tir.
+    Toplama kuralı, iki veya daha fazla olaydan **en az birinin gerçekleşme olasılığını** hesaplamak için kullanılır. Bu kuralda, olayların olasılıkları toplanır.
+
+    **Örneğin:** Bir zar atıldığında, 3 veya 5 gelme olasılığını hesaplayalım. Zarın herhangi bir yüzü gelme olasılığı 1/6 olduğuna göre:
+
+    $$ Olasılık ( 3 veya 5 gelmesi)=16+16=26=13≈0.33 $$
+
+    Bu durumda, 3 veya 5 gelme olasılığı yaklaşık %33’tür.
+
+    Not: Eğer olaylar **bağımsız** ise, iki olayın aynı anda gerçekleşme olasılığı, olayların olasılıklarının **çarpımı** ile bulunur. Bu durum "Çarpma Kuralı" olarak bilinir.
+
+3.  **Çarpma Kuralı (Ve Kuralı)**
+
+    Çarpma kuralı, iki olayın **aynı anda gerçekleşme olasılığını** hesaplamak için kullanılır. İki olayın birlikte gerçekleşme olasılığı, olayların olasılıklarının çarpımıyla hesaplanır.
+
+    **Örneğin:** İki madeni para attığınızda, her iki paranın da yazı gelme olasılığı %50, yani 0.5’tir. İki paranın da yazı gelme olasılığı şöyle hesaplanır:
+
+    $$ Olasılık (iki yazı)=0.5×0.5=0.25 
+    $$
+
+    Bu durumda, iki paranın da yazı gelme olasılığı %25’tir.
 
 # **Rastgele Değişkenler ve Olasılık Dağılımları**
 

@@ -23,7 +23,7 @@ Quarto dosyaları üç şekilde kullanılacak şekilde tasarlanmıştır:
 Herhangi bir Quarto belgesi üç önemli içerik türü içerir:
 
 -   --- ile çevrili (isteğe bağlı) bir YAML başlığı.
--   \`\`\` ile çevrili R kod parçacıkları.
+-   \`\`\` ile çevrili R (yada başka bir dil, örneğin python) kod parçacıkları.
 -   Başlık (#) ve italik (*italik*) gibi basit metin biçimlendirmeleri ile karışık metin.
 
 ### Markdown seçenekleri
@@ -59,7 +59,6 @@ Herhangi bir Quarto belgesi üç önemli içerik türü içerir:
 <http://example.com>
 
 [bağlantı ifadesi](http://example.com)
-
 
 ### Tablolar
 
