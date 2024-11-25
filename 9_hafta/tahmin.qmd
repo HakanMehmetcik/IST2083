@@ -1,0 +1,368 @@
+---
+title: "Tahmin"
+author: "Hakan Mehmetcik"
+date: "2024-11-28"
+format: pdf
+editor: visual
+execute: 
+  echo: true
+  warning: true
+---
+
+------------------------------------------------------------------------
+
+### **Yorumlayıcı İstatistiğin İki Ana Alanı**
+
+Yorumlayıcı istatistik geleneksel olarak iki ana alana ayrılır:
+
+1.  **Tahmin**
+
+2.  **Hipotez Testi**
+
+![](images/tahmin1.png)
+
+------------------------------------------------------------------------
+
+#### **Tahmin (Estimation)**
+
+Tahmin, örneklem verilerini kullanarak popülasyondaki bilinmeyen bir parametrenin değerini tahmin etmeyi içerir. Örneğin, bir şehirdeki tüm yetişkinlerin ortalama boyunu bilmek istiyorsanız, o şehirden bir grup insanın boyunu ölçebilirsiniz. Bu örneklemin ortalama boyu, şehirdeki tüm yetişkinlerin ortalama boyunu tahmin etmeye yardımcı olur.
+
+Tahmin iki türdedir:
+
+-   **Nokta Tahmini (Point Estimation):** Bir parametre için (örneğin, ortalama boy) tek bir en iyi tahmin sağlar.
+
+-   **Aralık Tahmini (Interval Estimation):** Parametrenin düşmesi muhtemel olduğu bir aralık verir. Örneğin, "ortalama boyun 5 fit 7 inç ile 5 fit 9 inç arasında olduğunu ve bu tahmine %95 güven duyulduğunu" belirtebilir.
+
+![](images/tahmin2.png)
+
+------------------------------------------------------------------------
+
+## Nokta Tahmini (Point Estimation) 
+
+-   Bir popülasyon parametresinin tek bir sayısal değerle tahmin edilmesidir.
+
+İstatistikte, R dilindeki **pnorm** fonksiyonu, normal dağılım için kümülatif dağılım fonksiyonunu (CDF) hesaplamak için kullanılır. Eğer popülasyonun gerçek ortalaması (μ\\mu) ve standart sapması (σ\\sigma) biliniyorsa, olasılıkları hesaplamak için **pnorm** fonksiyonunu doğrudan kullanabilirsiniz.
+
+```{r}
+# Sahte IQ puanları oluşturalım
+set.seed(178) # Rastgele sayı üretimini sabitle
+IQ <- rnorm(n=1000, mean=100, sd=15) # 1000 IQ puanı üret (ortalama=100, sd=15)
+IQ <- round(IQ) # IQ puanlarını tam sayıya yuvarla
+
+# Nokta Tahmini (Point Estimation)
+mean_est <- mean(IQ) # Ortalama IQ puanı
+sd_est <- sd(IQ) # IQ puanlarının standart sapması
+
+# Bir öğrencinin IQ puanının 89 veya daha düşük olma olasılığını hesapla
+prob <- pnorm(89, mean=mean_est, sd=sd_est)
+
+# Sonucu yazdır
+print(paste("Bir öğrencinin IQ puanının 89 veya daha düşük olma olasılığı:", round(prob, 4)))
+
+```
+
+![](images/normal_iq.png)
+
+Grafikte, normal dağılım $(μ=100,σ=15)$ gösterilmektedir. Kırmızı kesik çizgi, x=89'u temsil ederken, mavi gölgeli alan P(X≤89) olasılığını ifade etmektedir. Bu, X rastgele değişkeninin 89 veya daha düşük olma olasılığıdır.
+
+### Z-Skoru
+
+Ancak, popülasyonun gerçek parametrelerini bilmiyorsanız ve örneklem verileriyle çalışıyorsanız, genellikle z-skoru ve kritik z-değerlerini hesaplamalarınızda kullanırsınız. Z-skoru, verilerinizi standart normal dağılıma (ortalama = 0, standart sapma = 1) dönüştürür.
+
+#### **Z-Skoru Nedir?**
+
+Z-skoru, bir veri noktasının bir dağılım içindeki ortalamadan ne kadar uzakta olduğunu standart sapma cinsinden ifade eden bir ölçüttür. Z-skoru, bir veriyi standart normal dağılıma (ortalama = 0, standart sapma = 1) dönüştürmek için kullanılır.
+
+##### **Formül:**
+
+$$z = \frac{(X - \mu)}{\sigma}$$
+
+-   X: Değer
+
+-   μ\mu: Ortalama (popülasyon ortalaması)
+
+-   σ\sigma: Standart sapma (popülasyon standart sapması)
+
+#### **Z-Skorunun Anlamı:**
+
+-   **Pozitif Z-Skoru:** Veri, ortalamanın üzerindedir.
+
+-   **Negatif Z-Skoru:** Veri, ortalamanın altındadır.
+
+-   z=0: Veri, tam olarak ortalamadadır.
+
+**Örnek:**
+Bir öğrencinin sınav puanı 85, sınıfın ortalama puanı 70 ve standart sapması 10 ise:
+
+$$z = \frac{(85 - 70)}{10} = 1.5 $$
+
+Bu, öğrencinin puanının sınıf ortalamasının 1.5 standart sapma üzerinde olduğunu gösterir.
+
+::: callout-note
+**Z-skoru**, verileri standartlaştırarak olasılıkları hesaplamaya olanak tanır.
+:::
+
+R'da bir örnekle bakacak olursak:
+
+```{r}
+# 100 ortalama ve 15 standart sapma ile normal dağılımdan 30 veri noktası oluştur
+veri <- rnorm(n = 30, mean = 100, sd = 15)
+
+# Örneklem ortalamasını ve standart sapmasını hesapla
+x_bar <- mean(veri) # Örneklem ortalaması
+s <- sd(veri)       # Örneklem standart sapması
+
+# 110 değeri için z-skorunu hesapla
+z <- (110 - x_bar) / (s / sqrt(length(veri)))
+
+# Örneklem ortalamasının 110'dan küçük olma olasılığını hesapla
+olasilik <- pnorm(z)
+
+# Sonucu yazdır
+print(paste("Örneklem ortalamasının 110'dan küçük olma olasılığı:", olasilik, 4))
+
+```
+
+Bu bağlamda **pnorm(z)**'nin yorumlanması: Örneğimizde, z, 110 değerinin örneklem ortalamasından kaç standart hata uzaklıkta olduğunu temsil eder. **pnorm** kullanarak aslında şu soruyu sormuş oluyorsunuz: "Örneklem ortalamasının popülasyon ortalamasını tarafsız bir şekilde temsil ettiği ve örneklem ortalamalarının dağılımının normal olduğu varsayımıyla, gerçek popülasyon ortalamasının 110'dan küçük olma olasılığı nedir?"
+
+![](images/z-score1.png)
+
+Grafikte, rastgele oluşturulan bir örneklemin ortalama dağılımı ve $P(\text{Örneklem Ortalaması} \leq 110)$ olasılığı gösterilmektedir. Kırmızı kesik çizgi x=110'ı temsil ederken, mavi gölgeli alan bu değerin altında kalan olasılık alanını ifade eder. Hesaplanan oldukça yüksek olasılık (0.999874859905791 veya yaklaşık %99.99), örnekleme dayalı olarak gerçek popülasyon ortalamasının 110'dan küçük olmasının son derece olası olduğunu gösterir.
+
+Peki ya daha büyük değerlere bakmayı düşünsek! Basit, değil mi?
+
+```{r}
+# Parametreleri tanımla
+mean <- 100  # Ortalama
+sd <- 15     # Standart sapma
+n <- 30      # Örneklem büyüklüğü
+value <- 110 # Kontrol edilecek değer
+
+# Z-skorunu hesapla
+z <- (value - mean) / (sd / sqrt(n))
+
+# Standart normal rastgele bir değişkenin z'den büyük olma olasılığını hesapla
+prob <- 1 - pnorm(z)
+
+# Sonucu yazdır
+print(paste("Standart normal bir rastgele değişkenin", z, "değerinden büyük olma olasılığı:", prob))
+```
+
+```{r}
+# Gerekli kütüphaneyi yükle
+if(!require(ggplot2)) install.packages("ggplot2", dependencies=TRUE)
+library(ggplot2)
+
+# Parametreleri tanımla
+mean <- 100  # Ortalama
+sd <- 15     # Standart sapma
+n <- 30      # Örneklem büyüklüğü
+value <- 110 # Kontrol edilecek değer
+
+# Z-skorunu hesapla
+z <- (value - mean) / (sd / sqrt(n))
+
+# Grafik için veri oluştur
+x <- seq(70, 130, length.out=300)  # X ekseni değerleri
+y <- dnorm(x, mean=mean, sd=sd/sqrt(n))  # Yoğunluk fonksiyonu
+
+# Grafiği oluştur
+ggplot(data=NULL, aes(x=x)) +
+  geom_line(aes(y=y), color="blue") +  # Normal dağılım eğrisi
+  geom_area(aes(y=ifelse(x >= value, y, 0)), fill="orange") +  # 110'dan büyük olasılık için gölgeli alan
+  geom_vline(xintercept=value, linetype="dashed", color="red") +  # x = 110 çizgisi
+  labs(
+    title="Standart Normal Dağılım",
+    subtitle=sprintf("Gölgeli Alan: P(X > %s) için n=%s, ortalama=%s, sd=%s", value, n, mean, sd),
+    x="X Değerleri",
+    y="Yoğunluk"
+  ) +
+  theme_minimal() +
+  annotate("text", x=value+5, y=0.01, label=sprintf("z = %.2f", z), vjust=-1, color="red")  # Z-skorunu etikete ekle
+
+# Z-skorunu ve 110'dan büyük olma olasılığını yazdır
+cat("Z-Skoru:", z, "\n")
+prob <- 1 - pnorm(z)  # Z-skorunu kullanarak 110'dan büyük olma olasılığı
+cat("Örneklem ortalamasının 110'dan büyük olma olasılığı:", prob, "\n")
+
+```
+
+### **Güven Aralığı ile Tahmin Yapma (Confidence Interval)**
+
+Güven aralığı, bir popülasyon parametresinin (örneğin ortalama veya oran) belirli bir olasılık seviyesinde hangi değerler arasında yer alabileceğini ifade eden bir aralıktır. Güven aralığı, bir tahminin güvenilirliğini ve belirsizliğini ölçmek için istatistikte kullanılan önemli bir araçtır.
+
+------------------------------------------------------------------------
+
+### **Güven Aralığı Nedir?**
+
+Bir güven aralığı, örneklem verilerinden hesaplanır ve iki sınırdan oluşur:
+
+-   **Alt Sınır:** Parametrenin olası en düşük değeri.
+
+-   **Üst Sınır:** Parametrenin olası en yüksek değeri.
+
+**Örnek:** Bir sınıftaki öğrencilerin ortalama IQ'su için %95 güven aralığı \[98,100\] ise, bu şu anlama gelir:
+
+-   %95 güvenle, gerçek popülasyon ortalaması bu aralık içinde yer alır.
+
+```{r}
+# Aralık Tahmini
+alpha <- 0.05 # %95 güven aralığı için anlamlılık seviyesi
+error <- qnorm(1 - alpha/2) * sd_est / sqrt(length(IQ)) # Hata payı
+
+lower_bound <- mean_est - error # Güven aralığının alt sınırı
+upper_bound <- mean_est + error # Güven aralığının üst sınırı
+
+# Sonuçları yazdır
+print(paste("%95 Güven Aralığı için Ortalama IQ: (", lower_bound, ",", upper_bound, ")"))
+```
+
+Tamam, rastgele seçilen bir öğrencinin IQ'sunun 89 ile 101 arasında olma olasılığı nedir?
+
+```{r}
+# 89 için olasılık
+having_89 <- pnorm(89, mean_est, sd_est)
+# 101 için olasılık
+having_101 <- pnorm(101, mean_est, sd_est)
+
+# Sonucu yazdır
+cat("Rastgele bir seçimin 89 ile 101 arasında olma olasılığı:", having_101 - having_89)
+
+```
+
+### IQ Puanlarının Görselle İlgili Daha İyi Bir Aralık Tahminine Yönelik R Betiği
+
+Öncelikle IQ puanları için tipik parametreleri tanımlayalım: bir ortalama (μ\\mu) 100 ve bir standart sapma (σ\\sigma) 15. Daha sonra, örneğin bir IQ puanının 85 ile 115 arasında olma olasılığını hesaplayacağız.
+
+```{r}
+# Gerekli kütüphaneyi yükle
+if(!require(ggplot2)) install.packages("ggplot2", dependencies=TRUE)
+library(ggplot2)
+
+# IQ parametrelerini tanımla
+mean_IQ <- 100  # Ortalama IQ
+sd_IQ <- 15     # Standart sapma
+
+# Aralık için IQ sınırlarını tanımla
+lower_bound <- 85  # Alt sınır
+upper_bound <- 115  # Üst sınır
+
+# Sınırlar için z-skorlarını hesapla
+z_lower <- (lower_bound - mean_IQ) / sd_IQ  # Alt sınır z-skoru
+z_upper <- (upper_bound - mean_IQ) / sd_IQ  # Üst sınır z-skoru
+
+# Olasılıkları hesapla
+prob_lower <- pnorm(z_lower)  # P(X < 85)
+prob_upper <- pnorm(z_upper)  # P(X < 115)
+prob_interval <- prob_upper - prob_lower  # P(85 < X < 115)
+
+# Grafik için veri oluştur
+x <- seq(60, 140, length.out=300)  # X ekseni için aralık
+y <- dnorm(x, mean=mean_IQ, sd=sd_IQ)  # Normal dağılım yoğunluk fonksiyonu
+
+# Grafiği oluştur
+ggplot(data=NULL, aes(x=x)) +
+  geom_line(aes(y=y), color="blue") +  # Normal dağılım eğrisi
+  geom_area(aes(y=ifelse(x >= lower_bound & x <= upper_bound, y, 0)), fill="lightgreen") +  # Aralık için gölgeli alan
+  geom_vline(xintercept=lower_bound, linetype="dashed", color="red") +  # Alt sınır çizgisi
+  geom_vline(xintercept=upper_bound, linetype="dashed", color="red") +  # Üst sınır çizgisi
+  labs(
+    title="IQ Dağılımı",
+    subtitle=sprintf("IQ puanının %s ile %s arasında olma olasılığı", lower_bound, upper_bound),
+    x="IQ Puanı",
+    y="Yoğunluk"
+  ) +
+  theme_minimal()
+
+# Olasılık sonucunu yazdır
+cat(sprintf("Rastgele seçilen bir öğrencinin IQ puanının %s ile %s arasında olma olasılığı yaklaşık %.4f", 
+            lower_bound, upper_bound, prob_interval))
+
+```
+
+------------------------------------------------------------------------
+
+### **Güven Aralığının Unsurları**
+
+1.  **Güven Düzeyi (Confidence Level):**
+
+    -   Güven aralığının ne kadar güvenilir olduğunu ifade eder.
+
+    -   Genellikle %90, %95 veya %99 olarak seçilir.
+
+    -   Örneğin, %95 güven düzeyi, 100 örneklemden 95'inde gerçek popülasyon parametresinin aralık içinde olacağını belirtir.
+
+2.  **Standart Hata (Standard Error ):**
+
+    -   Örneklem ortalamasının popülasyon ortalamasından ne kadar sapabileceğini ölçer.
+
+    -   Formülü:
+        $$SE = \frac{\sigma}{\sqrt{n}}$$​
+
+        -   σ\sigma: Standart sapma
+
+        -   n: Örneklem büyüklüğü
+
+3.  **Kritik Z veya t-Değeri:**
+
+    -   Güven aralığını belirlemek için kullanılan çarpan.
+
+    -   Normal dağılım için kritik z-değeri, güven düzeyine göre seçilir (z=1.96 için %95 güven düzeyi).
+
+    -   Örneklem büyüklüğü küçükse (n<30), t-dağılımı kullanılır.
+
+4.  **Tahmin Edilen Değer:**
+
+    -   Genellikle örneklem ortalamasıdır $(\bar{x})$ .
+
+------------------------------------------------------------------------
+
+### **Güven Aralığı Nasıl Hesaplanır?**
+
+Güven aralığı, aşağıdaki formülle hesaplanır:
+
+$$ \text{Güven Aralığı} = \bar{x} \pm (z_{\alpha/2} \times SE)$$
+
+-   $\bar{x}$: Örneklem ortalaması
+
+-   $z_{\alpha/2}​$: Kritik z-değeri
+
+-   SE: Standart hata
+
+**Örnek:**
+
+-   Ortalama $(\bar{x})$ = 100
+
+-   Standart sapma (σ\sigmaσ) = 15
+
+-   Örneklem büyüklüğü (n) = 30
+
+-   Güven düzeyi: %95 (z=1.96)
+
+Standart hata:
+
+$$SSE = \frac{\sigma}{\sqrt{n}} = \frac{15}{\sqrt{30}} = 2.74$$
+
+Güven aralığı:
+
+$$\text{Güven Aralığı} = 100 \pm (1.96 \times 2.74) = [94.63, 105.37]$$
+
+Bu durumda, gerçek popülasyon ortalamasının %95 güvenle 94.63 ile 105.37 arasında olduğunu söyleyebiliriz.
+
+------------------------------------------------------------------------
+
+### **Güven Aralıklarının Kullanım Alanları**
+
+1.  **Popülasyon Parametrelerini Tahmin Etmek:**
+
+    -   Gerçek popülasyon ortalaması, oranı veya farkını tahmin etmek için kullanılır.
+
+2.  **Hipotez Testi:**
+
+    -   Güven aralığı, H0​ hipotezinin reddedilip reddedilemeyeceğini belirlemek için kullanılabilir.
+
+3.  **Kıyaslama:**
+
+    -   Farklı gruplar arasında istatistiksel olarak anlamlı bir fark olup olmadığını değerlendirmek için.
+
+------------------------------------------------------------------------
