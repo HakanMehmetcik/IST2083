@@ -237,7 +237,40 @@ Olasılık dağılımları, istatistik ve veri analizinde rastgele değişkenler
 
 ## R Fonksiyonları
 
-R'da farklı dağılım türleri için çeşitli fonksiyonlar bulunmaktadır. Bu fonksiyonlar genellikle dört ana işlevi yerine getirir:
+R'da farklı dağılım türleri için çeşitli fonksiyonlar bulunmaktadır.
+
+### **Özet Tablo**
+
++-------------+---------------------+--------------------+-------------------------+----------------------+
+| Dağılım     | Yoğunluk Fonksiyonu | Dağılım Fonksiyonu | Ters Dağılım Fonksiyonu | Rastgele Sayı Üretme |
++=============+=====================+====================+=========================+======================+
+| Normal      | `dnorm`             | `pnorm`            | `qnorm`                 | `rnorm`              |
++-------------+---------------------+--------------------+-------------------------+----------------------+
+| Binomial    | `dbinom`            | `pbinom`           | `qbinom`                | `rbinom`             |
++-------------+---------------------+--------------------+-------------------------+----------------------+
+| Poisson     | `dpois`             | `ppois`            | `qpois`                 | `rpois`              |
++-------------+---------------------+--------------------+-------------------------+----------------------+
+| Exponential | `dexp`              | `pexp`             | `qexp`                  | `rexp`               |
++-------------+---------------------+--------------------+-------------------------+----------------------+
+| Uniform     | `dunif`             | `punif`            | `qunif`                 | `runif`              |
++-------------+---------------------+--------------------+-------------------------+----------------------+
+| t-Dağılımı  | `dt`                | `pt`               | `qt`                    | `rt`                 |
++-------------+---------------------+--------------------+-------------------------+----------------------+
+| Chi-Square  | `dchisq`            | `pchisq`           | `qchisq`                | `rchisq`             |
++-------------+---------------------+--------------------+-------------------------+----------------------+
+
+Bu fonksiyonlar, çeşitli dağılımlar üzerinde hesaplama yapmanıza ve rastgele veri üretmenize olanak tanır.
+
+Bu fonksiyonlar genellikle dört ana işlevi yerine getirir:
+
+### **Özet Karşılaştırma**
+
+| **Fonksiyon Türü** | **Amaç** | **Örnek** |
+|----|----|----|
+| **Yoğunluk (Density)** | Belirli bir x değeri için yoğunluk ya da olasılığı hesaplar. | `dnorm(0, mean=0, sd=1)` |
+| **Dağılım (Distribution)** | Belirli bir x değerine kadar olan toplam olasılığı hesaplar $(X≤x)$. | `pnorm(1, mean=0, sd=1)` |
+| **Ters Dağılım (Quantile)** | Belirli bir olasılığa (p) karşılık gelen x değerini hesaplar. | `qnorm(0.95, mean=0, sd=1)` |
+| **Rastgele Üretim (Random)** | Belirli bir dağılımdan rastgele veri üretir. | `rnorm(10, mean=0, sd=1)` |
 
 1.  **Yoğunluk Fonksiyonu (Density Function):** Belirli bir x değerinin olasılık yoğunluğunu hesaplar (ör. `dnorm`, `dbinom`).
 
@@ -291,141 +324,18 @@ Grafikte, standart normal dağılım $(μ=0,σ=1)$ ve %95 yüzdelik değeri gös
 
 4.  **Rastgele Sayı Üretme (Random Generation):** Belirli bir dağılımdan rastgele veri üretir (ör. `rnorm`, `rbinom`).
 
-### **Özet Tablo**
-
-| Dağılım | Yoğunluk Fonksiyonu | Dağılım Fonksiyonu | Ters Dağılım Fonksiyonu | Rastgele Sayı Üretme |
-|----|----|----|----|----|
-| Normal | `dnorm` | `pnorm` | `qnorm` | `rnorm` |
-| Binomial | `dbinom` | `pbinom` | `qbinom` | `rbinom` |
-| Poisson | `dpois` | `ppois` | `qpois` | `rpois` |
-| Exponential | `dexp` | `pexp` | `qexp` | `rexp` |
-| Uniform | `dunif` | `punif` | `qunif` | `runif` |
-| t-Dağılımı | `dt` | `pt` | `qt` | `rt` |
-| Chi-Square | `dchisq` | `pchisq` | `qchisq` | `rchisq` |
-
-Bu fonksiyonlar, çeşitli dağılımlar üzerinde hesaplama yapmanıza ve rastgele veri üretmenize olanak tanır.
-
-Aşağıda her bir fonksiyon türüyle ilgili detaylı açıklamaları ve örnekleri bulabilirsiniz:
-
-------------------------------------------------------------------------
-
-### **1. Yoğunluk Fonksiyonu (Density Function)**
-
-Yoğunluk fonksiyonu, bir rastgele değişkenin belirli bir xxx değerine sahip olma olasılık yoğunluğunu hesaplar. Kesikli dağılımlar için bu, xxx'in olasılığını verir. Sürekli dağılımlarda ise yoğunluk değerleri, olasılık olarak değil, birim aralığındaki yoğunluk olarak yorumlanır.
-
--   **Kesikli Dağılımlar:**
-    Örneğin, bir zar atıldığında x=3x = 3x=3 gelme olasılığını hesaplamak için binom yoğunluk fonksiyonu kullanılır.
-
-    ```         
-    r
-    ```
-
-    Kodu kopyala
-
-    `dbinom(3, size = 10, prob = 0.5)  # 10 denemede tam 3 başarı olasılığı`
-
--   **Sürekli Dağılımlar:**
-    Sürekli dağılımlarda yoğunluk bir olasılık değildir, ancak bir aralıktaki olasılık hesaplamalarına katkı sağlar.
-
-    ```         
-    r
-    ```
-
-    Kodu kopyala
-
-    `dnorm(0, mean = 0, sd = 1)  # Normal dağılımda x = 0 yoğunluğu`
-
-------------------------------------------------------------------------
-
-### **2. Dağılım Fonksiyonu (Distribution Function)**
-
-Dağılım fonksiyonu, belirli bir xxx değerine kadar olan kümülatif olasılığı hesaplar. Bu, rastgele değişkenin X≤xX \leq xX≤x olma olasılığını ifade eder.
-
--   **Kesikli Dağılımlar:**
-    Örneğin, bir zar atıldığında x≤3x \leq 3x≤3 gelme olasılığını hesaplamak için:
-
-    ```         
-    r
-    ```
-
-    Kodu kopyala
-
-    `pbinom(3, size = 10, prob = 0.5)  # En fazla 3 başarı olasılığı`
-
--   **Sürekli Dağılımlar:**
-    Sürekli dağılımlarda belirli bir değere kadar olan alanın (integral) hesaplanmasıdır.
-
-    ```         
-    r
-    ```
-
-    Kodu kopyala
-
-    `pnorm(1, mean = 0, sd = 1)  # x ≤ 1 için kümülatif olasılık`
-
-------------------------------------------------------------------------
-
-### **3. Ters Dağılım Fonksiyonu (Quantile Function)**
-
-Ters dağılım fonksiyonu, belirli bir olasılık değerine karşılık gelen xxx değerini verir. Bu, belirli bir yüzdelik dilimdeki değeri bulmak için kullanılır.
-
--   **Kesikli Dağılımlar:**
-    Örneğin, binom dağılımında %95'lik dilimde kaç başarı olabileceğini bulmak:
-
-    ```         
-    r
-    ```
-
-    Kodu kopyala
-
-    `qbinom(0.95, size = 10, prob = 0.5)  # %95 yüzdelik başarı sayısı`
-
--   **Sürekli Dağılımlar:**
-    Sürekli bir dağılımda belirli bir yüzdelik dilim (ppp) için karşılık gelen xxx değeri:
-
-    ```         
-    r
-    ```
-
-    Kodu kopyala
-
-    `qnorm(0.95, mean = 0, sd = 1)  # %95 yüzdelik değer`
-
-------------------------------------------------------------------------
-
-### **4. Rastgele Sayı Üretme (Random Generation)**
-
 Bu fonksiyonlar, belirli bir dağılımdan rastgele değerler üretmek için kullanılır. Araştırmalarda simülasyon yapmak, deneysel veriler oluşturmak veya algoritmalar test etmek için idealdir.
 
--   **Kesikli Dağılımlar:**
-    Binom dağılımından rastgele 10 değer üretmek:
+Örneğin, binom dağılımından rastgele 10 değer üretmek:
 
-    ```         
-    r
-    ```
+```{r}
+rbinom(10, size = 10, prob = 0.5)  # Rastgele 10 başarı sayısı
+```
 
-    Kodu kopyala
+Ya da, normal dağılımdan rastgele 10 değer üretmek:
 
-    `rbinom(10, size = 10, prob = 0.5)  # Rastgele 10 başarı sayısı`
+```{r}
+rnorm(10, mean = 0, sd = 1)  # Normal dağılımdan rastgele değerler
+```
 
--   **Sürekli Dağılımlar:**
-    Normal dağılımdan rastgele 10 değer üretmek:
-
-    ```         
-    r
-    ```
-
-    Kodu kopyala
-
-    `rnorm(10, mean = 0, sd = 1)  # Normal dağılımdan rastgele değerler`
-
-------------------------------------------------------------------------
-
-### **Özet Karşılaştırma**
-
-| **Fonksiyon Türü** | **Amaç** | **Örnek** |
-|----|----|----|
-| **Yoğunluk (Density)** | Belirli bir x değeri için yoğunluk ya da olasılığı hesaplar. | `dnorm(0, mean=0, sd=1)` |
-| **Dağılım (Distribution)** | Belirli bir x değerine kadar olan toplam olasılığı hesaplar $(X≤x)$. | `pnorm(1, mean=0, sd=1)` |
-| **Ters Dağılım (Quantile)** | Belirli bir olasılığa (p) karşılık gelen x değerini hesaplar. | `qnorm(0.95, mean=0, sd=1)` |
-| **Rastgele Üretim (Random)** | Belirli bir dağılımdan rastgele veri üretir. | `rnorm(10, mean=0, sd=1)` |
+### 
