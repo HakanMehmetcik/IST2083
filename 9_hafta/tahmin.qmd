@@ -58,7 +58,7 @@ sd_est <- sd(IQ) # IQ puanlarının standart sapması
 prob <- pnorm(89, mean=mean_est, sd=sd_est)
 
 # Sonucu yazdır
-print(paste("Bir öğrencinin IQ puanının 89 veya daha düşük olma olasılığı:", round(prob, 4)))
+cat("Bir öğrencinin IQ puanının 89 veya daha düşük olma olasılığı:", round(prob, 2))
 
 ```
 
@@ -73,7 +73,7 @@ Peki 89'dan büyük olma olasılığını nasıl hesaplarız?
 1-prob
 
 # Sonucu yazdır
-print(paste("Bir öğrencinin IQ puanının 89'dan büyük olma olasılığı:", round(1-prob, 4)))
+cat("Bir öğrencinin IQ puanının 89'dan büyük olma olasılığı:", round(1-prob, 2))
 
 ```
 
@@ -114,10 +114,6 @@ cat("Yakıt tüketiminin 25 veya daha düşük olma olasılığı (P(X ≤ 25)):
 
 ### Z-Skoru
 
-Ancak, popülasyonun gerçek parametrelerini bilmiyorsanız ve örneklem verileriyle çalışıyorsanız, genellikle z-skoru değerlerini hesaplamalarınızda kullanırsınız.
-
-#### **Z-Skoru Nedir?**
-
 Z-skoru, bir veri noktasının bir dağılım içindeki ortalamadan ne kadar uzakta olduğunu standart sapma cinsinden ifade eden bir ölçüttür. Z-skoru, bir veriyi standart normal dağılıma (ortalama = 0, standart sapma = 1) dönüştürmek için kullanılır.
 
 ##### **Formül:**
@@ -126,17 +122,19 @@ $$z = \frac{(X - \mu)}{\sigma}$$
 
 -   X: Değer
 
--   μ\mu: Ortalama (popülasyon ortalaması)
+-   μ: Ortalama (popülasyon ortalaması)
 
--   σ\sigma: Standart sapma (popülasyon standart sapması)
+-   σ: Standart sapma (popülasyon standart sapması)
 
 #### **Z-Skorunun Anlamı:**
+
+**Z-skoru**, bir değerin ortalamadan ne kadar uzakta olduğunu gösteren bir sayıdır. **Bu uzaklığı standart sapma cinsinden ifade eder.**
 
 -   **Pozitif Z-Skoru:** Veri, ortalamanın üzerindedir.
 
 -   **Negatif Z-Skoru:** Veri, ortalamanın altındadır.
 
--   z=0: Veri, tam olarak ortalamadadır.
+-   **z=0:** Veri, tam olarak ortalamadadır.
 
 **Örnek:** Bir öğrencinin sınav puanı 85, sınıfın ortalama puanı 70 ve standart sapması 10 ise:
 
@@ -145,56 +143,81 @@ $$z = \frac{(85 - 70)}{10} = 1.5 $$
 Bu, öğrencinin puanının sınıf ortalamasının 1.5 standart sapma üzerinde olduğunu gösterir.
 
 ::: callout-note
-**Z-skoru**, verileri standartlaştırarak olasılıkları hesaplamaya olanak tanır.
+Tekrar edelim:
+
+**Z-skoru**, verileri standartlaştırarak olasılıkları hesaplamaya ve bunları standard bir düzlemde karşılaştırmaya olanak tanır.
 :::
 
 R'da bir örnekle bakacak olursak:
 
-```{r}
-# 100 ortalama ve 15 standart sapma ile normal dağılımdan 30 veri noktası oluştur
-veri <- rnorm(n = 30, mean = 100, sd = 15)
+Popülasyon parametreleri ile Bireysel Değer Tahmini
 
-# Örneklem ortalamasını ve standart sapmasını hesapla
-x_bar <- mean(veri) # Örneklem ortalaması
-s <- sd(veri)       # Örneklem standart sapması
+```{r}
+
+# Ortalaması 100 standard sapması 15 olan bir normal dağılım için pnorm ile bireysel bir değerin 110'dan küçük olma olasılığını hesapla
 
 prob <- pnorm(110, 100, 15)
 
-# 110 değeri için z-skorunu hesapla
-z <- (110 - x_bar) / (s / sqrt(length(veri)))
+# Sonucu yazdır
+cat("Popülasyon içinde herhangi bir bireysel değerin 110'dan küçük olma olasılığı:", round(prob, 2))
+
+```
+
+**Z-Skoru ile Bireysel Değer Tahmini**
+
+```{r}
+# 110 değeri için z-skorunu hesapla ve örneklem ortalamasının 110'dan küçük olma olasılığına z skor ile bak
+z <- ((110 -100) / 15)
 
 # Örneklem ortalamasının 110'dan küçük olma olasılığını hesapla
 olasilik <- pnorm(z)
 
-# Sonucu yazdır
-print(paste("Örneklem ortalamasının 110'dan küçük olma olasılığı:", olasilik, 4))
+cat("Bireysel bir değerin 110'dan küçük olma olasılığı:", round(olasilik, 2))
+```
+
+**Z-Skoru ile Örneklem Ortalamasına Dayalı Tahmin**
+
+Örneklem ortalamasının $\bar{X}$, popülasyon parametrelerine göre bir değerden küçük veya büyük olma olasılığını tahmin edebilirsiniz. Formül:
+
+$$Z= \frac{\bar{X} - \mu}{SE}$$​
+
+Burada, **standart hata** (SE) şu şekilde hesaplanır:
+
+$$SE = \frac{\sigma}{\sqrt{n}}$$​
+
+-   **Amaç:** Örneklem ortalamasının popülasyondaki yerine ilişkin tahmin yapmak.
+
+```{r}
+# Veriyi oluştur
+veri <- rnorm(1000, mean = 100, sd = 15)
+
+# Örneklem ortalaması ve standart sapması
+x_bar <- mean(veri) # Örneklem ortalaması
+s <- sd(veri)       # Örneklem standart sapması
+n <- length(veri)   # Örneklem büyüklüğü
+
+# Standart hata hesapla
+SE <- s / sqrt(n)
+
+# Z-skorunu hesapla (örneklem ortalaması için 110'dan küçük olma)
+z <- (110 - x_bar) / SE
+
+# Örneklem ortalamasının 110'dan küçük olma olasılığı
+olasilik <- pnorm(z)
+
+# Sonuçları yazdır
+cat("Z-skoru:", z, "\n")
+cat("Örneklem ortalamasının 110'dan küçük olma olasılığı:", olasilik, "\n")
 
 ```
 
 Bu bağlamda **pnorm(z)**'nin yorumlanması: Örneğimizde, z, 110 değerinin örneklem ortalamasından kaç standart hata uzaklıkta olduğunu temsil eder. **pnorm** kullanarak aslında şu soruyu sormuş oluyorsunuz: "Örneklem ortalamasının popülasyon ortalamasını tarafsız bir şekilde temsil ettiği ve örneklem ortalamalarının dağılımının normal olduğu varsayımıyla, gerçek popülasyon ortalamasının 110'dan küçük olma olasılığı nedir?"
 
+Cevaben diyebilirizki, **`pnorm(z)` değeri 1** çıktığı için, örneklem ortalamasının 110'dan küçük olma olasılığı neredeyse kesin (%100). Yani, bu sonuç, örneklem ortalamasının popülasyonun genel davranışıyla uyumlu olduğunu ve 110 gibi bir değere ulaşmasının olasılıksız olduğunu gösterir.
+
 ![](images/z-score1-01.png)
 
 Grafikte, rastgele oluşturulan bir örneklemin ortalama dağılımı ve $P(\text{Örneklem Ortalaması} \leq 110)$ olasılığı gösterilmektedir. Kırmızı kesik çizgi x=110'ı temsil ederken, mavi gölgeli alan bu değerin altında kalan olasılık alanını ifade eder. Hesaplanan oldukça yüksek olasılık (0.999874859905791 veya yaklaşık %99.99), örnekleme dayalı olarak gerçek popülasyon ortalamasının 110'dan küçük olmasının son derece olası olduğunu gösterir.
-
-Peki ya daha büyük değerlere bakmayı düşünsek!
-
-```{r}
-# Parametreleri tanımla
-mean <- 100  # Ortalama
-sd <- 15     # Standart sapma
-n <- 30      # Örneklem büyüklüğü
-value <- 110 # Kontrol edilecek değer
-
-# Z-skorunu hesapla
-z <- (value - mean) / (sd / sqrt(n))
-
-# Standart normal rastgele bir değişkenin z'den büyük olma olasılığını hesapla
-prob <- 1 - pnorm(z)
-
-# Sonucu yazdır
-print(paste("Standart normal bir rastgele değişkenin", z, "değerinden büyük olma olasılığı:", prob))
-```
 
 ## **Aralık Tahmin Yapma**
 
