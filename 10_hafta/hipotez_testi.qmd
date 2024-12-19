@@ -9,9 +9,9 @@ execute:
   warning: true
 ---
 
-# Hipotez Testi 
+# Hipotez Testi
 
-**Hipotez testi**, bir popülasyon hakkında öne sürülen bir iddianın (hipotezin) istatistiksel olarak doğrulanması veya reddedilmesi için kullanılan bir istatistiksel yöntemdir. **Hipotez testi,** örneklemden elde edilen verilerden hareketle popülasyonla ilgili bir karar verme sürecini içerir.
+**Hipotez testi**, bir popülasyon hakkında öne sürülen bir iddianın (hipotezin) istatistiksel olarak doğrulanması veya reddedilmesi için kullanılan bir istatistiksel yöntemdir. Fakat unutmayalım, **hipotez testi,** örneklemden elde edilen verilerden hareketle popülasyonla ilgili bir karar verme sürecini ifade eder.
 
 ::: callout-note
 💡 **Hatırlayalım: Yorumlayıcı istatistik (Inferential Statistics)**, örneklemlerden elde edilen veriler yardımıyla, bir popülasyon hakkında genelleme yapmayı veya çıkarımda bulunmayı amaçlayan istatistik dalıdır. Yani, yorumlayıcı istatistik, sınırlı bir veri kümesinden hareketle daha geniş bir kitleye yönelik tahminlerde bulunmamıza olanak sağlar.
@@ -57,7 +57,7 @@ execute:
 
     -   Null hipoteze karşı öne sürülen iddiadır.
 
-    -   Örneğin: Bir ilaç, mevcut tedaviye göre daha etkilidir (Ha:μ1>μ2​).
+    -   Örneğin: Bir ilaç, mevcut tedaviye göre daha etkilidir (Ha:μ1\>μ2​).
 
 3.  **Test İstatistiği:**
 
@@ -93,7 +93,7 @@ execute:
 
         -   P-değeri, hipotez testindeki anlamlılık düzeyini (örneğin, α=0.05) değerlendirmek için kullanılır.
 
-        -   Küçük bir p-değeri (genellikle p<α ):
+        -   Küçük bir p-değeri (genellikle p\<α ):
 
             -   Elde edilen sonuçların null hipotezle açıklanmasının zor olduğunu ve alternatif hipotezin (Ha​) daha olası olduğunu gösterir.
 
@@ -120,10 +120,10 @@ Bu ifade, mahkeme analojisiyle şu şekilde açıklanabilir: Sanık hukukun gene
 -   **P-Değeri ve Anlamlılık Düzeyi (**α**) Arasındaki İlişki:**
 
 | **P-Değeri** | **Sonuç** |
-|----|----|
-| p<0.01 | Çok güçlü bir şekilde H0H_0H0​ reddedilir (sonuç oldukça anlamlıdır). |
-| 0.01≤p<0.05 | H0​ reddedilir (sonuç anlamlıdır). |
-| 0.05≤p<0.10 | Zayıf bir şekilde H0 reddedilir (sonuç marjinal olarak anlamlıdır). |
+|------------------------------------|------------------------------------|
+| p\<0.01 | Çok güçlü bir şekilde H0H_0H0​ reddedilir (sonuç oldukça anlamlıdır). |
+| 0.01≤p\<0.05 | H0​ reddedilir (sonuç anlamlıdır). |
+| 0.05≤p\<0.10 | Zayıf bir şekilde H0 reddedilir (sonuç marjinal olarak anlamlıdır). |
 | p≥0.10 | H0​ reddedilmez (sonuç anlamlı değildir). |
 
 ------------------------------------------------------------------------
@@ -164,7 +164,7 @@ Veri türüne ve test etmek istediğiniz hipoteze göre bir istatistiksel test s
 
 -   **Regresyon Analizi:** Değişkenler arasındaki ilişkileri anlamak için kullanılır.
 
-#### **Adım 3: Test İstatistiğini Hesapla**
+####  **3: Test İstatistiğini Hesapla**
 
 Seçtiğiniz teste göre şu adımları izleyin:
 
@@ -193,10 +193,7 @@ Seçtiğiniz teste göre şu adımları izleyin:
 ::: callout-note
 👋 Aşağıda, R'de en yaygın kullanılan hipotez testi yöntemi olan **t-testi** açıklanmıştır!
 
-t.test(x, y = NULL,
-alternative = c("two.sided", "less", "greater"),
-mu = 0, paired = FALSE, var.equal = FALSE,
-conf.level = 0.95, …)
+t.test(x, y = NULL, alternative = c("two.sided", "less", "greater"), mu = 0, paired = FALSE, var.equal = FALSE, conf.level = 0.95, …)
 
 Burada:
 
@@ -393,7 +390,7 @@ Sonuç olarak, tedavi edilen bitkilerin ortalama ağırlığının 5 gramdan far
 
 Eşleştirilmiş örneklem t-testi, bir örneklemdeki her bir gözlemin diğer bir örneklemdeki eşleşmiş bir gözlemle karşılaştırılabildiği durumlarda iki örneklemin ortalamalarını karşılaştırmak için kullanılır.
 
-### **Senaryo:** 
+### **Senaryo:**
 
 Bir antrenman programının basketbol oyuncularının maksimum dikey sıçrama yüksekliğini (inç cinsinden) artırıp artırmadığını bilmek istiyoruz.
 
@@ -533,8 +530,7 @@ print(t_test_result)
 
     -   Sample2 için ortalama boy: **159.25 cm**.
 
-**Sonuç:**
-İki mısır türünün ortalama boyları arasında anlamlı bir fark vardır. Mısır türü 2’nin ortalama boyu, mısır türü 1’den daha uzundur. Bu fark istatistiksel olarak anlamlıdır.
+**Sonuç:** İki mısır türünün ortalama boyları arasında anlamlı bir fark vardır. Mısır türü 2’nin ortalama boyu, mısır türü 1’den daha uzundur. Bu fark istatistiksel olarak anlamlıdır.
 
 ------------------------------------------------------------------------
 
@@ -721,13 +717,13 @@ print(chi_sq_result)
 
 ### **Adım 4: p-Değerinin Yorumlanması**
 
--   **p-Değeri:** < $2.2 \times 10^{-16}$. Bu pratikte sıfır anlamına gelir ve null hipotezi reddetmek için güçlü bir kanıt sağlar.
+-   **p-Değeri:** \< $2.2 \times 10^{-16}$. Bu pratikte sıfır anlamına gelir ve null hipotezi reddetmek için güçlü bir kanıt sağlar.
 
 -   **Yorum:** Cinsiyet ve kabul durumu arasındaki ilişki, istatistiksel olarak anlamlıdır.
 
 ### **Adım 5: Karar Verme (**α=0.05)
 
--   **Karar:** p-değeri <0.05 olduğundan, null hipotez reddedilir.
+-   **Karar:** p-değeri \<0.05 olduğundan, null hipotez reddedilir.
 
 -   **Sonuç:** Cinsiyet, kabul kararlarında önemli bir etkiye sahiptir. Bu, potansiyel eşitsizlikler veya diğer etkenlerin araştırılmasını gerektirebilir.
 
@@ -764,13 +760,13 @@ summary(model)
 
 ### **Adım 4: p-Değerinin Yorumlanması**
 
--   **Kesim noktası (Intercept):** 37.285137.285137.2851, p-değeri <1.29×10−10< 1.29 \times 10^{-10}\<1.29×10−10, anlamlıdır.
+-   **Kesim noktası (Intercept):** 37.285137.285137.2851, p-değeri \<1.29×10−10\< 1.29 \times 10\^{-10}\<1.29×10−10, anlamlıdır.
 
--   **Ağırlık katsayısı (Slope):** −5.3445-5.3445−5.3445, p-değeri 1.29×10−101.29 \times 10^{-10}1.29×10−10. Araç ağırlığı ile yakıt verimliliği arasında negatif bir ilişki vardır. Ağırlık arttıkça yakıt verimliliği azalır.
+-   **Ağırlık katsayısı (Slope):** −5.3445-5.3445−5.3445, p-değeri 1.29×10−101.29 \times 10\^{-10}1.29×10−10. Araç ağırlığı ile yakıt verimliliği arasında negatif bir ilişki vardır. Ağırlık arttıkça yakıt verimliliği azalır.
 
 ### **Adım 5: Karar Verme (**α=0.05\alpha = 0.05α=0.05)
 
--   **Karar:** Hem kesim noktası hem de ağırlık katsayısı için p-değeri <0.05< 0.05\<0.05. Null hipotez reddedilir.
+-   **Karar:** Hem kesim noktası hem de ağırlık katsayısı için p-değeri \<0.05\< 0.05\<0.05. Null hipotez reddedilir.
 
 -   **Sonuç:** Araç ağırlığının yakıt verimliliği üzerinde anlamlı bir etkisi vardır.
 
@@ -778,7 +774,7 @@ summary(model)
 
 -   **Model Özeti:** Regresyon denklemi: mpg=37.2851−5.3445×wtmpg = 37.2851 - 5.3445 \times wtmpg=37.2851−5.3445×wt. Araç ağırlığı bir birim arttığında, yakıt verimliliği yaklaşık 5.3445 mil/galon azalır.
 
--   **İstatistiksel Anlamlılık:** Kesim noktası ve ağırlık katsayısı anlamlıdır (p<0.05p < 0.05p\<0.05).
+-   **İstatistiksel Anlamlılık:** Kesim noktası ve ağırlık katsayısı anlamlıdır (p\<0.05p \< 0.05p\<0.05).
 
 -   **Uyum İyiliği:**
 
