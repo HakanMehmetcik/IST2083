@@ -149,7 +149,7 @@ wr %>%
   glimpse()
 ```
 
-#### Soru 5: 
+#### Soru 5:
 
 Kadınlar ve erkekler için gülle atma rekoru mesafesi ile yıl arasındaki dağılımı gösteren bir scatterplot (dağılım grafiği) oluşturalım. Neden?
 
@@ -190,8 +190,8 @@ womens_shotput %>%
 Bu gülle atma dünya rekoru verilerine bir doğrusal model (linear model) oluşturduğumuzda neyi belirleyebiliriz? Erkekler için dünya rekoru mesafesini tahmin eden model denklemi nedir?
 
 ```{r}
-lm_mdl_women <- lm(Record~Year, data = mens_shotput)
-summary(lm_mdl_women)
+lm_mdl_men <- lm(Record~Year, data = mens_shotput)
+summary(lm_mdl_men)
 ```
 
 **Intercept Yorumlaması**: Yıl sıfırdan başlamadığı için intercept (kesişme noktası) anlamlı değildir.
@@ -219,7 +219,7 @@ summary(lm_mdl_women)
 
 Erkekler ve kadınlar gülle atma dünya rekorları için dağılım grafikleri, bu etkinliklerin yıllar boyunca güçlü ve pozitif bir doğrusal ilişki gösterdiğini ortaya koymaktadır. Erkeklerde rekor mesafesi yılda ortalama 0.13 metre, kadınlarda ise 0.23 metre artmaktadır. Ancak, başlangıç yılına bağlı olan intercept (kesişme noktası), sorunun bağlamına göre doğrudan yorumlanamaz. Bu nedenle, yılı yeniden düzenleyerek modeller oluşturulmuş ve verilerle iyi bir uyum gösterilmiştir. Fakat çarpıcı bir biçimde, modelimize göre kadınlar için yıllık değişim oranı erkeklere göre daha büyüktür ve bu sonuç istatistiksel olarak anlamlıdır.
 
-### **Örnek 2:** 
+### **Örnek 2:**
 
 **Araştırma Sorusu:** *"Erkekler ve kadınlar için 1 mil dünya rekoru süreleri yıllar içinde nasıl değişti?"*
 
@@ -422,7 +422,7 @@ summary(men_mdl_pole_transposed)
 
 Kategorik değişkenler, regresyon analizinde özel bir dikkat gerektirir. Bu değişkenler, sürekli ya da iki kategorili değişkenler gibi doğrudan regresyon denklemine eklenemez. Bunun yerine, regresyon modeline dahil edilebilmeleri için farklı bir kodlama sistemi kullanılarak bir dizi değişkene dönüştürülmeleri gerekir. Kodlama sistemleri farklı olabilir, ancak seçilen kodlama sistemi değişkenin genel etkisini değiştirmez.
 
-### Örnek 4: 
+### Örnek 4:
 
 Balık veri seti, yedi yaygın balık türünü ve bu balıkların ağırlıkları gibi bilgilerle bir tahmin modeli geliştirmek için kullanılabilir. Amaç, balık türlerine göre ağırlık tahmini yapmaktır.
 
@@ -496,7 +496,7 @@ str(taiwan_real_estate)
 
 ```
 
-#### Soru 1: 
+#### Soru 1:
 
 Veri setini görüntüleyerek hangi değişkenin iyi bir yanıt değişkeni olacağını belirleyin.
 
@@ -549,7 +549,7 @@ Modelin `n_convenience` katsayısı `0.7981` olarak hesaplanmıştır. Bu ne anl
 
 **Cevap:** Yakındaki market sayısını bir artırdığınızda, ev fiyatında beklenen artış **0.7981 TWD/metrekare** olur.
 
-### Örnek 6: 
+### Örnek 6:
 
 Açıklayıcı değişken kategorik olduğunda, verileri görselleştirmek için daha önce kullanılan dağılım grafiği uygun değildir. Bunun yerine, her kategori için bir çubuk grafiği veya histogram oluşturmak iyi bir seçenektir.
 
