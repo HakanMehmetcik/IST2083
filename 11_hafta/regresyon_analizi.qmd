@@ -331,14 +331,15 @@ summary(mod1)
 
 ### **Model Özeti**
 
-1.  **Regresyon Denklemi:** 
+1.  **Regresyon Denklemi:**
 
 arr_delay = -22.93 + 2.01 x hour
 
+```         
+-   **Intercept (-22.93):** Günün başında (saat 0) varış gecikmesinin ortalama olarak **-22.93 dakika** olduğunu gösterir. Bu negatif değer, günün başındaki uçuşların genellikle erken varış yaptığını gösteriyor olabilir.
 
-    -   **Intercept (-22.93):** Günün başında (saat 0) varış gecikmesinin ortalama olarak **-22.93 dakika** olduğunu gösterir. Bu negatif değer, günün başındaki uçuşların genellikle erken varış yaptığını gösteriyor olabilir.
-
-    -   **hour Katsayısı (2.01):** Her saat başına, varış gecikmesinde **2.01 dakikalık bir artış** beklenmektedir. Bu, gün ilerledikçe uçuş gecikmelerinin arttığını destekleyen bir bulgudur.
+-   **hour Katsayısı (2.01):** Her saat başına, varış gecikmesinde **2.01 dakikalık bir artış** beklenmektedir. Bu, gün ilerledikçe uçuş gecikmelerinin arttığını destekleyen bir bulgudur.
+```
 
 2.  **Artıklar (Residuals):**
 

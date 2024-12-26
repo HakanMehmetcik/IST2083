@@ -164,7 +164,7 @@ Veri türüne ve test etmek istediğiniz hipoteze göre bir istatistiksel test s
 
 -   **Regresyon Analizi:** Değişkenler arasındaki ilişkileri anlamak için kullanılır.
 
-####  **3: Test İstatistiğini Hesapla**
+#### **3: Test İstatistiğini Hesapla**
 
 Seçtiğiniz teste göre şu adımları izleyin:
 
@@ -760,7 +760,7 @@ summary(model)
 
 ### **Adım 4: p-Değerinin Yorumlanması**
 
--   **Kesim noktası (Intercept):** 37.285137.285137.2851, p-değeri \<1.29×10−10\< 1.29 \times 10\^{-10}\<1.29×10−10, anlamlıdır.
+-   **Kesim noktası (Intercept):** 37.2851, p-değeri \<1.29×10−10\< 1.29 \times 10\^{-10}\<1.29×10−10, anlamlıdır.
 
 -   **Ağırlık katsayısı (Slope):** −5.3445-5.3445−5.3445, p-değeri 1.29×10−101.29 \times 10\^{-10}1.29×10−10. Araç ağırlığı ile yakıt verimliliği arasında negatif bir ilişki vardır. Ağırlık arttıkça yakıt verimliliği azalır.
 
