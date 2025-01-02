@@ -8,7 +8,106 @@ execute:
   warning: true
 ---
 
-## Alıştırma ve Logisitik Regresyon
+## Logisitik Regresyon
+
+**Lojistik regresyon**, bir bağımlı değişkenin **ikili (binary)** veya **çoklu (multinomial)** kategorilerden oluştuğu durumlarda, bu bağımlı değişken ile bir veya birden fazla bağımsız değişken arasındaki ilişkiyi modellemek için kullanılan bir istatistiksel yöntemdir.
+
+### **Özellikleri:**
+
+1.  **Bağımlı Değişken:**
+
+    -   İkili lojistik regresyon: Bağımlı değişken iki kategorilidir (ör., 0 ve 1).
+
+    -   Çoklu lojistik regresyon: Bağımlı değişken birden fazla kategorilidir (ör., A, B, C).
+
+2.  **Bağımsız Değişkenler:**
+
+    -   Sürekli veya kategorik olabilir.
+
+    -   Örneğin, yaş, cinsiyet, eğitim düzeyi.
+
+3.  **Amaç:**
+
+    -   Bağımlı değişkenin belirli bir kategoriye ait olma olasılığını tahmin etmek (ör., "Evet" oyu verme olasılığı).
+
+    -   Bağımsız değişkenlerin bağımlı değişken üzerindeki etkisini ölçmek.
+
+<!-- -->
+
+1.  **Logit Fonksiyonu:**
+
+    -   Lojistik regresyon, bağımlı değişkenin **log-odds**'larını bağımsız değişkenlerle ilişkilendirir:
+        $$\text{log}\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n $$ ​
+
+        -   ppp: Bağımlı değişkenin 1 olma olasılığı.
+
+        -   1−p: Bağımlı değişkenin 0 olma olasılığı.
+
+        -   β0​: Sabit terim (intercept).
+
+        -   βi​: Bağımsız değişkenlerin katsayıları.
+
+2.  **Odds ve Odds Oranı:**
+
+    -   **Odds:** Bir olayın gerçekleşme olasılığı ile gerçekleşmeme olasılığı arasındaki oran:
+        $$\text{Odds} = \frac{p}{1-p}$$ ​
+
+    -   **Odds Oranı (Odds Ratio):** Bir bağımsız değişkendeki bir birimlik artışın bağımlı değişken üzerindeki etkisini gösterir:
+        $$\text{Odds Ratio} = e^{\beta}$$
+
+## R'da Lojistik regresyon modeli
+
+logit_model \<- glm(y \~ x1 + x2 + x3, family = binomial, data = my_data)
+
+summary(logit_model)
+
+## Örnek 1:
+
+Bir kişinin kredi alıp alamaması (`kredi_onay` = 0 veya 1) ile geliri (`gelir`) ve kredi puanı (`kredi_puani`) arasındaki ilişkiyi incelemek istiyoruz.
+
+```{r}
+# Basit bir veri seti
+data <- data.frame(
+  kredi_onay = c(0, 1, 0, 1, 0, 1, 1, 0, 1, 0),  # 0 = reddedildi, 1 = onaylandı
+  gelir = c(3000, 5000, 2500, 8000, 2000, 7000, 6000, 2200, 9000, 1500),  # Gelir düzeyi
+  kredi_puani = c(600, 750, 580, 800, 550, 720, 700, 590, 820, 510)  # Kredi puanı
+)
+
+# Veri setini görüntüleme
+print(data)
+
+```
+
+#### **Lojistik Regresyon Modeli**
+
+Bağımlı değişken: **`kredi_onay`**\
+Bağımsız değişkenler: **`gelir`** ve **`kredi_puani`**
+
+```{r}
+# Lojistik regresyon modeli
+logit_model <- glm(kredi_onay ~ gelir + kredi_puani, family = binomial, data = data)
+
+# Modelin özetini görüntüleme
+summary(logit_model)
+```
+
+Katsayılar, bağımsız değişkenlerin bağımlı değişken üzerindeki etkilerini temsil eder. Ancak burada:
+
+-   **Intercept (-169.6):** Çok yüksek bir negatif değerde, ancak bu modelin sorunlu olduğunun bir göstergesi.
+
+-   **`gelir` (0.0087):** Katsayı neredeyse sıfır.
+
+-   **`kredi_puani` (0.2009):** Katsayı yine anlamlı değil.
+
+**Pr(\>\|z\|)** sütunundaki değerler:
+
+-   Tüm değişkenler için **1**, yani bu değişkenlerin bağımlı değişken üzerindeki etkileri istatistiksel olarak anlamlı değil.
+
+-   Bu, modelin bağımsız değişkenleri kullanarak bağımlı değişkeni etkili bir şekilde açıklayamadığını gösteriyor.
+
+Bu model, veri setinizin küçük olması ve bağımsız değişkenlerle bağımlı değişkenin mükemmel ayrışması nedeniyle güvenilir sonuçlar üretememiştir. Şimdi gerçek hayattan bir örnekle logistik regresyon'u inceleyelim.
+
+## Örnek 2: 
 
 Bu alıştırmada ["The Scottish Social Attitudes (SSA) survey"](https://www.gov.scot/collections/scottish-social-attitudes-survey/) ismiyle bilinen ve 1999 yılından bu yana İskoçya'daki insanların sosyal, politik ve ahlaki tutumlarındaki değişiklikleri takip eden bir anket serisinin 2019 yılı anket sonuçlarını kullanacağız.
 
@@ -468,3 +567,16 @@ Her bir bağımsız değişkenin **katsayı (Estimate)**, **p-değeri (Pr(\>\|z\
 -   **Katsayı = -0.277, p = 0.470:**
 
     -   İstihdam durumunun "Evet" oyu verme üzerinde anlamlı bir etkisi yoktur (p \> 0.05).
+
+```{r}
+# Tahmin edilen olasılıkları hesaplama
+predicted_prob <- predict(logit_model, type = "response")
+
+# İlk birkaç tahmin
+head(predicted_prob)
+
+```
+
+-   Modelimiz, her bir birey için "Evet" oyu verme olasılıklarını tahmin ediyor.
+
+-   İlk birkaç tahminde, bireylerin genellikle "Hayır" oyu verme olasılığının daha yüksek olduğunu görebiliyoruz.
