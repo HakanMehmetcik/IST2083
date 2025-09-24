@@ -36,8 +36,7 @@ execute:
 
 1.  **Logit Fonksiyonu:**
 
-    -   Lojistik regresyon, bağımlı değişkenin **log-odds**'larını bağımsız değişkenlerle ilişkilendirir:
-        $$\text{log}\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n $$ ​
+    -   Lojistik regresyon, bağımlı değişkenin **log-odds**'larını bağımsız değişkenlerle ilişkilendirir: $$\text{log}\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n $$ ​
 
         -   ppp: Bağımlı değişkenin 1 olma olasılığı.
 
@@ -49,11 +48,9 @@ execute:
 
 2.  **Odds ve Odds Oranı:**
 
-    -   **Odds:** Bir olayın gerçekleşme olasılığı ile gerçekleşmeme olasılığı arasındaki oran:
-        $$\text{Odds} = \frac{p}{1-p}$$ ​
+    -   **Odds:** Bir olayın gerçekleşme olasılığı ile gerçekleşmeme olasılığı arasındaki oran: $$\text{Odds} = \frac{p}{1-p}$$ ​
 
-    -   **Odds Oranı (Odds Ratio):** Bir bağımsız değişkendeki bir birimlik artışın bağımlı değişken üzerindeki etkisini gösterir:
-        $$\text{Odds Ratio} = e^{\beta}$$
+    -   **Odds Oranı (Odds Ratio):** Bir bağımsız değişkendeki bir birimlik artışın bağımlı değişken üzerindeki etkisini gösterir: $$\text{Odds Ratio} = e^{\beta}$$
 
 ## R'da Lojistik regresyon modeli
 
@@ -107,7 +104,7 @@ Katsayılar, bağımsız değişkenlerin bağımlı değişken üzerindeki etkil
 
 Bu model, veri setinizin küçük olması ve bağımsız değişkenlerle bağımlı değişkenin mükemmel ayrışması nedeniyle güvenilir sonuçlar üretememiştir. Şimdi gerçek hayattan bir örnekle logistik regresyon'u inceleyelim.
 
-## Örnek 2: 
+## Örnek 2:
 
 Bu alıştırmada ["The Scottish Social Attitudes (SSA) survey"](https://www.gov.scot/collections/scottish-social-attitudes-survey/) ismiyle bilinen ve 1999 yılından bu yana İskoçya'daki insanların sosyal, politik ve ahlaki tutumlarındaki değişiklikleri takip eden bir anket serisinin 2019 yılı anket sonuçlarını kullanacağız.
 
@@ -279,7 +276,7 @@ scottish_clean %>%
   summarise(
     mean_age = mean(age, na.rm = TRUE),
     mean_trust = mean(trust, na.rm = TRUE),
-    mean_edu = mean(edu, na.rm = TRUE),
+    mean_edu = mean(edu1, na.rm = TRUE),
     sd_age = sd(age, na.rm = TRUE),
     sd_trust = sd(trust, na.rm = TRUE),
     sd_edu = sd(edu, na.rm = TRUE)
@@ -297,7 +294,7 @@ ggplot(scottish_clean, aes(x = age)) +
 
 
 # Eğitim histogramı ve yoğunluk grafiği
-ggplot(scottish_clean, aes(x = edu)) +
+ggplot(scottish_clean, aes(x = edu1)) +
   geom_histogram(binwidth = 1, fill = "purple", alpha = 0.7) +
   geom_density(aes(y = ..count..), color = "red", size = 1) +
   labs(title = "Eğitim Düzeyi Dağılımı", x = "Eğitim Düzeyi", y = "Frekans")
@@ -313,7 +310,7 @@ ggplot(scottish_clean, aes(x = trust)) +
   labs(title = "Güven Dağılımı", x = "Güven", y = "Frekans")
 
 # Eğitim değişkeni bar grafiği
-ggplot(scottish_clean, aes(x = edu)) +
+ggplot(scottish_clean, aes(x = edu1)) +
   geom_bar(fill = "purple", alpha = 0.7) +
   labs(title = "Eğitim Düzeyi Dağılımı", x = "Eğitim Düzeyi", y = "Frekans")
 
@@ -322,19 +319,19 @@ ggplot(scottish_clean, aes(x = edu)) +
 ```{r}
 # Spearman korelasyonu
 scottish_clean %>%
-  select(trust, edu, age) %>%
+  select(trust, edu1, age) %>%
   cor(method = "spearman", use = "complete.obs")
 
 # Kendall tau korelasyonu
 scottish_clean %>%
-  select(trust, edu, age) %>%
+  select(trust, edu1, age) %>%
   cor(method = "kendall", use = "complete.obs")
 
 ```
 
 ```{r}
 scottish_clean %>%
-  group_by(edu) %>%
+  group_by(edu1) %>%
   summarise(mean_trust = mean(trust, na.rm = TRUE))
 ```
 
@@ -464,7 +461,7 @@ ggplot(scottish_clean, aes(x = pid1, y = libauth)) +
 
 ```{r}
 # Satır yüzdeleri
-prop.table(table(scottish_clean$employmentdum, scottish_clean$edu), margin = 1) * 100
+prop.table(table(scottish_clean$employmentdum, scottish_clean$edu1), margin = 1) * 100
 
 ```
 
@@ -474,7 +471,7 @@ Genel olarak işsizler, daha düşük eğitim seviyelerinde yoğunlaşıyor. İ�
 
 ```{r}
 # Ki-kare testi
-chi_test <- chisq.test(table(scottish_clean$employmentdum, scottish_clean$edu))
+chi_test <- chisq.test(table(scottish_clean$employmentdum, scottish_clean$edu1))
 chi_test
 
 ```
@@ -498,7 +495,7 @@ Bağımlı değişkenin (**`RefvoteDum`**) diğer bağımsız değişkenler tara
 ```{r}
 
 # Lojistik regresyon modeli
-logit_model <- glm(RefvoteDum ~ pid1 + edu + age + rsex + libauth + employmentdum,
+logit_model <- glm(RefvoteDum ~ pid1 + edu1 + age + rsex + libauth + employmentdum,
                    data = scottish_clean, family = binomial)
 
 # Modelin özetini görüntüleme
