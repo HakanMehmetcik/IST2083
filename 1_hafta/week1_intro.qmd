@@ -13,12 +13,31 @@ df-print: kable
 ---
 
 ## Öğrenme Çıktıları
+<<<<<<< HEAD
 
 -   İstatistiğin ne olduğunu, neden önemli olduğunu ve nerelerde kullanıldığını açıklar.
 -   Veriden anlam çıkarmanın temel adımlarını örneklerle ifade eder.
 -   R ve RStudio’nun temel bileşenlerini tanımlar; konsol ve script farkını kavrar.
 -   R’da temel aritmetik, karşılaştırma ve mantıksal işlemleri uygular.
 -   Git ve GitHub’ın versiyon kontrolü ve işbirliği için nasıl kullanıldığını ana hatlarıyla açıklar.
+=======
+
+-   İstatistiğin ne olduğunu, neden önemli olduğunu ve nerelerde kullanıldığını açıklar.
+-   Veriden anlam çıkarmanın temel adımlarını örneklerle ifade eder.
+-   R ve RStudio’nun temel bileşenlerini tanımlar; konsol ve script farkını kavrar.
+-   R’da temel aritmetik, karşılaştırma ve mantıksal işlemleri uygular.
+-   Git ve GitHub’ın versiyon kontrolü ve işbirliği için nasıl kullanıldığını ana hatlarıyla açıklar.
+
+## Ders Akışı (öneri)
+
+1.  İstatistiğe ısınma ve önyargıları kırma (mini vaka + sınıf içi mini anket)
+2.  İstatistiğin alanları ve karar destek rolü
+3.  R / RStudio hızlı başlangıç: ilk komutlar
+4.  Hata mesajlarını okuma, yardım alma yolları
+5.  Git/GitHub’a giriş ve basit akış
+
+------------------------------------------------------------------------
+>>>>>>> d9bc8ff35ee06ae1e77cd33bd1304126b2d6d908
 
 # 1. İstatistiğin Anlamı ve Önemi
 
@@ -38,9 +57,15 @@ Bu örneklerin tümü istatistiğin farklı uygulama alanlarını gösterir. **�
 
 ## 1.3 İstatistiğin Kullanım Alanları
 
+<<<<<<< HEAD
 -   **Bilimsel araştırmalarda:** hipotez testleri, deney/araştırma sonuçlarının değerlendirilmesi.
 -   **Ekonomi ve siyasette:** büyüme, enflasyon, işsizlik verileri; seçim tahminleri.
 -   **Sağlıkta:** ilaç etkinliği, salgın yayılımının izlenmesi.
+=======
+-   **Bilimsel araştırmalarda:** hipotez testleri, deney/araştırma sonuçlarının değerlendirilmesi.\
+-   **Ekonomi ve siyasette:** büyüme, enflasyon, işsizlik verileri; seçim tahminleri.\
+-   **Sağlıkta:** ilaç etkinliği, salgın yayılımının izlenmesi.\
+>>>>>>> d9bc8ff35ee06ae1e77cd33bd1304126b2d6d908
 -   **Günlük yaşamda:** reklam etkinliği, müşteri tercihleri, trafik yoğunluğu.
 
 ## 1.4 İstatistik Ne İşe Yarar?
@@ -54,8 +79,18 @@ Bu örneklerin tümü istatistiğin farklı uygulama alanlarını gösterir. **�
 Bu sorgulama, çağımızda **veri okuryazarlığı**nın temelidir.
 
 ## 1.6 Önyargıları Kırmak
+<<<<<<< HEAD
 
 Birçok öğrenci için istatistik “sıkıcı, ezbere dayalı, zor matematik” gibi görünebilir. Oysa doğru bağlamda: - Gerçek hayatla **doğrudan bağlantılıdır**, - Problemleri anlamaya ve çözmeye **yardımcı olur**, - **Merak uyandıran** sorulara cevap aramamızı sağlar.
+=======
+
+Birçok öğrenci için istatistik “sıkıcı, ezbere dayalı, zor matematik” gibi görünebilir. Oysa doğru bağlamda: - Gerçek hayatla **doğrudan bağlantılıdır**, - Problemleri anlamaya ve çözmeye **yardımcı olur**, - **Merak uyandıran** sorulara cevap aramamızı sağlar.
+
+::: callout-note
+**Sınıf içi mini etkinlik (5 dk):**\
+Favori içecek / sosyal medya platformu gibi bir soru belirleyin. Eller kaldırılarak frekans sayın; sonra R’da hızlı bir tablo/grafik ile görselleştirin.
+:::
+>>>>>>> d9bc8ff35ee06ae1e77cd33bd1304126b2d6d908
 
 ## 1.7 Yanıltıcı İstatistik ve Görselleştirme
 
