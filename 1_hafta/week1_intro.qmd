@@ -12,27 +12,18 @@ execute:
 df-print: kable
 ---
 
-# Dersin Genel Çerçevesi
-
 ## Öğrenme Çıktıları
-- İstatistiğin ne olduğunu, neden önemli olduğunu ve nerelerde kullanıldığını açıklar.
-- Veriden anlam çıkarmanın temel adımlarını örneklerle ifade eder.
-- R ve RStudio’nun temel bileşenlerini tanımlar; konsol ve script farkını kavrar.
-- R’da temel aritmetik, karşılaştırma ve mantıksal işlemleri uygular.
-- Git ve GitHub’ın versiyon kontrolü ve işbirliği için nasıl kullanıldığını ana hatlarıyla açıklar.
 
-## Ders Akışı (öneri)
-1. İstatistiğe ısınma ve önyargıları kırma (mini vaka + sınıf içi mini anket)
-2. İstatistiğin alanları ve karar destek rolü
-3. R / RStudio hızlı başlangıç: ilk komutlar
-4. Hata mesajlarını okuma, yardım alma yolları
-5. Git/GitHub’a giriş ve basit akış
-
----
+-   İstatistiğin ne olduğunu, neden önemli olduğunu ve nerelerde kullanıldığını açıklar.
+-   Veriden anlam çıkarmanın temel adımlarını örneklerle ifade eder.
+-   R ve RStudio’nun temel bileşenlerini tanımlar; konsol ve script farkını kavrar.
+-   R’da temel aritmetik, karşılaştırma ve mantıksal işlemleri uygular.
+-   Git ve GitHub’ın versiyon kontrolü ve işbirliği için nasıl kullanıldığını ana hatlarıyla açıklar.
 
 # 1. İstatistiğin Anlamı ve Önemi
 
 ## 1.1 İstatistik Nedir?
+
 İstatistik, **verilerden anlam çıkarma sanatıdır**. Sayılardan ibaret değildir; sayıların arkasındaki hikâyeyi keşfetmeye çalışır. İstatistik, karmaşık veri yığınlarını **düzenlememizi, özetlememizi ve yorumlamamızı** sağlar.
 
 ::: callout-tip
@@ -40,85 +31,70 @@ df-print: kable
 :::
 
 ## 1.2 Neden İstatistik?
-Günlük hayatta sürekli veriyle karşılaşıyoruz:
-- Sosyal medyada hangi içeriğin daha çok etkileşim aldığı,
-- Spor müsabakalarında oyuncu/maç performansı,
-- Seçim dönemlerinde kamuoyu anketleri,
-- Sağlıkta bir tedavinin etkisini ölçen klinik araştırmalar.
+
+Günlük hayatta sürekli veriyle karşılaşıyoruz: - Sosyal medyada hangi içeriğin daha çok etkileşim aldığı, - Spor müsabakalarında oyuncu/maç performansı, - Seçim dönemlerinde kamuoyu anketleri, - Sağlıkta bir tedavinin etkisini ölçen klinik araştırmalar.
 
 Bu örneklerin tümü istatistiğin farklı uygulama alanlarını gösterir. **İstatistik olmadan güvenilir karar vermek** çoğu zaman mümkün değildir.
 
 ## 1.3 İstatistiğin Kullanım Alanları
-- **Bilimsel araştırmalarda:** hipotez testleri, deney/araştırma sonuçlarının değerlendirilmesi.  
-- **Ekonomi ve siyasette:** büyüme, enflasyon, işsizlik verileri; seçim tahminleri.  
-- **Sağlıkta:** ilaç etkinliği, salgın yayılımının izlenmesi.  
-- **Günlük yaşamda:** reklam etkinliği, müşteri tercihleri, trafik yoğunluğu.
+
+-   **Bilimsel araştırmalarda:** hipotez testleri, deney/araştırma sonuçlarının değerlendirilmesi.
+-   **Ekonomi ve siyasette:** büyüme, enflasyon, işsizlik verileri; seçim tahminleri.
+-   **Sağlıkta:** ilaç etkinliği, salgın yayılımının izlenmesi.
+-   **Günlük yaşamda:** reklam etkinliği, müşteri tercihleri, trafik yoğunluğu.
 
 ## 1.4 İstatistik Ne İşe Yarar?
-İstatistik:
-- **Özetler:** Büyük veri kümelerini birkaç sayı (ortalama, medyan, sapma) ya da grafik ile anlaşılır kılar.
-- **Karşılaştırır:** Gruplar arasındaki benzerlik/farklılıkları ortaya çıkarır.
-- **Tahmin eder:** Eğilimleri ve olası gelecek değerlerini öngörür.
-- **Karar destekler:** Politika, iş dünyası ve bireysel seçimlerde daha bilinçli karar almamıza hizmet eder.
+
+İstatistik: - **Özetler:** Büyük veri kümelerini birkaç sayı (ortalama, medyan, sapma) ya da grafik ile anlaşılır kılar. - **Karşılaştırır:** Gruplar arasındaki benzerlik/farklılıkları ortaya çıkarır. - **Tahmin eder:** Eğilimleri ve olası gelecek değerlerini öngörür. - **Karar destekler:** Politika, iş dünyası ve bireysel seçimlerde daha bilinçli karar almamıza hizmet eder.
 
 ## 1.5 Neden İstatistik Okumalıyız?
-İstatistik, yalnızca teknik bir araç değil, **eleştirel düşünme** becerisidir. Bir grafiğe ya da rakama bakınca şu soruları sorabilmeliyiz:
-- Bu sayı **ne anlama** geliyor?
-- Doğru ve **bağlamında** mı sunulmuş?
-- **Alternatif** yorumlar mümkün mü?
+
+İstatistik, yalnızca teknik bir araç değil, **eleştirel düşünme** becerisidir. Bir grafiğe ya da rakama bakınca şu soruları sorabilmeliyiz: - Bu sayı **ne anlama** geliyor? - Doğru ve **bağlamında** mı sunulmuş? - **Alternatif** yorumlar mümkün mü?
 
 Bu sorgulama, çağımızda **veri okuryazarlığı**nın temelidir.
 
 ## 1.6 Önyargıları Kırmak
-Birçok öğrenci için istatistik “sıkıcı, ezbere dayalı, zor matematik” gibi görünebilir. Oysa doğru bağlamda:
-- Gerçek hayatla **doğrudan bağlantılıdır**,
-- Problemleri anlamaya ve çözmeye **yardımcı olur**,
-- **Merak uyandıran** sorulara cevap aramamızı sağlar.
 
-::: callout-note
-**Sınıf içi mini etkinlik (5 dk):**  
-Favori içecek / sosyal medya platformu gibi bir soru belirleyin. Eller kaldırılarak frekans sayın; sonra R’da hızlı bir tablo/grafik ile görselleştirin.
-:::
+Birçok öğrenci için istatistik “sıkıcı, ezbere dayalı, zor matematik” gibi görünebilir. Oysa doğru bağlamda: - Gerçek hayatla **doğrudan bağlantılıdır**, - Problemleri anlamaya ve çözmeye **yardımcı olur**, - **Merak uyandıran** sorulara cevap aramamızı sağlar.
 
 ## 1.7 Yanıltıcı İstatistik ve Görselleştirme
-Aynı veriyi farklı eksen ölçekleriyle ya da eksik bağlamla sunmak, **yanıltıcı** sonuçlara yol açabilir. Bu nedenle grafik okuryazarlığı kritik önemdedir.
-- Eksen kırpma (y eksenine 0’dan başlamamak),
-- Veri seçmeciliği (cherry-picking),
-- Oran yerine ham sayı kullanmak vb.
 
----
+Aynı veriyi farklı eksen ölçekleriyle ya da eksik bağlamla sunmak, **yanıltıcı** sonuçlara yol açabilir. Bu nedenle grafik okuryazarlığı kritik önemdedir. - Eksen kırpma (y eksenine 0’dan başlamamak), - Veri seçmeciliği (cherry-picking), - Oran yerine ham sayı kullanmak vb.
+
+------------------------------------------------------------------------
 
 # 2. R ve RStudio’a Hızlı Giriş
 
 ## 2.1 Neden R? (Python ile Kısa Karşılaştırma)
-- **R:** İstatistik ve görselleştirmede güçlü; akademide çok yaygın; zengin paket ekosistemi (örn. *tidyverse*, *ggplot2*, *dplyr*).  
-- **Python:** Genel amaçlı dil; makine öğrenmesi ve üretim ortamlarında güçlü.  
-- **Not:** Birini bilmek diğerini öğrenmeyi **kolaylaştırır**, birbirini tamamlar.
+
+-   **R:** İstatistik ve görselleştirmede güçlü; akademide çok yaygın; zengin paket ekosistemi (örn. *tidyverse*, *ggplot2*, *dplyr*).\
+-   **Python:** Genel amaçlı dil; makine öğrenmesi ve üretim ortamlarında güçlü.\
+-   **Not:** Birini bilmek diğerini öğrenmeyi **kolaylaştırır**, birbirini tamamlar.
 
 ## 2.2 RStudio Arayüzü
-RStudio, R ile çalışmayı kolaylaştıran bir IDE’dir. Temel paneller:
-- **Source (Script):** Kalıcı kod dosyaları.
-- **Console:** Anlık komut çalıştırma.
-- **Environment/History:** Nesneler ve komut geçmişi.
-- **Plots/Files/Packages/Help:** Grafikler, dosyalar, paketler, yardım.
+
+RStudio, R ile çalışmayı kolaylaştıran bir IDE’dir. Temel paneller: - **Source (Script):** Kalıcı kod dosyaları. - **Console:** Anlık komut çalıştırma. - **Environment/History:** Nesneler ve komut geçmişi. - **Plots/Files/Packages/Help:** Grafikler, dosyalar, paketler, yardım.
 
 ::: callout-important
 **Konsol vs Script:** Konsol anlık denemeler içindir; **script** ise tekrar çalıştırılabilir analizlerinizi **kalıcı** hale getirir.
 :::
 
 ## 2.3 İlk Komutlar
+
 ```{r}
 2 + 2
 mean(c(1, 2, 3, 4, 5))
 ```
 
 Örnek veri kümeleriyle çalışmak:
+
 ```{r}
 head(iris)
 mean(iris$Sepal.Length)
 ```
 
 ## 2.4 Temel Aritmetik Operasyonlar
+
 ```{r}
 # Toplama, çıkarma, çarpma, bölme
 toplam    <- 5 + 3
@@ -136,6 +112,7 @@ list(toplam = toplam, cikarma = cikarma, carpma = carpma, bolme = bolme,
 ```
 
 ## 2.5 Karşılaştırma ve Mantıksal Operatörler
+
 ```{r}
 # Karşılaştırmalar
 c(5 == 3, 5 == 5)
@@ -154,6 +131,7 @@ c(!TRUE, !FALSE)
 ```
 
 ## 2.6 Diğer Yaygın Operatörler
+
 ```{r}
 # Kolon operatörü
 sequence <- 1:10
@@ -173,22 +151,25 @@ seq(1, 10, by = 2)
 rep(1:3, times = 3)
 ```
 
----
+------------------------------------------------------------------------
 
 # 3. R’da Hata Mesajları ve Yardım Alma
 
 ## 3.1 Hataları Okumak
+
 Yanlış operatör kullanımı örneği:
+
 ```{r}
 # 3 x 5  # Bu satır hata üretir: "unexpected symbol"
 3 * 5     # Doğrusu
 ```
 
-- **Semboller doğru mu?** `+ - * / ^ %% %/%`
-- **Büyük/küçük harf duyarlılığına** dikkat edin.
-- Hata mesajını **tam okuyun**; çoğu zaman çözüm ipucu içerir.
+-   **Semboller doğru mu?** `+ - * / ^ %% %/%`
+-   **Büyük/küçük harf duyarlılığına** dikkat edin.
+-   Hata mesajını **tam okuyun**; çoğu zaman çözüm ipucu içerir.
 
 ## 3.2 Yardım Alma Yolları
+
 ```{r}
 ?mean
 help(mean)
@@ -197,20 +178,22 @@ example(mean)
 
 Paket belgeleri (CRAN), RStudio **Help** paneli ve topluluk kaynakları (örn. StackOverflow) değerlidir.
 
----
+------------------------------------------------------------------------
 
 # 4. Git ve GitHub’a Giriş (Kısa Rehber)
 
 ## 4.1 Git Nedir? GitHub Nedir?
-- **Git:** Dosyalarınızda yapılan değişiklikleri izleyen **versiyon kontrol** sistemidir.
-- **GitHub:** Git depolarını bulutta barındıran ve **işbirliği** sağlayan platformdur.
+
+-   **Git:** Dosyalarınızda yapılan değişiklikleri izleyen **versiyon kontrol** sistemidir.
+-   **GitHub:** Git depolarını bulutta barındıran ve **işbirliği** sağlayan platformdur.
 
 ## 4.2 Temel Akış
-1. Yerel klasörde proje başlatma,
-2. Değişiklikleri kaydetme (commit),
-3. GitHub’a gönderme (push).
 
-```bash
+1.  Yerel klasörde proje başlatma,
+2.  Değişiklikleri kaydetme (commit),
+3.  GitHub’a gönderme (push).
+
+``` bash
 # Proje klasörünüzde
 git init
 git add .
@@ -225,29 +208,30 @@ git push -u origin main
 :::
 
 ## 4.3 Önerilen Sınıf İçi Uygulama
-- Hazırlanmış örnek bir GitHub deposundan bir `.R` dosyası indirin.
-- RStudio’da çalıştırın ve küçük bir değişiklik yapıp commit/push deneyin.
-- Böylece “GitHub yalnızca yazılımcılar için değil” mesajı pekişir.
 
----
+-   Hazırlanmış örnek bir GitHub deposundan bir `.R` dosyası indirin.
+-   RStudio’da çalıştırın ve küçük bir değişiklik yapıp commit/push deneyin.
+-   Böylece “GitHub yalnızca yazılımcılar için değil” mesajı pekişir.
+
+------------------------------------------------------------------------
 
 # 5. Küçük Alıştırmalar (Ödev/Alıştırma)
 
-1. `iris` veri setinin ilk 10 satırını görüntüleyin ve `Sepal.Length` değişkeninin ortalamasını hesaplayın.  
-2. `1:20` aralığından yalnızca çift sayıları üreten bir vektör oluşturun.  
-3. `rep()` ve `seq()` kullanarak 5’ten 25’e 5’er artan değerleri üç kez arka arkaya tekrar eden bir vektör oluşturun.  
-4. RStudio’da bir script dosyası oluşturup bu alıştırmaların çözümlerini kaydedin.  
-5. (İsteğe bağlı) Yerelde Git ile bir depo başlatın ve script dosyanızı en az bir kez commit edin.
+1.  `iris` veri setinin ilk 10 satırını görüntüleyin ve `Sepal.Length` değişkeninin ortalamasını hesaplayın.\
+2.  `1:20` aralığından yalnızca çift sayıları üreten bir vektör oluşturun.\
+3.  `rep()` ve `seq()` kullanarak 5’ten 25’e 5’er artan değerleri üç kez arka arkaya tekrar eden bir vektör oluşturun.\
+4.  RStudio’da bir script dosyası oluşturup bu alıştırmaların çözümlerini kaydedin.\
+5.  (İsteğe bağlı) Yerelde Git ile bir depo başlatın ve script dosyanızı en az bir kez commit edin.
 
----
+------------------------------------------------------------------------
 
 # 6. Sık Sorulan Sorular
 
-**S: R mi Python mu?**  
+**S: R mi Python mu?**\
 **C:** İkisi de güçlü araçlardır; R istatistik/görselleştirmede, Python genel amaçlı ve üretim uygulamalarında öne çıkar. Birini bilmek diğerini öğrenmeyi kolaylaştırır.
 
-**S: R zor mu?**  
+**S: R zor mu?**\
 **C:** Temel sözdizimi kısa sürede öğrenilir. RStudio arayüzü ve hazır paketler öğrenme eğrisini yumuşatır.
 
-**S: LaTeX gerekiyor mu (PDF için)?**  
+**S: LaTeX gerekiyor mu (PDF için)?**\
 **C:** Quarto’da PDF üretmek için sisteminizde TeX dağıtımı gerekebilir. HTML formatı ise ek kurulum gerektirmez.
