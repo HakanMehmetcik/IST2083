@@ -10,6 +10,20 @@ execute:
 df-print: kable
 ---
 
+🎯 Öğrenme Hedefleri
+
+Bu haftanın sonunda öğrenciler:
+
+-   R’daki temel veri türlerini (numeric, character, logical) tanımlayabilecek,
+
+-   Basit matematiksel ve mantıksal işlemleri uygulayabilecek,
+
+-   Yerleşik fonksiyonların (sum(), mean(), length(), vb.) kullanımını kavrayabilecek,
+
+-   Vektör, liste, matris ve data frame gibi basit veri yapıları ile çalışabilecek,
+
+-   Bir CSV dosyasını R’a aktarıp inceleyebilecek.
+
 # 1. Değişkenler ve Veri Türleri
 
 R dilinde, verileri saklamak ve işlemek için değişkenler kullanılır. Değişkenler, belirli bir değeri tutar ve bu değer üzerinde işlemler yapmanıza olanak tanır.
@@ -405,3 +419,7 @@ head(data)
 # Son birkaç satırı görüntüleme
 tail(data)
 ```
+
+::: callout-note
+📚 Ek Kaynak olarak RStudio Cheat Sheet: Base R'a bakmayı unutma!
+:::

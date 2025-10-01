@@ -1,0 +1,258 @@
+---
+title: "2. Hafta: R'da Veri Türleri ve Temel Fonksiyonlar"
+author: "Hakan Mehmetcik"
+date: "`r Sys.Date()`"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    toc: true
+    toc-depth: 2
+    incremental: true
+    code-overflow: scroll
+    code-line-numbers: false
+    transition: fade
+editor: visual
+execute: 
+  echo: true
+  warning: true
+df-print: kable
+---
+
+## 🎯 Öğrenme Hedefleri
+
+Bu haftanın sonunda öğrenciler: - R’daki temel veri türlerini (numeric, character, logical) tanımlayabilecek, - Basit matematiksel ve mantıksal işlemleri uygulayabilecek, - Yerleşik fonksiyonların (`sum()`, `mean()`, `length()`, vb.) kullanımını kavrayabilecek, - Vektör, liste, matris ve data frame gibi basit veri yapıları ile çalışabilecek, - Bir CSV dosyasını R’a aktarıp inceleyebilecek.
+
+------------------------------------------------------------------------
+
+## 1) Değişkenler ve Atama
+
+-   R’da veriler değişkenlerde saklanır.
+-   Atama operatörü: `<-`
+
+```{r}
+x <- 10   # x değişkenine 10 değerini atar
+y <- "Merhaba"   # karakter dizesi
+z <- TRUE        # logical
+```
+
+------------------------------------------------------------------------
+
+## 2) R'da Veri Türleri
+
+-   **Sayısal (numeric)**: ondalıklı veya tam sayılar
+-   **Karakter (character)**: metinler
+-   **Mantıksal (logical)**: `TRUE` / `FALSE`
+
+**Örnekler:**
+
+```{r}
+a <- 5.7   # numeric (double)
+b <- 10    # numeric (integer benzeri)
+c <- "R programlama dili"  # character
+durum <- TRUE              # logical
+```
+
+------------------------------------------------------------------------
+
+## 3) Matematiksel İşlemler
+
+```{r}
+a <- 5; b <- 3
+toplam   <- a + b
+cikarma  <- a - b
+carpma   <- a * b
+bolme    <- a / b
+us       <- a ^ b
+list(toplam=toplam, cikarma=cikarma, carpma=carpma, bolme=bolme, us=us)
+```
+
+> 💡 **Soru:** `sum(c(TRUE, TRUE, FALSE))` kaç döner? Neden?
+
+------------------------------------------------------------------------
+
+## 4) R'da Temel Fonksiyonlar (I)
+
+-   `print()`: Konsola yazdırır
+-   `sum()`, `mean()`, `sd()`, `length()`
+
+```{r}
+print("Merhaba Dünya")
+toplam <- sum(c(1, 2, 3, 4, 5))
+ortalama <- mean(c(1, 2, 3, 4, 5))
+standart_sapma <- sd(c(1, 2, 3, 4, 5))
+uzunluk <- length(c(1, 2, 3, 4, 5))
+c(toplam=toplam, ortalama=ortalama, sd=standart_sapma, n=uzunluk)
+```
+
+------------------------------------------------------------------------
+
+## 5) R'da Temel Fonksiyonlar (II)
+
+-   Dizi üretimi: `seq()`, `rep()`
+-   Vektör oluşturma: `c()`
+-   Data frame: `data.frame()`
+-   Özet: `summary()`
+
+```{r}
+dizi <- seq(1, 10, by = 2)
+tekrar <- rep(1, times = 5)
+vektor <- c(1, 2, 3, 4, 5)
+veri <- data.frame(isim = c("Ali", "Ayşe", "Fatma"), yas = c(25, 30, 35))
+ozet <- summary(c(1, 2, 3, 4, 5))
+list(dizi=dizi, tekrar=tekrar, vektor=vektor, veri_basi=head(veri,1), ozet=ozet)
+```
+
+------------------------------------------------------------------------
+
+## 6) Parametrelerle Fonksiyon Kullanımı
+
+-   `na.rm = TRUE` ile eksik değerleri yoksayma
+
+```{r}
+sayilar <- c(10, 20, NA, 40, 50)
+ortalama <- mean(sayilar, na.rm = TRUE)
+ortalama
+```
+
+------------------------------------------------------------------------
+
+## 7) Fonksiyon Oluşturma
+
+1)  `function` anahtar kelimesi\
+2)  Parametreleri belirtme\
+3)  Gövdede işlemler\
+4)  `return()` (opsiyonel)
+
+```{r}
+topla <- function(a, b) {
+  sonuc <- a + b
+  return(sonuc)
+}
+topla(5, 3)
+```
+
+**Yardım alma:**
+
+```{r}
+# ?mean
+# help(sum)
+```
+
+------------------------------------------------------------------------
+
+## 8) Basit Veri Yapıları – Vektör
+
+-   Aynı türden değerler
+-   İndeksleme, güncelleme
+
+```{r}
+numeric_vector <- c(1, 2, 3, 4, 5)
+character_vector <- c("a", "b", "c", "d")
+logical_vector <- c(TRUE, FALSE, TRUE)
+
+numeric_vector[2] <- 10
+total_sum <- sum(numeric_vector)
+list(numeric_vector=numeric_vector, character_vector=character_vector,
+     logical_vector=logical_vector, total_sum=total_sum)
+```
+
+------------------------------------------------------------------------
+
+## 9) Basit Veri Yapıları – Liste
+
+-   Farklı türleri bir arada tutar
+
+```{r}
+my_list <- list(number = 5, greeting = "Hello", flag = TRUE, numbers = c(1, 2, 3))
+my_list$number <- 10
+my_list$greeting <- "Hi"
+my_list$new_element <- "New Element"
+my_list$new_element <- NULL  # silme
+my_list
+```
+
+------------------------------------------------------------------------
+
+## 10) Basit Veri Yapıları – Matris
+
+-   Aynı türden 2B yapı (satır x sütun)
+
+```{r}
+my_matrix <- matrix(1:6, nrow = 2, ncol = 3)
+my_matrix[1, 2] <- 10
+
+matrix1 <- matrix(1:4, nrow = 2)
+matrix2 <- matrix(5:8, nrow = 2)
+sum_matrix <- matrix1 + matrix2
+product_matrix <- matrix1 %*% matrix2
+list(my_matrix=my_matrix, sum_matrix=sum_matrix, product_matrix=product_matrix)
+```
+
+------------------------------------------------------------------------
+
+## 11) Basit Veri Yapıları – Data Frame
+
+-   Sütunlar farklı türde olabilir
+-   Tablo benzeri yapı
+
+```{r}
+my_data_frame <- data.frame(
+  numbers = c(1, 2, 3, 4, 5),
+  letters = c("a", "b", "c", "d", "e"),
+  logicals = c(TRUE, FALSE, TRUE, FALSE, TRUE)
+)
+
+my_data_frame[1, 2] <- "z"
+my_data_frame$numbers[2] <- 10
+
+my_data_frame$new_column <- c(10, 20, 30, 40, 50)
+new_row <- data.frame(numbers = 6, letters = "f", logicals = FALSE, new_column = 60)
+my_data_frame <- rbind(my_data_frame, new_row)
+
+new_column <- c(100, 200, 300, 400, 500, 600)
+my_data_frame <- cbind(my_data_frame, new_column)
+
+head(my_data_frame)
+```
+
+------------------------------------------------------------------------
+
+## 12) Veri İçe Aktarma (CSV) ve İnceleme
+
+-   En yaygın format: **CSV**
+-   `read.csv()` ile içe aktar, `str()`, `summary()`, `head()` ile incele
+
+```{r}
+data <- read.csv("https://raw.githubusercontent.com/datasciencedojo/datasets/refs/heads/master/titanic.csv")
+head(data)
+str(data)
+summary(data)
+```
+
+> Not: Excel (`readxl`), RDS (`saveRDS`, `readRDS`) konularını ileride ele alacağız.
+
+------------------------------------------------------------------------
+
+## 13) Uygulama – Kısa Görevler
+
+1.  Doğum yılınızı değişken olarak tanımlayın, yaşınızı hesaplayın.\
+2.  Bir vektör oluşturup (`c()`), ortalama ve sd hesaplayın.\
+3.  `isim`, `yaş`, `şehir` ile bir data frame oluşturun.\
+4.  `write.csv()` ile kaydedip tekrar R’a içe aktarın.\
+5.  Bir sütun için histogram çizin.
+
+```{r}
+# Örnek histogram (kendi verinizle değiştirin)
+set.seed(42)
+ornek <- rnorm(100, mean=50, sd=10)
+hist(ornek)
+```
+
+------------------------------------------------------------------------
+
+## 📚 Ek Kaynak
+
+-   RStudio Cheat Sheet: **Base R**
+-   Ders verileri ve örnekleri: kendi GitHub sınıf reposu
+-   Yardım: `?fonksiyon_adi` / `help(fonksiyon_adi)`
