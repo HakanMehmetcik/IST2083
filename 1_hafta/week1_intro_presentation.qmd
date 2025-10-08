@@ -24,7 +24,7 @@ execute:
 -   Spor müsabakaları istatistikleri
 -   Seçim anketleri
 -   Sağlık araştırmaları
--   **Karar vermede kritik rol**
+-   Karar vermede kritik rol
 
 ## Kullanım Alanları
 

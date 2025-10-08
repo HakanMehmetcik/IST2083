@@ -171,7 +171,7 @@ Estetikler, bir grafik üzerindeki nesnelerin görsel özelliklerini tanımlayan
 **Tablo 1: Estetikler**
 
 | Estetik | Veri Türü | Açıklama |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | `x` | Sayısal / Kategorik | X ekseninde gösterilecek değişken. |
 | `y` | Sayısal | Y ekseninde gösterilecek değişken. |
 | `fill` | Kategorik / Sayısal | Çubuk, alan veya noktaların iç rengini belirler. |
@@ -192,7 +192,7 @@ Görsel ipuçları, grafiklerde belirli bilgileri iletmek için kullanılan graf
 **Tablo 2: Görsel ipuçları ve anlamları.**
 
 | Görsel İpucu | Değişken Türü | Soru |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Konum | sayısal | Diğer şeylerle ilişkili olarak nerede? |
 | Uzunluk | sayısal | Ne kadar büyük (bir boyutta)? |
 | Açı | sayısal | Ne kadar geniş? Bir şeyle paralel mi? |
@@ -382,13 +382,8 @@ ggplot(data = students, aes(x = Math, y = Science)) +
 ```
 
 -   **`color = Gender`**: Noktaların rengini cinsiyete göre ayarlıyoruz.
-
-<!-- -->
-
 -   **`size = Science`**: Noktaların boyutunu fen notuna göre ayarlıyoruz. Daha yüksek fen notları, daha büyük noktalar anlamına gelir.
-
 -   **`shape = Course`**: Alınan kursa göre noktaların şeklini ayarlıyoruz. Örneğin, Matematik, Fen ve Kimya kursları farklı şekillerde gösterilecektir.
-
 -   **`alpha = 0.7`**: Noktaların saydamlık düzeyini ayarlıyoruz. Bu, yoğunluk yüksek olan bölgelerdeki noktaların daha görünür olmasını sağlar.
 
 #### Ek Estetiklerin Kullanım Mantığı:
@@ -579,7 +574,7 @@ Her veri bilimcisinin bilmesi ve yorumlaması gereken birkaç veri grafiği vard
 **Tablo 3: Temel Grafik Türleri**
 
 | Grafik Türü | Tanım | Kullanım | Veri Türü | ggplot Estetikleri | Olası Diğer Unsurlar |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | **Tek Değişkenli Grafikler** |  |  |  |  |  |
 | **Histogram** | Sayısal verilerin dağılımını gösteren çubuk grafiği. | Sürekli değişkenlerin dağılımını analiz etmek için. | Sürekli sayısal | `x`, `fill` | Bin genişliği, eksen etiketleri |
 | **Kutu Grafiği** | Veri setinin özet istatistiklerini gösteren grafik. | Verinin dağılımını ve aykırı değerleri incelemek için. | Sürekli sayısal, kategorik | `x`, `y`, `fill` | Medyan, çeyrekler, aykırı değerler |
@@ -934,7 +929,7 @@ Aşağıda, çeşitli sayısal ve kategorik değişkenler için önerilen grafik
 **Tablo 4: Temel Grafik Türleri Özet**
 
 | Yanıt ($y$) | Açıklayıcı ($x$) | Grafik Türü | `geom_*()` Fonksiyonu | Ek Bilgiler |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Kategorik | Kategorik | Çubuk Grafiği | `geom_bar()` | Frekans veya toplam değer gösterir. |
 | Kategorik | Kategorik | Yığılmış Çubuk Grafiği | `geom_bar(position = "fill")` | Oranları gösterir. |
 | Sayısal | Kategorik | Kutu Grafiği | `geom_boxplot()` | Medyan, çeyrekler ve aykırı değerleri gösterir. |
