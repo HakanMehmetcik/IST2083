@@ -377,9 +377,11 @@ data <- read.csv("https://raw.githubusercontent.com/datasciencedojo/datasets/ref
 # readxl paketini yükleme
 # install.packages("readxl")
 library(readxl)
+library(here)
+path <- ("~/IST2083/data")
 
 # Excel dosyasını içe aktarma
-data <- read_excel("~/Desktop/IST2083/Data/sample_excel.xlsx")
+data <- read_excel(here(path, "sample_excel.xlsx"))
 ```
 
 ## Veri Kaydetme
