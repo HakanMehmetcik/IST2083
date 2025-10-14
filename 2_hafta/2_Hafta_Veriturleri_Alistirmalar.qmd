@@ -1,4 +1,3 @@
-
 ---
 title: "2. Hafta - Veri Türleri ve Temel Fonksiyonlar"
 author: "Hakan Mehmetcik"
@@ -14,11 +13,11 @@ df-print: kable
 
 ## 1. Değişkenler ve Veri Türleri
 
-**Soru:**  
+**Soru:**\
 R'da bir değişken nasıl tanımlanır ve farklı veri türleri nelerdir? Örnekler verin.
 
-**Alıştırma:**  
-Aşağıdaki adımları takip edin:  
+**Alıştırma:**\
+Aşağıdaki adımları takip edin:
 
 ```{r}
 # Sayısal, karakter ve mantıksal veri türünde değişkenler oluşturun
@@ -31,15 +30,15 @@ x + 5
 z & FALSE
 ```
 
----
+------------------------------------------------------------------------
 
 ## 2. R’da Temel Fonksiyonlar
 
-**Soru:**  
+**Soru:**\
 Yerleşik fonksiyonlar nasıl kullanılır? Bir vektörün toplamını, ortalamasını ve uzunluğunu nasıl bulabilirsiniz?
 
-**Alıştırma:**  
-Aşağıdaki adımları izleyin:  
+**Alıştırma:**\
+Aşağıdaki adımları izleyin:
 
 ```{r}
 # Bir vektör oluşturun
@@ -51,14 +50,14 @@ ortalama <- mean(sayilar)
 uzunluk <- length(sayilar)
 ```
 
----
+------------------------------------------------------------------------
 
 ## 3. Basit Veri Yapıları
 
-**Soru:**  
+**Soru:**\
 Vektörler, listeler, matrisler ve data frameler nedir? Her biri için örnekler verin.
 
-**Alıştırma:**  
+**Alıştırma:**\
 Aşağıdaki veri yapılarını oluşturun ve üzerinde işlemler yapın:
 
 ```{r}
@@ -73,14 +72,14 @@ liste$a <- 10
 matris[1, 2] <- 9
 ```
 
----
+------------------------------------------------------------------------
 
 ## 4. Veri İçe Aktarma ve Kaydetme
 
-**Soru:**  
+**Soru:**\
 R’da veri nasıl içe aktarılır ve kaydedilir? Hangi fonksiyonlar kullanılır?
 
-**Alıştırma:**  
+**Alıştırma:**\
 Aşağıdaki adımları izleyin:
 
 ```{r}
@@ -92,16 +91,16 @@ head(veri)
 write.csv(veri, "output.csv", row.names = FALSE)
 ```
 
----
+------------------------------------------------------------------------
 
 ## 5. Gelişmiş Vektörler, Listeler, Matrisler ve Data Frameler Alıştırmaları
 
 ### Vektörler
 
-**Soru:**  
+**Soru:**\
 R'da vektörlerle ilgili daha fazla işlemler nasıl yapılır? Vektörlerin uzunluğu, elemanlarının toplamı ve elemanlarına göre mantıksal karşılaştırmalar nasıl yapılır?
 
-**Alıştırma:**  
+**Alıştırma:**\
 Aşağıdaki adımları izleyin:
 
 ```{r}
@@ -125,14 +124,14 @@ en_buyuk <- max(vektor)
 sirali_vektor <- sort(vektor)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Listeler
 
-**Soru:**  
+**Soru:**\
 Listeler içinde farklı veri türlerini nasıl kullanırsınız? Liste elemanlarına nasıl erişir, günceller ve yeni eleman ekleyebilirsiniz?
 
-**Alıştırma:**  
+**Alıştırma:**\
 Aşağıdaki adımları izleyin:
 
 ```{r}
@@ -157,14 +156,14 @@ liste$notlar <- c(85, 90, 78)
 ilk_not <- liste$notlar[1]
 ```
 
----
+------------------------------------------------------------------------
 
 ### Matrisler
 
-**Soru:**  
+**Soru:**\
 Matrislerle yapılan işlemler nelerdir? Matris elemanlarına erişim, matris toplama, çarpma ve matris altkümesi oluşturma işlemleri nasıl yapılır?
 
-**Alıştırma:**  
+**Alıştırma:**\
 Aşağıdaki adımları izleyin:
 
 ```{r}
@@ -184,14 +183,14 @@ altkume <- matris[1:2, 2:3]
 boyut <- dim(matris)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Data Frameler
 
-**Soru:**  
+**Soru:**\
 Data frameler üzerinde nasıl işlemler yapılır? Data frame elemanlarına erişim, veri ekleme ve güncelleme nasıl yapılır?
 
-**Alıştırma:**  
+**Alıştırma:**\
 Aşağıdaki adımları izleyin:
 
 ```{r}
@@ -211,4 +210,3 @@ df$yas[2] <- 32
 yeni_satir <- data.frame(adi = "Ahmet", yas = 22, ogrenci_mi = TRUE, bolum = "Fizik")
 df <- rbind(df, yeni_satir)
 ```
-
