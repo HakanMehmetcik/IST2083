@@ -6,8 +6,10 @@ format: pdf
 editor: visual
 execute: 
   echo: true
-  warning: true
+  warning: false
+  message: false
 df-print: kable
+lang: tr
 ---
 
 ```{r setup, echo=FALSE, message=FALSE}
@@ -22,6 +24,7 @@ library(nycflights13)
 
 here <- here::here()
 dpath <- "data"
+
 ```
 
 # Temel İstatistik Kavramlarına Giriş
@@ -72,113 +75,81 @@ Verileri özetlemenin bir yolu, **tanımlayıcı/betimsel istatistikler** kullan
 ```{r}
 # Kitap okuma kategorileri ve sayıları
 books_readers <- c("no_books"=395, "print_only"=577, "digital_only"=91, "print_and_digital"=425)
+
 books_readers  # Kitap okuyanların sayısını görüntüle
-
-# Sadece basılı kitap okuyanların örnek oranını hesaplama
-
 ```
 
-**1. Frekans:**
-
-**Kitap Okuma Kategorileri ve Sayıları**:
-
--   **Basılı Kitap Okumayan (no_books)**: 395
-
--   **Sadece Basılı Kitap Okuyan (print_only)**: 577
-
--   **Sadece Dijital Kitap Okuyan (digital_only)**: 91
-
--   **Hem Basılı Hem Dijital Kitap Okuyan (print_and_digital)**: 425
-
-Bu frekanslar, her kitap okuma kategorisinde kaç okuyucu bulunduğunu gösterir.
-
-**2. Yüzde**
-
-**Toplam Okuyucu Sayısı**:
+Frekans dışında yüzde olarak da ifade edilebilir:
 
 ```{r}
-toplam_okuyucu <- sum(books_readers)  # Toplam okuyucu sayısını hesapla
-print_only_proportion <- books_readers["print_only"] / toplam_okuyucu  # Sadece basılı kitap okuyanların oranı
-print_only_proportion  # Oranı görüntüle
-
-# Kesirli tablolar, iki veya daha fazla kategorik değişken arasındaki tüm olası varyasyonları listeler!
-# Burada, kitap okuma kategorilerinin oranlarını içeren bir tablo oluşturuluyor
-oran_tablosu <- books_readers / toplam_okuyucu
-oran_tablosu  # Oluşturulan oran tablosunu görüntüle
-
+# Kitap okuma kategorilerinin oranlarını yüzde olarak hesapla ve görüntüle
+books_readers_percent <- round(prop.table(books_readers) * 100, 2)
+books_readers_percent
 ```
 
-**3. Mod**
+```{r}
+# Veri çerçevesine dönüştür
+books_df <- as.data.frame(books_readers) %>%
+  rownames_to_column(var = "category") %>%
+  rename(count = books_readers) %>%
+  mutate(percent = round((count / sum(count)) * 100, 2))
 
--   **En Sık Görülen Kategori**: "Sadece Basılı Kitap Okuyan" (577). Bu, en çok okunan kitap türüdür.
+# Bar grafiği oluştur
+ggplot(books_df, aes(x = category, y = percent, fill = category)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = paste0(percent, "%")), vjust = -0.5) +
+  labs(title = "Kitap Okuma Kategorileri",
+       x = "Kategori",
+       y = "Yüzde (%)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
 
-**4. Çapraz Tablo**
-
-**Etnik Gruplar ve Bilim Haberlerine İlgi**:
+### Örnek 2: **Etnik Gruplar ve Bilim Haberlerine İlgi**:
 
 ```{r}
-# Bilim haberlerini aktif, sıradan veya ilgisiz bir şekilde tüketiyor musunuz?
-# Farklı etnik grupların bilim haberlerine olan ilgisini göstermek için kategoriler ve sayıları
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+# Veriler
 white <- c("active"=487, "casual"=916, "uninterested"=1431, "no_answer"=28)
 black <- c("active"=59, "casual"=98, "uninterested"=227, "no_answer"=8)
 hispanic <- c("active"=89, "casual"=152, "uninterested"=183, "no_answer"=23)
 
-# Elde edilen verileri bir veri çerçevesi (data frame) olarak birleştirme
+# 1. Veri çerçevesi oluşturma
 my_table <- as.data.frame(rbind(white, black, hispanic))
 
-# Her bir grubun toplamını hesaplama
-my_table$rowsum <- rowSums(my_table)  # Her bir satırın toplamını hesapla
-my_table["colsum",] <- colSums(my_table)  # Her bir sütunun toplamını hesapla
+# 2. Oranları hesapla (satır bazında)
+prop_table <- round(prop.table(as.matrix(my_table), margin = 1) * 100, 2)
+prop_table_df <- as.data.frame(prop_table)
 
-# Sonuçları görüntüleme
-my_table  # Hesaplanan tabloyu görüntüle
+# 3. Oranları tablo olarak görüntüle
+prop_table_df
 ```
 
-**Yorumlar:**
+```{r}
+# Uzun formata dönüştür
+prop_long <- prop_table_df %>%
+  rownames_to_column(var = "group") %>%
+  pivot_longer(cols = -group, names_to = "category", values_to = "percent")
 
-1.  **Sadece Basılı Kitap Okuyanların Oranı**:
+# Bar Plot oluştur
+ggplot(prop_long, aes(x = group, y = percent, fill = category)) +
+  geom_col(width = 0.7) +
+  geom_text(aes(label = paste0(percent, "%")),
+            position = position_stack(vjust = 0.5),
+            size = 3.5) +
+  labs(
+    title = "Etnik Gruplara Göre Bilim Haberlerine İlgi",
+    x = "Etnik Grup",
+    y = "Yüzde (%)",
+    fill = "İlgi Kategorisi"
+  ) +
+  theme_minimal(base_size = 13)
+```
 
-    -   **Oran**: 0.3877688 (yaklaşık %38.78)
-
-    -   Bu, toplam okuyucu sayısının yaklaşık %38.78'inin yalnızca basılı kitap okuduğunu göstermektedir. Bu oran, okuyucuların çoğunluğunun basılı kitapları tercih ettiğini ortaya koymaktadır.
-
-2.  **Diğer Kategoriler**:
-
-    -   **Hiç Kitap Okumayanlar (no_books)**: Yaklaşık %26.55 kişi, hiç kitap okumadığını belirtmiştir.
-
-    -   **Yalnızca Basılı Kitap Okuyanlar (print_only)**: %38.78, yalnızca basılı kitap okuduğunu ifade etmiştir.
-
-    -   **Yalnızca Dijital Kitap Okuyanlar (digital_only)**: %6.12, yalnızca dijital kitap okuduğunu belirtmiştir.
-
-    -   **Hem Basılı Hem de Dijital Kitap Okuyanlar (print_and_digital)**: %28.56, hem basılı hem de dijital kitap okuduğunu söylemiştir.
-
-    Bu oranlar, kitap okuma alışkanlıklarının dağılımını daha net bir şekilde gösterir. Yalnızca basılı kitap okuma oranı en yüksekken, yalnızca dijital kitap okuma oranı oldukça düşüktür.
-
-3.  **Bilim Haberlerine Tüketim**:
-
-    -   Her üç grup arasında "ilgili" ve "sıradan" olarak sınıflandırılan birey sayısının yüksek olması dikkat çekicidir. Ancak "ilgisiz" olanların sayısı en yüksektir; bu durum, bilim haberlerine olan ilgisizliği göstermektedir.
-
-4.  **Etnik Gruba Göre Dağılım**:
-
-    -   Beyaz grubun, diğer gruplara göre bilim haberlerine daha fazla ilgi gösterdiği gözlemlenmektedir. Siyah ve Hispanik grupların "aktif" oranları daha düşüktür.
-
-5.  **Cevap Vermeyenler**:
-
-    -   Cevap vermeyenlerin sayısı oldukça düşük kalmış, bu da verilerin güvenilirliğini artırmaktadır.
-
-**Sonuç**
-
-Bu analiz, hem kitap okuma kategorileri hem de etnik grupların bilim haberlerine olan ilgisini anlamak için çeşitli tanımlayıcı istatistikler kullanmaktadır.
-
--   **Frekanslar**: Her kategorideki okuyucu sayısını göstermektedir.
-
--   **Yüzdeler**: Belirli grupların toplam içindeki oranlarını belirtmektedir.
-
--   **Mod**: En sık rastlanan kategoriyi ifade etmektedir.
-
--   **Çapraz Tablo**: İki veya daha fazla değişken arasındaki ilişkileri ortaya koymaktadır.
-
-### Örnek 2: Titanik'te Hayatta Kalma Oranları
+### Örnek 3: Titanik'te Hayatta Kalma Oranları
 
 ```{r}
 # Titanic verisini okuma
