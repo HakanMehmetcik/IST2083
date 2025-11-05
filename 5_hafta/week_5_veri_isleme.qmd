@@ -2,7 +2,7 @@
 title: "week_5_veri_isleme"
 author: "Hakan Mehmetcik"
 date: "2024-10-31"
-format: html
+format: pdf
 editor: visual
 execute: 
   echo: true
