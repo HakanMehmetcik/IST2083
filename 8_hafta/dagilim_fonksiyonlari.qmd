@@ -61,17 +61,17 @@ Bir **olasılık dağılımı**, rastgele bir değişkenin alabileceği tüm ola
 
 Bir madeni paranın iki kez atılması durumunda, yazıların sayısını ifade eden rastgele değişkeni XXX olarak tanımlayalım. Olasılık dağılımı şu şekilde ifade edilebilir:
 
-+--------------------+----------------+
-| $$X$$(Yazı Sayısı) | $(P(X))$       |
-|                    |                |
-|                    | Olasılık       |
-+====================+================+
-| 0 (Hiç yazı yok)   | $P(X=0)=0.25$  |
-+--------------------+----------------+
-| 1 (Bir yazı)       | $P(X=1)=0.50$  |
-+--------------------+----------------+
-| 2 (İki yazı)       | $P(X=2)=0.25$  |
-+--------------------+----------------+
++--------------------+---------------+
+| $$X$$(Yazı Sayısı) | $(P(X))$      |
+|                    |               |
+|                    | Olasılık      |
++====================+===============+
+| 0 (Hiç yazı yok)   | $P(X=0)=0.25$ |
++--------------------+---------------+
+| 1 (Bir yazı)       | $P(X=1)=0.50$ |
++--------------------+---------------+
+| 2 (İki yazı)       | $P(X=2)=0.25$ |
++--------------------+---------------+
 
 -   **Açıklama:** X'in alabileceği değerler 0,1,2'dir ve bu değerlerin gerçekleşme olasılıklarının toplamı 1'e eşittir.
 
@@ -241,23 +241,15 @@ R'da farklı dağılım türleri için çeşitli fonksiyonlar bulunmaktadır.
 
 ### **Özet Tablo**
 
-+-------------+---------------------+--------------------+-------------------------+----------------------+
-| Dağılım     | Yoğunluk Fonksiyonu | Dağılım Fonksiyonu | Ters Dağılım Fonksiyonu | Rastgele Sayı Üretme |
-+=============+=====================+====================+=========================+======================+
-| Normal      | `dnorm`             | `pnorm`            | `qnorm`                 | `rnorm`              |
-+-------------+---------------------+--------------------+-------------------------+----------------------+
-| Binomial    | `dbinom`            | `pbinom`           | `qbinom`                | `rbinom`             |
-+-------------+---------------------+--------------------+-------------------------+----------------------+
-| Poisson     | `dpois`             | `ppois`            | `qpois`                 | `rpois`              |
-+-------------+---------------------+--------------------+-------------------------+----------------------+
-| Exponential | `dexp`              | `pexp`             | `qexp`                  | `rexp`               |
-+-------------+---------------------+--------------------+-------------------------+----------------------+
-| Uniform     | `dunif`             | `punif`            | `qunif`                 | `runif`              |
-+-------------+---------------------+--------------------+-------------------------+----------------------+
-| t-Dağılımı  | `dt`                | `pt`               | `qt`                    | `rt`                 |
-+-------------+---------------------+--------------------+-------------------------+----------------------+
-| Chi-Square  | `dchisq`            | `pchisq`           | `qchisq`                | `rchisq`             |
-+-------------+---------------------+--------------------+-------------------------+----------------------+
+| Dağılım | Yoğunluk Fonksiyonu | Dağılım Fonksiyonu | Ters Dağılım Fonksiyonu | Rastgele Sayı Üretme |
+|----|----|----|----|----|
+| Normal | `dnorm` | `pnorm` | `qnorm` | `rnorm` |
+| Binomial | `dbinom` | `pbinom` | `qbinom` | `rbinom` |
+| Poisson | `dpois` | `ppois` | `qpois` | `rpois` |
+| Exponential | `dexp` | `pexp` | `qexp` | `rexp` |
+| Uniform | `dunif` | `punif` | `qunif` | `runif` |
+| t-Dağılımı | `dt` | `pt` | `qt` | `rt` |
+| Chi-Square | `dchisq` | `pchisq` | `qchisq` | `rchisq` |
 
 Bu fonksiyonlar, çeşitli dağılımlar üzerinde hesaplama yapmanıza ve rastgele veri üretmenize olanak tanır.
 
@@ -291,8 +283,7 @@ Grafikte, standart normal dağılım $(μ=0,σ=1)$ gösterilmektedir. Kırmızı
 
 2.  **Dağılım Fonksiyonu (Distribution Function):** Belirli bir x değerine kadar olan kümülatif olasılığı hesaplar (ör. `pnorm`, `pbinom`).
 
-Dağılım fonksiyonu, belirli bir x değerine kadar olan kümülatif olasılığı hesaplar. Bu, rastgele değişkenin $X≤x$ olma olasılığını ifade eder.
-Örneğin, bir zar atıldığında $x≤3$ gelme olasılığını hesaplamak için:
+Dağılım fonksiyonu, belirli bir x değerine kadar olan kümülatif olasılığı hesaplar. Bu, rastgele değişkenin $X≤x$ olma olasılığını ifade eder. Örneğin, bir zar atıldığında $x≤3$ gelme olasılığını hesaplamak için:
 
 ```{r}
 pbinom(3, size = 10, prob = 0.5)  # En fazla 3 başarı olasılığı
