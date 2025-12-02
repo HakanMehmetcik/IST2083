@@ -1,5 +1,5 @@
 ---
-title: "Yorumlayıcı İstatistik"
+title: "Çıkarımsal İstatistik"
 author: "Hakan Mehmetcik"
 date: "`r Sys.Date()`"
 format: pdf
@@ -20,17 +20,17 @@ here <- here::here()
 dpath <- "data"
 ```
 
-# Yorumlayıcı/Çıkarımsal İstatistik
+# Çıkarımsal İstatistik
 
-Veriyi **tanımlayıcı istatistikler** (betimleyici istatistik olarak da bilinir) kullanarak özetledikten sonra, istatistiksel çıkarım yöntemleriyle (yorumlayıcı istatistik veya çıkarımsal istatistik) sorulara yanıt verebiliriz. Tanımlayıcı istatistikler, veri setinin temel özelliklerini tanımlamak ve özetlemek için kullanılır. Ancak bu istatistik türü, veriye dair sadece yüzeysel bir genel bakış sunar ve elde edilen sonuçlar yalnızca mevcut veriyle sınırlıdır.
+Veriyi **tanımlayıcı istatistikler** (betimleyici istatistik olarak da bilinir) kullanarak özetledikten sonra, istatistiksel çıkarım yöntemleriyle sorulara yanıt verebiliriz. Tanımlayıcı istatistikler, veri setinin temel özelliklerini tanımlamak ve özetlemek için kullanılır. Ancak bu istatistik türü, veriye dair sadece yüzeysel bir genel bakış sunar ve elde edilen sonuçlar yalnızca mevcut veriyle sınırlıdır.
 
-İstatistiğin asıl güçlü ve geniş kapsamlı kısmı, **veriler hakkında çıkarımlar yapmamızı sağlayan yorumlayıcı istatistiktir**. Yorumlayıcı istatistik, veriyi analiz ederek daha geniş bir kitleye dair genellemeler yapmamızı sağlar ve bu sayede gözlemlediğimiz örneklemden yola çıkarak evrensel ya da daha büyük popülasyonlar hakkında tahminlerde bulunabiliriz. Bu, yalnızca örneklemin ötesine geçerek daha geniş bir perspektif elde etmemizi mümkün kılar ve araştırma sonuçlarını anlamlandırmada önemli bir rol oynar.
+İstatistiğin asıl güçlü ve geniş kapsamlı kısmı, **veriler hakkında çıkarımlar yapmamızı sağlayan Çıkarımsal istatistiktir**. Çıkarımsal istatistik, veriyi analiz ederek daha geniş bir kitleye dair genellemeler yapmamızı sağlar ve bu sayede gözlemlediğimiz örneklemden yola çıkarak evrensel ya da daha büyük popülasyonlar hakkında tahminlerde bulunabiliriz. Bu, yalnızca örneklemin ötesine geçerek daha geniş bir perspektif elde etmemizi mümkün kılar ve araştırma sonuçlarını anlamlandırmada önemli bir rol oynar.
 
 ![](images/descvsinfer.png){fig-align="center"}
 
-Yorumlayıcı istatistik, daha küçük bir gruptan (örneklem) elde edilen verilerle daha büyük bir grup (popülasyon) hakkında çıkarımlarda bulunmayı içerir. Bu yöntem son derece yararlıdır, çünkü çoğu zaman bir popülasyondaki tüm bireylerden veri toplamak pratik değildir ya da imkansızdır.
+Çıkarımsal istatistik, daha küçük bir gruptan (örneklem) elde edilen verilerle daha büyük bir grup (popülasyon) hakkında çıkarımlarda bulunmayı içerir. Bu yöntem son derece yararlıdır, çünkü çoğu zaman bir popülasyondaki tüm bireylerden veri toplamak pratik değildir ya da imkansızdır.
 
-Yorumlayıcı istatistik geleneksel olarak dört ana alana ayrılır: örnekleme, tahmin, hipotez testi ve regresyon/modelleme.
+Çıkarımsal istatistik geleneksel olarak dört ana alana ayrılır: örnekleme, tahmin, hipotez testi ve regresyon/modelleme.
 
 ![](images/yorumlayıcı.png){fig-align="center"}
 
@@ -100,4 +100,4 @@ Hipotez testi şu adımları içerir:
 
 ![](images/hipoteztesti.png){fig-align="center"}
 
-Örnekleme, tahmin, regresyon/modelleme ve hipotez testi, yorumlayıcı istatistiğin temel araçlarıdır ve verilerden çıkarımlar yapmamızı sağlar. Bu araçlar, örneklemin doğal olarak içerdiği rastgele değişim faktörünü hesaba katarak popülasyon hakkında güvenilir ve anlamlı sonuçlar çıkarmamızı mümkün kılar.
+Örnekleme, tahmin, regresyon/modelleme ve hipotez testi, Çıkarımsal istatistiğin temel araçlarıdır ve verilerden çıkarımlar yapmamızı sağlar. Bu araçlar, örneklemin doğal olarak içerdiği rastgele değişim faktörünü hesaba katarak popülasyon hakkında güvenilir ve anlamlı sonuçlar çıkarmamızı mümkün kılar.

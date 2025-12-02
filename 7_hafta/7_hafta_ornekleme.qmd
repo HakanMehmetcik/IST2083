@@ -83,24 +83,14 @@ Popülasyon parametreleri ve örneklem istatistikleri, bir veri setinin belirli 
 
 ### **Kullanım Amaçları**
 
-Kantitatif araştırmalarda ana hedef, popülasyonun özelliklerini anlamak için **parametreleri bulmaktır**. Ancak, tüm popülasyondan veri toplamak genellikle mümkün olmadığından, **örneklem istatistikleri** kullanılarak popülasyon parametreleri tahmin edilir. Bu tahminlerde **yorumlayıcı istatistik** (inferential statistics) önemli bir rol oynar.
-
-------------------------------------------------------------------------
-
-### **Örnek: Kan Basıncı**
-
--   Popülasyon parametresi: Massachusetts'teki yetişkinlerin diastolik kan basıncının gerçek ortalaması 78 mm Hg78 , \text{mm Hg}78mm Hg.
-
--   Örneklem istatistikleri: Üç ayrı örneklemin diastolik kan basınçlarının ortalamaları. Bu örneklem istatistikleri, popülasyon parametresini tahmin etmek için kullanılır. Ancak, örneklem istatistikleri her zaman tam olarak popülasyon parametresine eşit olmayabilir.
-
-------------------------------------------------------------------------
+Kantitatif araştırmalarda ana hedef, popülasyonun özelliklerini anlamak için **parametreleri bulmaktır**. Ancak, tüm popülasyondan veri toplamak genellikle mümkün olmadığından, **örneklem istatistikleri** kullanılarak popülasyon parametreleri tahmin edilir. Bu tahminlerde **çıkarımsal istatistik** (inferential statistics) önemli bir rol oynar.
 
 ### **Popülasyon Parametreleri ve Örneklem İstatistikleri İçin Semboller**
 
 Aşağıdaki tablo, popülasyon parametreleri ve örneklem istatistiklerini ifade etmek için kullanılan sembolleri özetler:
 
 | Açıklama             | **Popülasyon Parametresi** | **Örneklem İstatistiği** |
-|----------------------|----------------------------|--------------------------|
+|---------------------|---------------------------|-------------------------|
 | Ortalama             | $\mu$                      | $\bar{x}$                |
 | Standart Sapma       | $\sigma$                   | $s$                      |
 | Oran                 | $p$                        | $\hat{p}$                |
@@ -264,7 +254,7 @@ Bir katılımcı, diğer katılımcıları önerir. Genellikle zor ulaşılan gr
 ### Özet
 
 | **Yöntem** | **Özellik** | **Avantaj** | **Dezavantaj** |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Basit Rastgele | Her bireyin eşit seçilme olasılığı | Kolay ve tarafsız | Büyük popülasyonlarda zor |
 | Tabakalı | Popülasyon gruplara ayrılır | Daha hassas sonuç | Karmaşıktır |
 | Sistematik | Belirli bir aralıkla birey seçilir | Hızlı ve basit | Örüntü varsa yanlılık olabilir |
