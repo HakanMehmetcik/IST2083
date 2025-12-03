@@ -11,9 +11,9 @@ execute:
 
 ------------------------------------------------------------------------
 
-### **Yorumlayıcı İstatistiğin İki Ana Alanı**
+### **Çıkarımsal İstatistiğin İki Ana Alanı**
 
-Yorumlayıcı istatistik geleneksel olarak iki ana alana ayrılır:
+Çıkarımsal istatistik geleneksel olarak iki ana alana ayrılır:
 
 1.  **Tahmin**
 
@@ -50,12 +50,8 @@ IQ <- rnorm(n=1000, mean=100, sd=15) # 1000 IQ puanı üret (ortalama=100, sd=15
 IQ <- round(IQ) # IQ puanlarını tam sayıya yuvarla
 
 
-# Nokta Tahmini (Point Estimation)
-mean_est <- mean(IQ) # Ortalama IQ puanı
-sd_est <- sd(IQ) # IQ puanlarının standart sapması
-
 # Bir öğrencinin IQ puanının 89 veya daha düşük olma olasılığını hesapla
-prob <- pnorm(89, mean=mean_est, sd=sd_est)
+prob <- pnorm(89, mean=100, sd=15)
 
 # Sonucu yazdır
 cat("Bir öğrencinin IQ puanının 89 veya daha düşük olma olasılığı:", round(prob, 2))
@@ -175,50 +171,6 @@ olasilik <- pnorm(z)
 cat("Bireysel bir değerin 110'dan küçük olma olasılığı:", round(olasilik, 2))
 ```
 
-**Z-Skoru ile Örneklem Ortalamasına Dayalı Tahmin**
-
-Örneklem ortalamasının $\bar{X}$, popülasyon parametrelerine göre bir değerden küçük veya büyük olma olasılığını tahmin edebilirsiniz. Formül:
-
-$$Z= \frac{\bar{X} - \mu}{SE}$$​
-
-Burada, **standart hata** (SE) şu şekilde hesaplanır:
-
-$$SE = \frac{\sigma}{\sqrt{n}}$$​
-
--   **Amaç:** Örneklem ortalamasının popülasyondaki yerine ilişkin tahmin yapmak.
-
-```{r}
-# Veriyi oluştur
-veri <- rnorm(1000, mean = 100, sd = 15)
-
-# Örneklem ortalaması ve standart sapması
-x_bar <- mean(veri) # Örneklem ortalaması
-s <- sd(veri)       # Örneklem standart sapması
-n <- length(veri)   # Örneklem büyüklüğü
-
-# Standart hata hesapla
-SE <- s / sqrt(n)
-
-# Z-skorunu hesapla (örneklem ortalaması için 110'dan küçük olma)
-z <- (110 - x_bar) / SE
-
-# Örneklem ortalamasının 110'dan küçük olma olasılığı
-olasilik <- pnorm(z)
-
-# Sonuçları yazdır
-cat("Z-skoru:", z, "\n")
-cat("Örneklem ortalamasının 110'dan küçük olma olasılığı:", olasilik, "\n")
-
-```
-
-Bu bağlamda **pnorm(z)**'nin yorumlanması: Örneğimizde, z, 110 değerinin örneklem ortalamasından kaç standart hata uzaklıkta olduğunu temsil eder. **pnorm** kullanarak aslında şu soruyu sormuş oluyorsunuz: "Örneklem ortalamasının popülasyon ortalamasını tarafsız bir şekilde temsil ettiği ve örneklem ortalamalarının dağılımının normal olduğu varsayımıyla, gerçek popülasyon ortalamasının 110'dan küçük olma olasılığı nedir?"
-
-Cevaben diyebilirizki, **`pnorm(z)` değeri 1** çıktığı için, örneklem ortalamasının 110'dan küçük olma olasılığı neredeyse kesin (%100). Yani, bu sonuç, örneklem ortalamasının popülasyonun genel davranışıyla uyumlu olduğunu ve 110 gibi bir değere ulaşmasının olasılıksız olduğunu gösterir.
-
-![](images/z-score1-01.png)
-
-Grafikte, rastgele oluşturulan bir örneklemin ortalama dağılımı ve $P(\text{Örneklem Ortalaması} \leq 110)$ olasılığı gösterilmektedir. Kırmızı kesik çizgi x=110'ı temsil ederken, mavi gölgeli alan bu değerin altında kalan olasılık alanını ifade eder. Hesaplanan oldukça yüksek olasılık (0.999874859905791 veya yaklaşık %99.99), örnekleme dayalı olarak gerçek popülasyon ortalamasının 110'dan küçük olmasının son derece olası olduğunu gösterir.
-
 ## **Aralık Tahmin Yapma**
 
 Esasında aralık tahmini yapmak nokta tahmini yapma ile benzerdir. Tek yapılması gereken alt ve üst sınırlar için nokta tahmini yapmak ve noktalar arası farkı almaktır.
@@ -326,7 +278,7 @@ ggplot(data=NULL, aes(x=x)) +
 ### **Z-Skoru mu Doğrudan Değer mi?**
 
 | **Durum** | **Kullanım** | **Kod Örneği** |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Standart normal dağılım (μ=0,σ=1) | Z-skoru girilmeli | `pnorm(-1.5)` |
 | Orijinal dağılım (μ≠0,σ≠1) | Veri değerleri ve dağılım parametreleri girilmeli | `pnorm(85, mean=100, sd=15)` |
 
