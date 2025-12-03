@@ -181,9 +181,9 @@ Esasında aralık tahmini yapmak nokta tahmini yapma ile benzerdir. Tek yapılma
 
 ```{r}
 # 89 için olasılık
-having_89 <- pnorm(89, mean_est, sd_est)
+having_89 <- pnorm(89, 100, 15)
 # 101 için olasılık
-having_101 <- pnorm(101, mean_est, sd_est)
+having_101 <- pnorm(101, 100, 15)
 
 # Sonucu yazdır
 cat("Rastgele bir seçimin 89 ile 101 arasında olma olasılığı:", having_101 - having_89)
@@ -278,7 +278,7 @@ ggplot(data=NULL, aes(x=x)) +
 ### **Z-Skoru mu Doğrudan Değer mi?**
 
 | **Durum** | **Kullanım** | **Kod Örneği** |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | Standart normal dağılım (μ=0,σ=1) | Z-skoru girilmeli | `pnorm(-1.5)` |
 | Orijinal dağılım (μ≠0,σ≠1) | Veri değerleri ve dağılım parametreleri girilmeli | `pnorm(85, mean=100, sd=15)` |
 
