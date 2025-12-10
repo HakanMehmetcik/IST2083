@@ -90,7 +90,7 @@ Bu ifade, mahkeme analojisiyle şu şekilde açıklanabilir: Sanık hukukun gene
 -   **P-Değeri ve Anlamlılık Düzeyi (**α**) Arasındaki İlişki:**
 
 | **P-Değeri** | **Sonuç** |
-|------------------------------------|------------------------------------|
+|----|----|
 | p\<0.01 | Çok güçlü bir şekilde H0H_0H0​ reddedilir (sonuç oldukça anlamlıdır). |
 | 0.01≤p\<0.05 | H0​ reddedilir (sonuç anlamlıdır). |
 | 0.05≤p\<0.10 | Zayıf bir şekilde H0 reddedilir (sonuç marjinal olarak anlamlıdır). |
