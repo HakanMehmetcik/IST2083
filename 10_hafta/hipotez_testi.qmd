@@ -78,12 +78,12 @@ execute:
 -   **Eğer p-değeri** α'dan küçükse:
 
     -   **H₀ reddedilir ve H₁ kabul edilir.**\
-        Bu durumda, p-değeri, gözlemlenen sonuçların null hipotez (H₀​) doğruyken oluşma olasılığının çok düşük olduğunu gösterir. Bu nedenle, H0H₀H0​ reddedilir ve alternatif hipotez (H₁​) desteklenir.
+        Bu durumda, p-değeri, gözlemlenen sonuçların null hipotez (H₀​) doğruyken oluşma olasılığının çok düşük olduğunu gösterir. Bu nedenle, H₀ reddedilir ve alternatif hipotez (H₁​) desteklenir.
 
 -   **Eğer p-değeri** α'dan büyükse:
 
     -   **H₀ reddedilmez.**\
-        Ancak, bu durum H0H₀H0​'ın kesinlikle doğru olduğu anlamına gelmez. Sadece, H0H₀H0​'yı reddetmek için yeterince güçlü kanıt bulunmadığını ifade eder.
+        Ancak, bu durum H₀​'ın kesinlikle doğru olduğu anlamına gelmez. Sadece, H₀​'yı reddetmek için yeterince güçlü kanıt bulunmadığını ifade eder.
 
 Bu ifade, mahkeme analojisiyle şu şekilde açıklanabilir: Sanık hukukun genel ilkelerinden biri olan masumiyet karinesi uyarınca başlangıçta suçsuz kabul edilir (H0​), ancak mahkeme sürecinde suçluluğunu kanıtlamak için yeterli delil olmadığında sanık beraat eder. Bu, sanığın masum olduğunu kesin olarak kanıtlamaz; yalnızca suçlu olduğuna dair yeterli kanıt bulunmadığını gösterir.
 
