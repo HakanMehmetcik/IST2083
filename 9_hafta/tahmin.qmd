@@ -11,18 +11,6 @@ execute:
 
 ------------------------------------------------------------------------
 
-### **Çıkarımsal İstatistiğin İki Ana Alanı**
-
-Çıkarımsal istatistik geleneksel olarak iki ana alana ayrılır:
-
-1.  **Tahmin**
-
-2.  **Hipotez Testi**
-
-![](images/tahmin1.png)
-
-------------------------------------------------------------------------
-
 #### **Tahmin (Estimation)**
 
 Tahmin, örneklem verilerini kullanarak popülasyondaki bilinmeyen bir parametrenin değerini tahmin etmeyi içerir. Örneğin, bir şehirdeki tüm yetişkinlerin ortalama boyunu bilmek istiyorsanız, o şehirden bir grup insanın boyunu ölçebilirsiniz. Bu örneklemin ortalama boyu, şehirdeki tüm yetişkinlerin ortalama boyunu tahmin etmeye yardımcı olur.
@@ -36,6 +24,34 @@ Tahmin iki türdedir:
 ![](images/tahmin2-01.png)
 
 ------------------------------------------------------------------------
+
+::: callout-note
+🧠 💡 **Hatırlayalım: Çıkarımsal istatistik (Inferential Statistics)**, örneklemlerden elde edilen veriler yardımıyla, bir popülasyon hakkında genelleme yapmayı veya çıkarımda bulunmayı amaçlayan istatistik dalıdır. Yani, çıkarımsal istatistik, sınırlı bir veri kümesinden hareketle daha geniş bir kitleye yönelik tahminlerde bulunmamıza olanak sağlar.
+
+### **Çıkarımsal İstatistiğin Araçları ve Yöntemleri**
+
+1.  **Tahmin:**
+
+    -   **Nokta Tahmini:** Bir popülasyon parametresinin tek bir değerle tahmin edilmesi. Örneğin, bir popülasyonun ortalamasını örneklem ortalamasıyla tahmin etmek.
+
+    -   **Aralık Tahmini:** Popülasyon parametresinin, belirli bir güven düzeyinde, bir aralık içinde yer alma olasılığını ifade eder.
+
+2.  **Hipotez Testi:**
+
+    -   Null hipotez (H0​) ve alternatif hipotez (Ha ya da H1​) kurularak popülasyon hakkında bir iddiayı test etme sürecidir.
+
+    -   Örneğin, bir ilacın etkili olup olmadığını test etmek.
+
+3.  **Regresyon ve Korelasyon Analizi:**
+
+    -   İki veya daha fazla değişken arasındaki ilişkileri incelemek.
+
+4.  **Olasılık Dağılımları:**
+
+    -   Verilerin belirli bir dağılıma (örneğin normal dağılım) uyup uymadığını incelemek.
+
+![](images/hipotez_testi1.png)
+:::
 
 ## Nokta Tahmini (Point Estimation)
 
@@ -278,7 +294,7 @@ ggplot(data=NULL, aes(x=x)) +
 ### **Z-Skoru mu Doğrudan Değer mi?**
 
 | **Durum** | **Kullanım** | **Kod Örneği** |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Standart normal dağılım (μ=0,σ=1) | Z-skoru girilmeli | `pnorm(-1.5)` |
 | Orijinal dağılım (μ≠0,σ≠1) | Veri değerleri ve dağılım parametreleri girilmeli | `pnorm(85, mean=100, sd=15)` |
 
@@ -760,3 +776,158 @@ Grafikte, motor hacmi dağılımı ve %99 güven aralığı gösterilmektedir:
 -   **Yeşil kesik çizgiler**: Alt ve üst sınırları temsil eder.
 
 -   **Mavi gölgeli alan**: Güven aralığı içindeki değerleri ifade eder.
+
+## t.test ile hesap vs Manual Yöntem
+
+1.  **Senaryo A:** Elimizde sadece özet bilgiler (Ortalama, Standart Sapma vb.) var.
+
+2.  **Senaryo B:** Elimizde ham veri seti (excel satırları gibi) var.
+
+------------------------------------------------------------------------
+
+### 1. YÖNTEM: Manuel Hesaplama (Özet Bilgilerle)
+
+Bu yöntemi, elinizde ham veri olmadığında kullanırsınız. Örneğin bir makalede "Ortalama=50, Standart Sapma=5" yazıyorsa ve siz güven aralığını merak ediyorsanız bu yolu seçmelisiniz.
+
+**Kullanılan Fonksiyon:** `qnorm()` (Normal Dağılım için kritik değer hesaplar).
+
+### 📝 Adım Adım Kod (RStudio'da Çalıştırın)
+
+```{r}
+# --- ADIM 1: Bilinenleri Tanımlayalım ---
+n <- 100           # Örneklem büyüklüğü (Gözlem sayısı)
+x_bar <- 50        # Ortalamamız (Mean)
+s <- 10            # Standart Sapmamız (Sd)
+guven <- 0.95      # %95 Güven düzeyi istiyoruz
+
+# --- ADIM 2: Hata Payını (Margin of Error) Bulalım ---
+# Formül: Kritik Değer * Standart Hata
+
+# a) Standart Hata (Standard Error)
+se <- s / sqrt(n)  
+
+# b) Kritik Değer (Z Skoru)
+# %95 güven için kuyruklarda kalan alan (alpha) 0.05'tir.
+alpha <- 1 - guven
+z_skoru <- qnorm(1 - alpha/2)  
+# Not: qnorm(0.975) bize meşhur 1.96 değerini verir.
+
+# c) Hata Payı
+hata_payi <- z_skoru * se
+
+# --- ADIM 3: Aralığı Oluşturalım ---
+alt_sinir <- x_bar - hata_payi
+ust_sinir <- x_bar + hata_payi
+
+# Sonucu ekrana yazdıralım
+cat("Manuel Hesaplanan %95 Güven Aralığı: [", alt_sinir, "-", ust_sinir, "]")
+```
+
+> **💡 İpucu:** Eğer örneklem sayınız çok azsa ($n < 30$), `qnorm` yerine `qt` (t-dağılımı) kullanmak daha doğru sonuç verir.
+
+------------------------------------------------------------------------
+
+### 2. YÖNTEM: Otomatik Hesaplama (Ham Veri ile)
+
+Bu yöntem en pratik olandır. Elinizde bir anket sonucu veya ölçüm verileri varsa formül yazmanıza gerek yoktur. R sizin yerinize "Hipotez Testi" fonksiyonlarını kullanarak aralığı hesaplar.
+
+**Kullanılan Fonksiyon:** `t.test()`
+
+### 📝 Adım Adım Kod (RStudio'da Çalıştırın)
+
+```{r}
+# --- ADIM 1: Veri Setimizi Oluşturalım ---
+# Diyelim ki 10 öğrencinin notları elimizde:
+notlar <- c(45, 50, 48, 52, 55, 47, 49, 51, 53, 50)
+
+# --- ADIM 2: Tek Komutla Testi Yapalım ---
+# t.test fonksiyonu hem test yapar hem güven aralığı verir.
+sonuc <- t.test(notlar, conf.level = 0.95)
+
+# --- ADIM 3: Sonucu İnceleyelim ---
+# Tüm test sonucunu görmek için:
+print(sonuc)
+
+# Sadece Güven Aralığını çekip almak için:
+cat("Otomatik Hesaplanan %95 Güven Aralığı:", sonuc$conf.int)
+```
+
+------------------------------------------------------------------------
+
+## 🎯 Özet Karşılaştırma Tablosu
+
+Hangi durumda hangi kodu kullanmalısınız?
+
+|  |  |  |
+|----|----|----|
+| **Durum** | **Hangi Yöntem?** | **Neden?** |
+| **Elinizde Ham Veri Varsa** | `t.test(veri)` | En kolayıdır. Hata yapma riskiniz yoktur. |
+| **Sadece Özet Sayılar Varsa** | `qnorm(...)` formülü | Ham veri olmadığı için `t.test` çalışmaz. |
+| **Büyük Örneklem (**$n > 30$) | `qnorm` (Z Tablosu) | Veri sayısı arttıkça dağılım Normale döner. |
+| **Küçük Örneklem (**$n < 30$) | `qt` (T Tablosu) | Az veride T dağılımı daha hassastır. |
+
+------------------------------------------------------------------------
+
+🧠 Hatırlatma: Güven aralığı, "Gerçek ortalamanın, %95 olasılıkla bu iki sayı arasında olduğunu" tahmin etmektir.
+
+# ⚠️ Kritik Ayrım: Güven Aralığı vs. Tahmin Aralığı
+
+İki kavram birbirine çok benzer ama hedefleri farklıdır:
+
+### 1. Güven Aralığı (Confidence Interval - CI)
+
+-   **Neyi arar?** Popülasyonun **ORTALAMASINI (**$\mu$ ).
+
+-   **Soru:** "Tüm sınıfın boy ortalaması kaç olabilir?"
+
+-   **Mantık:** Ortalamalar daha kararlıdır. Veri sayısı ($n$) arttıkça ortalamayı daha net biliriz, bu yüzden **veri sayısı arttıkça Güven Aralığı DARALIR.**
+
+### 2. Tahmin Aralığı (Prediction Interval - PI)
+
+-   **Neyi arar?** Tek bir **GÖZLEMİ (**$x$).
+
+-   **Soru:** "Kapıdan girecek sıradaki öğrencinin boyu kaç olabilir?"
+
+-   **Mantık:** Tek bir kişiyi tahmin etmek çok zordur (biri çok kısa veya çok uzun olabilir). Bu yüzden belirsizlik çok daha fazladır. **Veri sayısı artsa bile bu aralık çok fazla DARALMAZ** (çünkü insan doğasındaki çeşitlilik yok olmaz).
+
+------------------------------------------------------------------------
+
+### 🧪 R ile İspatlayalım (Görsel Fark)
+
+Aşağıdaki kodu RStudio'da çalıştırdığında, senin tanımının (Tahmin Aralığı) neden Güven Aralığından çok daha geniş olduğunu göreceksin.
+
+```{r}
+# 1. Veri Oluşturalım (Örn: Sınav Notları)
+set.seed(123)
+notlar <- rnorm(100, mean = 50, sd = 10) # Ortalaması 50, SS 10 olan 100 not
+
+# Basit bir model kuralım (Sadece ortalama üzerinden)
+model <- lm(notlar ~ 1)
+
+# 2. HESAPLAMA
+# predict fonksiyonu bir matris (tablo) döndürür: fit (tahmin), lwr (alt), upr (üst)
+
+# A) Güven Aralığı (Confidence Interval) - Sadece ilk satırı alıyoruz
+ci <- predict(model, interval = "confidence", level = 0.95)[1, ]
+
+# B) Tahmin Aralığı (Prediction Interval) - Sadece ilk satırı alıyoruz
+pi <- predict(model, interval = "prediction", level = 0.95)[1, ]
+
+# 3. SONUÇLARI KARŞILAŞTIRMA
+cat("--- SONUÇLAR ---\n")
+# ci["lwr"] ve ci["upr"] isimleriyle çağırıyoruz
+cat("Güven Aralığı (Ortalama nerede?): [", round(ci["lwr"], 2), "-", round(ci["upr"], 2), "]\n")
+cat("Tahmin Aralığı (Sıradaki öğrenci kaç alır?): [", round(pi["lwr"], 2), "-", round(pi["upr"], 2), "]\n")
+```
+
+**Çıktıyı yorumlarsak (yaklaşık değerler):**
+
+-   **Güven Aralığı:** `[49 - 52]` -\> "Sınıfın ortalamasının 50 civarında olduğundan çok eminiz." (Dar aralık)
+
+-   **Tahmin Aralığı:** `[30 - 70]` -\> "Ama rastgele bir öğrenci seçersen notu 30 da olabilir, 70 de." (Geniş aralık)
+
+### 🎯 Özet
+
+-   Eğer **"Genel durum (trend/ortalama) nedir?"** diyorsan -\> **Güven Aralığı**
+
+-   Eğer **"Sıradaki veri ne gelecek?"** diyorsan -\> **Tahmin Aralığı**

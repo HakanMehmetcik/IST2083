@@ -13,37 +13,7 @@ execute:
 
 **Hipotez testi**, bir popülasyon hakkında öne sürülen bir iddianın (hipotezin) istatistiksel olarak doğrulanması veya reddedilmesi için kullanılan bir istatistiksel yöntemdir. Fakat unutmayalım, **hipotez testi,** örneklemden elde edilen verilerden hareketle popülasyonla ilgili bir karar verme sürecini ifade eder.
 
-::: callout-note
-💡 **Hatırlayalım: Yorumlayıcı istatistik (Inferential Statistics)**, örneklemlerden elde edilen veriler yardımıyla, bir popülasyon hakkında genelleme yapmayı veya çıkarımda bulunmayı amaçlayan istatistik dalıdır. Yani, yorumlayıcı istatistik, sınırlı bir veri kümesinden hareketle daha geniş bir kitleye yönelik tahminlerde bulunmamıza olanak sağlar.
-
-### **Yorumlayıcı İstatistiğin Araçları ve Yöntemleri**
-
-1.  **Tahmin:**
-
-    -   **Nokta Tahmini:** Bir popülasyon parametresinin tek bir değerle tahmin edilmesi. Örneğin, bir popülasyonun ortalamasını örneklem ortalamasıyla tahmin etmek.
-
-    -   **Aralık Tahmini:** Popülasyon parametresinin, belirli bir güven düzeyinde, bir aralık içinde yer alma olasılığını ifade eder.
-
-2.  **Hipotez Testi:**
-
-    -   Null hipotez (H0​) ve alternatif hipotez (Ha ya da H1​) kurularak popülasyon hakkında bir iddiayı test etme sürecidir.
-
-    -   Örneğin, bir ilacın etkili olup olmadığını test etmek.
-
-3.  **Regresyon ve Korelasyon Analizi:**
-
-    -   İki veya daha fazla değişken arasındaki ilişkileri incelemek.
-
-4.  **Olasılık Dağılımları:**
-
-    -   Verilerin belirli bir dağılıma (örneğin normal dağılım) uyup uymadığını incelemek.
-
-![](images/hipotez_testi1.png)
-:::
-
 **Hipotez testi,** yalnızca verilerle desteklenmiş iddiaları kabul ederek objektif ve güvenilir sonuçlara ulaşmamıza olanak tanır ve bu yönüylede oldukça yayğın olarak kullanılan bir istatistiksel yöntemdir.
-
-------------------------------------------------------------------------
 
 ## **Temel Kavramlar:**
 
@@ -108,7 +78,7 @@ execute:
 -   **Eğer p-değeri** α'dan küçükse:
 
     -   **H₀ reddedilir ve H₁ kabul edilir.**\
-        Bu durumda, p-değeri, gözlemlenen sonuçların null hipotez (H0H₀H0​) doğruyken oluşma olasılığının çok düşük olduğunu gösterir. Bu nedenle, H0H₀H0​ reddedilir ve alternatif hipotez (H1H₁H1​) desteklenir.
+        Bu durumda, p-değeri, gözlemlenen sonuçların null hipotez (H₀​) doğruyken oluşma olasılığının çok düşük olduğunu gösterir. Bu nedenle, H0H₀H0​ reddedilir ve alternatif hipotez (H₁​) desteklenir.
 
 -   **Eğer p-değeri** α'dan büyükse:
 
