@@ -274,7 +274,7 @@ colnames(categorical_vars)
 # Temel istatistikler
 scottish_clean %>%
   summarise(
-    mean_age = mean(age, na.rm = TRUE),
+    mean_age = mean(rage, na.rm = TRUE),
     mean_trust = mean(trust, na.rm = TRUE),
     mean_edu = mean(edu1, na.rm = TRUE),
     sd_age = sd(age, na.rm = TRUE),
@@ -501,6 +501,9 @@ logit_model <- glm(RefvoteDum ~ pid1 + edu1 + age + rsex + libauth + employmentd
 # Modelin özetini görüntüleme
 summary(logit_model)
 
+# odds ratiolar
+exp(cbind(OR = coef(logit_model), confint(logit_model)))
+
 ```
 
 ### **1. Modelin Genel Değerlendirmesi**
@@ -523,13 +526,13 @@ Her bir bağımsız değişkenin **katsayı (Estimate)**, **p-değeri (Pr(\>\|z\
 
     -   Labour Partisi’ne bağlılık, "Evet" oyu verme olasılığını artırır.
 
-    -   Odds oranı: $e^{1.932} \approx 6.91$ , yani Labour’a bağlı bireylerin "Evet" oyu verme olasılığı, Conservative’e bağlı bireylere kıyasla yaklaşık 7 kat daha fazladır.
+    -   Odds oranı: $e^{1.932} \approx 6.86$ , yani Labour’a bağlı bireylerin "Evet" oyu verme olasılığı, Conservative’e bağlı bireylere kıyasla yaklaşık 7 kat daha fazladır.
 
 -   **SNP (Katsayı = 4.051, p \< 0.001):**
 
     -   SNP’ye bağlılık, "Evet" oyu verme olasılığını çok güçlü bir şekilde artırır.
 
-    -   Odds oranı: $e^{4.051} \approx 57.4$ , yani SNP’ye bağlı bireylerin "Evet" oyu verme olasılığı Conservative’e bağlı bireylerden yaklaşık 57 kat daha fazladır.
+    -   Odds oranı: $e^{4.051} \approx 57.1$ , yani SNP’ye bağlı bireylerin "Evet" oyu verme olasılığı Conservative’e bağlı bireylerden yaklaşık 57 kat daha fazladır.
 
 #### **`edu` (Eğitim Düzeyi):**
 
@@ -549,7 +552,7 @@ Her bir bağımsız değişkenin **katsayı (Estimate)**, **p-değeri (Pr(\>\|z\
 
     -   Erkeklerin "Evet" oyu verme olasılığı kadınlara göre daha düşüktür.
 
-    -   Odds oranı: $e^{-0.637} \approx 0.53$, yani erkeklerin "Evet" oyu verme olasılığı kadınlara göre %47 daha azdır.
+    -   Odds oranı: $e^{-0.637} \approx 0.52$, yani erkeklerin "Evet" oyu verme olasılığı kadınlara göre %47 daha azdır.
 
 #### **`libauth` (Liberal-Otoriter Eğilim):**
 
